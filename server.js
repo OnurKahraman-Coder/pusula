@@ -8,7 +8,7 @@ const fs = require('fs');
 const os = require('os');
 const path = require('path');
 const { spawn } = require('child_process');
-const { Engine, implied, impliedPower } = require('./lib/engine');
+const { Engine, implied, impliedPower, wilson } = require('./lib/engine');
 const { createAnalyzer } = require('./lib/analyze');
 const FX = require('./lib/fixtures');
 const BULLETIN = require('./lib/bulletin');
@@ -93,7 +93,7 @@ function loadDB() {
   });
   fxIndex = FX.buildIndex(engine.teams);
   panel = PANEL.createPanel(engine);
-  firsatlar = FIRSATLAR.createFirsatlar(engine, analyzer);
+  firsatlar = FIRSATLAR.createFirsatlar(engine, analyzer, { F: engine.F || require('./lib/engine').F, wilson });
 
   scheduleBulletin();
   console.log(`Veritabani: ${dbMeta.matches} mac, ${dbMeta.teams} takim (${dbMeta.loadMs} ms)`);

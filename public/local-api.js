@@ -16,6 +16,7 @@
   let booting = null;
   let fxIndex = null;
   let panel = null;
+  let firsatlarInst = null;
 
   function loadScript(src) {
     return new Promise((resolve, reject) => {
@@ -212,6 +213,18 @@
       const t0 = Date.now();
       const out = panel.analyze(body.input || body, body.options || {});
       out.tookMs = Date.now() - t0;
+      return out;
+    }
+    if (path === '/api/firsatlar') {
+      if (!window.OranFirsatlar) throw new Error('firsatlar modülü yüklenmemiş');
+      if (!firsatlarInst) {
+        const E = window.OranEngine;
+        firsatlarInst = window.OranFirsatlar.createFirsatlar(engine, analyzer, { F: E.F, wilson: E.wilson });
+      }
+      let fx = { matches: [] };
+      try { fx = await webJson('bwin-fixtures.json', q.get('refresh') === '1'); } catch (_) {}
+      const out = firsatlarInst.scan((fx && fx.matches) || [], {});
+      out.fetchedAt = fx ? fx.fetchedAt : null;
       return out;
     }
     if (path === '/api/bwfixtures') {

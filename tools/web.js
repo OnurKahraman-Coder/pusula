@@ -39,6 +39,7 @@ fs.writeFileSync(path.join(OUT, 'engine.browser.js'), '(function(){\n' + engine 
 /* 3) UMD modüller olduğu gibi */
 fs.copyFileSync(path.join(ROOT, 'lib', 'analyze.js'), path.join(OUT, 'analyze.browser.js'));
 fs.copyFileSync(path.join(ROOT, 'lib', 'fixtures.js'), path.join(OUT, 'fixtures.browser.js'));
+fs.copyFileSync(path.join(ROOT, 'lib', 'firsatlar.js'), path.join(OUT, 'firsatlar.browser.js'));
 fs.copyFileSync(path.join(ROOT, 'lib', 'panel.js'), path.join(OUT, 'panel.browser.js'));
 
 /* 4) veri dosyaları */
@@ -59,7 +60,7 @@ copyOr('bulletin.json', { date: 0, dateText: '', count: 0, matches: [] });
 let html = fs.readFileSync(path.join(WEB, 'index.html'), 'utf8');
 html = html.replace('<meta name="theme-color" content="#0d0f12">',
   `<meta name="theme-color" content="#0d0f12">\n<meta name="data-version" content="${version}">\n<meta name="robots" content="noindex">`);
-const scripts = ['engine.browser.js', 'analyze.browser.js', 'fixtures.browser.js', 'panel.browser.js', 'local-api.js', 'web.js']
+const scripts = ['engine.browser.js', 'analyze.browser.js', 'fixtures.browser.js', 'panel.browser.js', 'firsatlar.browser.js', 'local-api.js', 'web.js']
   .map((f) => `<script src="${f}?v=${version}"></script>`).join('\n');
 html = html.replace('<!--SCRIPTS-->', scripts + `\n<script>if('serviceWorker' in navigator){navigator.serviceWorker.getRegistrations().then(r=>r.forEach(x=>x.unregister())).catch(()=>{});}</script>`);
 html = html.replace('web.css"', `web.css?v=${version}"`);

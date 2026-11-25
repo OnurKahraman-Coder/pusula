@@ -187,6 +187,83 @@ function opts() {
   };
 }
 
+/* ------------------------------ Fırsatlar ------------------------------ */
+
+function switchView(v) {
+  const main = document.querySelector('.main');
+  $$('#vnav button').forEach((x) => x.classList.toggle('on', x.dataset.v === v));
+  if (v === 'firsatlar') {
+    main.classList.add('show-firsatlar');
+    if (!S.firsatlarLoaded) loadFirsatlar();
+  } else {
+    main.classList.remove('show-firsatlar');
+  }
+}
+
+async function loadFirsatlar() {
+  const out = $('#firsatlarOut');
+  out.innerHTML = '<div class="empty">analiz ediliyor…</div>';
+  try {
+    const r = await api('/api/firsatlar');
+    S.firsatlarLoaded = true;
+    renderFirsatlar(r);
+  } catch (e) {
+    out.innerHTML = '<div class="empty">Yüklenemedi: ' + esc(e.message || e) + '</div>';
+  }
+}
+
+function renderFirsatlar(r) {
+  const pc = (x) => (x * 100).toFixed(1);
+  let h = '';
+  h += '<h3 class="fk-h">Örüntü Kuralları</h3>';
+  if (r.uyari) h += '<div class="fk-warn" style="margin-bottom:10px">⚠ ' + esc(r.uyari) + '</div>';
+  for (const k of r.kurallar) {
+    const b = k.baz || {};
+    const anlamli = !!b.anlamli;
+    const rozet = anlamli
+      ? '<span class="fk-badge ok">anlamlı işaret</span>'
+      : '<span class="fk-badge noise">gürültü — ayırt edilemez</span>';
+    h += '<div class="fk-card' + (anlamli ? '' : ' pasif') + '">'
+      + '<div class="fk-top"><b>' + esc(k.ad) + '</b> ' + rozet + '</div>'
+      + '<div class="fk-sub">' + esc(k.aciklama) + ' → ' + esc(k.sinyal) + '</div>'
+      + '<div class="fk-stat">dönüş %' + (b.pct != null ? b.pct : '—')
+      + ' <small>(baz %' + (b.bazPct != null ? b.bazPct : '—')
+      + ' · %95 GA [' + (b.gaLo != null ? b.gaLo : '—') + '–' + (b.gaHi != null ? b.gaHi : '—') + ']'
+      + ' · n=' + (b.n || 0) + (anlamli && b.lift ? ' · lift ' + b.lift + '×' : '') + ')</small></div>';
+    if (!anlamli) {
+      h += '<div class="fk-warn">Bu kuralın oranı (%' + (b.pct != null ? b.pct : '—') + '), genel orandan (%'
+        + (b.bazPct != null ? b.bazPct : '—') + ') istatistiksel olarak ayırt edilemiyor. İşaret olarak kullanma.</div>';
+    }
+    if (k.maclar && k.maclar.length) {
+      h += '<ul class="fk-ml">';
+      for (const m of k.maclar) h += '<li>' + esc(m.date) + ' · ' + esc(m.home) + ' – ' + esc(m.away) + ' <small>(' + esc(m.league) + ')</small></li>';
+      h += '</ul>';
+    } else {
+      h += '<div class="fk-sub" style="margin-top:4px">Önümüzdeki maçlarda bu örüntüye uyan yok.</div>';
+    }
+    h += '</div>';
+  }
+
+  h += '<h3 class="fk-h" style="margin-top:18px">Değer Fırsatları <small>(model &gt; piyasa, EV&gt;%3)</small></h3>';
+  if (!r.value || !r.value.length) {
+    h += '<div class="empty">Şu an değer eşiğini geçen seçim yok.</div>';
+  } else {
+    h += '<div class="fk-tblwrap"><table class="fk-tbl"><thead><tr><th>Maç</th><th>Seçim</th><th>Oran</th><th>Model</th><th>Piyasa</th><th>EV</th></tr></thead><tbody>';
+    for (const v of r.value) {
+      const not = v.azVeri ? '⚠ az veri (' + v.macSay + ' maç)' : (v.ev > 0.20 ? '⚠ aşırı EV' : '');
+      h += '<tr' + (v.supheli ? ' class="supheli"' : '') + '>'
+        + '<td>' + esc(v.home) + ' – ' + esc(v.away) + '<br><small>' + esc(v.league) + ' · ' + esc(v.date) + '</small></td>'
+        + '<td>' + esc(v.secim) + '</td><td>' + (v.secimOrani != null ? v.secimOrani : '—') + '</td>'
+        + '<td>%' + pc(v.modelP) + '</td><td>%' + pc(v.piyasaP) + '</td>'
+        + '<td><b>+%' + pc(v.ev) + '</b>' + (not ? ' <span class="fk-warn-in">' + not + '</span>' : '') + '</td></tr>';
+    }
+    h += '</tbody></table></div>';
+    h += '<div class="fk-sub" style="margin-top:8px">⚠ İşaretli satırlar güvenilmez: az maçlı takımda model piyasadan aşırı ayrışır (ince-veri artefaktı). Güvenilir seçimler üstte.</div>';
+  }
+  h += '<div class="fk-sub" style="margin-top:10px">Fikstür: ' + (r.sayac ? r.sayac.fikstur : 0) + ' maç</div>';
+  $('#firsatlarOut').innerHTML = h;
+}
+
 async function run() {
   const h = +$('#iH').value, d = +$('#iD').value, a = +$('#iA').value;
   if (!(h > 1 && d > 1 && a > 1)) { toast('1, X ve 2 oranlarını gir.'); return; }
@@ -339,6 +416,7 @@ async function boot() {
     if (sv.excludeLow) $('#oLow').checked = true;
 
     $('#go').addEventListener('click', run);
+    $$('#vnav button').forEach((b) => b.addEventListener('click', () => switchView(b.dataset.v)));
     ['#iH', '#iD', '#iA', '#iO', '#iU'].forEach((s) => $(s).addEventListener('keydown', (e) => { if (e.key === 'Enter') run(); }));
     $$('#dtabs button').forEach((b) => b.addEventListener('click', () => {
       S.tab = b.dataset.d; $$('#dtabs button').forEach((x) => x.classList.toggle('on', x === b)); renderList();
