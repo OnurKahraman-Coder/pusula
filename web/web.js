@@ -237,8 +237,8 @@ const GVIEWS = {
     cap: 60,
   },
   evev: {
-    warn: 'Yalnızca <b>Evet/Evet ihtimali en yüksek</b> maçlar (≥%85). Evet/Evet = <b>her iki yarıda da en az 1 gol</b>. Benzer maçların İY/MS skorlarından. Tarih/saate göre sıralı. Garanti değil, bahis önerisi değil.',
-    filter: (m) => m.evEv != null && m.evEv >= 0.85,
+    warn: 'Yalnızca <b>en sağlam Evet/Evet</b> maçları: Evet/Evet ≥%85 <b>ve</b> 3.5 üst ≥%50 <b>ve</b> İY 1.5 ≥%45 <b>ve</b> İY var ≥%65. Yani her iki yarıda gol + bol gollü + hareketli ilk yarı. Tarih/saate göre sıralı. Garanti değil, bahis önerisi değil.',
+    filter: (m) => m.evEv != null && m.evEv >= 0.85 && m.o35 >= 0.50 && m.iy15 >= 0.45 && m.iy05 >= 0.65,
     sort: SORT_DT,
     cap: 80,
   },
@@ -287,7 +287,7 @@ function renderGollu(filter) {
       stats = `<span>İY KG <b>${P(m.iyKg)}</b></span><span>İY 0.5 Üst <b>${P(m.iy05)}</b></span><span>KG Var <b>${P(m.kg)}</b></span>`;
     } else if (filter === 'evev') {
       badge = '<span class="gbadge evev">EVET / EVET</span>';
-      stats = `<span>Evet/Evet <b>${P(m.evEv)}</b></span><span>İY 0.5 Üst <b>${P(m.iy05)}</b></span><span>2.5 Üst <b>${P(m.o25)}</b></span>`;
+      stats = `<span>Evet/Evet <b>${P(m.evEv)}</b></span><span>3.5 Üst <b>${P(m.o35)}</b></span><span>İY 1.5 <b>${P(m.iy15)}</b></span><span>İY var <b>${P(m.iy05)}</b></span>`;
     } else {
       badge = m.kind === 'kg' ? '<span class="gbadge kg">KG VAR GÜÇLÜ</span>' : '<span class="gbadge strong">GÜÇLÜ GOLLÜ</span>';
       stats = `<span>2.5 Üst <b>${P(m.o25)}</b></span><span>KG Var <b>${P(m.kg)}</b></span><span>İY 0.5 Üst <b>${P(m.iy05)}</b></span><span>maç başı <b>${m.avgGoals.toFixed(2)}</b> gol</span>`;
