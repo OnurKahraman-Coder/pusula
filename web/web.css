@@ -214,3 +214,14 @@ td.eq { color: var(--pnum); font-weight: 800; }
 .fk-tbl th, .fk-tbl td { text-align:left; padding:7px 9px; border-bottom:1px solid #23272e; }
 .fk-tbl th { color:#8a8579; }
 .fk-tbl tr.supheli { background:rgba(255,120,80,.07); }
+
+/* ---- Canlı dönüş sinyali (ağır favori geride) ---- */
+.cbkbar{background:linear-gradient(180deg,#2a0f12,#1c0b0d);border:1px solid #7f1d1d;border-radius:12px;padding:10px 12px;margin:0 0 12px}
+.cbkhead{color:#fca5a5;font-weight:800;font-size:13px;letter-spacing:.3px;margin-bottom:6px}
+.cbkrow{color:#fecaca;font-size:13px;padding:6px 8px;border-radius:8px;cursor:pointer;background:#3b1517;margin:4px 0}
+.cbkrow:hover{background:#4c1a1d}
+.cbkrow b{color:#fff}
+.cbknote{color:#9a6b6b;font-size:11px;margin-top:6px}
+.m.cbkm{box-shadow:inset 3px 0 0 #ef4444}
+.cbk{display:block;margin-top:4px;font-size:11.5px;color:#fca5a5;background:#2a0f12;border:1px solid #7f1d1d;border-radius:7px;padding:3px 7px;line-height:1.35}
+.cbk b{color:#fff}

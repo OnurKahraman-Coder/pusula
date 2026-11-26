@@ -25,6 +25,20 @@ function setFoot(iso) {
   } catch (_) { /* yoksa düz metin */ }
   el.textContent = `${txt} · her 3 saatte yenilenir`;
 }
+
+// CANLI DÖNÜŞ SİNYALİ: ağır favori şu an geride mi? (120b maç kanıtı, İY'de geride
+// kalan favorinin dönüp-KAZANMA oranı; gol farkına göre). Oran<=1.65 = izleme adayı.
+function favBehind(m) {
+  if (m.status !== 'live' || m.hg == null || m.ag == null || !(m.h > 1 && m.a > 1)) return null;
+  const homeFav = m.h < m.a, favOdds = Math.min(m.h, m.a);
+  if (favOdds > 1.65) return null;
+  const favG = homeFav ? m.hg : m.ag, oppG = homeFav ? m.ag : m.hg;
+  if (favG >= oppG) return null;                 // favori geride değil
+  const deficit = oppG - favG;
+  const band = favOdds < 1.30 ? 0 : favOdds < 1.50 ? 1 : 2;
+  const rate = [[43, 21], [30, 14], [22, 10]][band][deficit >= 2 ? 1 : 0];
+  return { rate, dir: homeFav ? '2/1' : '1/2', favName: homeFav ? m.homeName : m.awayName, favOdds, deficit };
+}
 const dShort = (n) => { const d = new Date(Math.floor(n / 10000), Math.floor((n % 10000) / 100) - 1, n % 100); return `${GUN[d.getDay()]} ${pad(n % 100)}.${pad(Math.floor((n % 10000) / 100))}`; };
 
 const S = { meta: null, items: [], tab: 'today', sel: null, q: '', last: null, fxAt: null };
@@ -137,8 +151,18 @@ function renderList() {
   });
 
   const box = $('#mlist');
+  // CANLI DÖNÜŞ banner'ı — tüm maçlardan (sekme farketmez), en güçlü favori üstte
+  const alerts = S.items.filter(favBehind).sort((a, b) => favBehind(b).rate - favBehind(a).rate);
+  let banner = '';
+  if (alerts.length) {
+    banner = `<div class="cbkbar"><div class="cbkhead">🔴 CANLI DÖNÜŞ ADAYI · ${alerts.length}</div>`;
+    alerts.forEach((m) => { const fb = favBehind(m); const i = S.items.indexOf(m);
+      banner += `<div class="cbkrow" data-i="${i}"><b>${esc(fb.favName)}</b> geride · ${m.hg}-${m.ag} ${esc(m.clock)} · tarihsel <b>%${fb.rate}</b> → ${fb.dir}</div>`; });
+    banner += `<div class="cbknote">İY'de geride kalan ağır favori dönüp kazanır (120b maç). Garanti değil, bahis önerisi değil.</div></div>`;
+  }
   if (!items.length) {
-    box.innerHTML = `<div class="empty">${S.tab === 'live' ? 'Şu an canlı maç yok.' : 'Bu aralıkta maç yok.'}<br>Oranları sağdan elle girebilirsin.</div>`;
+    box.innerHTML = banner + `<div class="empty">${S.tab === 'live' ? 'Şu an canlı maç yok.' : 'Bu aralıkta maç yok.'}<br>Oranları sağdan elle girebilirsin.</div>`;
+    box.querySelectorAll('.cbkrow').forEach((el) => el.addEventListener('click', () => pick(S.items[+el.dataset.i])));
     return;
   }
   // ülke → lig → maç
@@ -166,12 +190,15 @@ function renderList() {
           : `<span class="badge-time">${S.tab === 'today' ? esc(m.time) : dShort(m.date) + '<br>' + esc(m.time)}</span>`;
         const sc = m.status === 'live' && m.hg != null ? `<small class="sc">${m.hg}-${m.ag} · ${esc(m.clock)}</small>` : '';
         const od = m.h > 1 ? `<span>${o2(m.h)}</span><span>${o2(m.d)}</span><span>${o2(m.a)}</span>` : '<span class="no">oran yok</span>';
-        html += `<div class="m${on}" data-i="${i}">${left}<div class="tm">${esc(m.homeName)}<br>${esc(m.awayName)}${sc}</div><div class="odds">${od}</div></div>`;
+        const fb = favBehind(m);
+        const alert = fb ? `<div class="cbk">🔴 ${esc(fb.favName)} geride (favori ${o2(fb.favOdds)}) — tarihsel <b>%${fb.rate}</b> dönüp kazanır → <b>${fb.dir}</b> adayı</div>` : '';
+        html += `<div class="m${on}${fb ? ' cbkm' : ''}" data-i="${i}">${left}<div class="tm">${esc(m.homeName)}<br>${esc(m.awayName)}${sc}${alert}</div><div class="odds">${od}</div></div>`;
       });
     }
     html += '</div></div>';
   }
-  box.innerHTML = html;
+  box.innerHTML = banner + html;
+  box.querySelectorAll('.cbkrow').forEach((el) => el.addEventListener('click', () => pick(S.items[+el.dataset.i])));
   box.querySelectorAll('.m').forEach((el) => el.addEventListener('click', () => pick(S.items[+el.dataset.i])));
   box.querySelectorAll('.country').forEach((el) => el.addEventListener('click', () => {
     const g = el.parentElement; g.classList.toggle('closed');
