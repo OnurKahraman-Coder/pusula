@@ -224,11 +224,13 @@ function renderGollu(list) {
   const up = list.filter((m) => m.date >= today);
   if (!up.length) { $('#golluOut').innerHTML = '<div class="empty">Şu an gol eğilimi eşiğini geçen maç yok.</div>'; return; }
   const P = (x) => Math.round(x * 100);
-  let h = `<div class="guyar">Bunlar <b>tarihsel sıklık</b>: aynı oran dizilimindeki ${'geçmiş'} maçlarda bu kadar çok gol çıkmış — <b>garanti değil, bahis önerisi değil</b>. Geçmiş testte bu tür sapmalara bahis ortalama −%14 getirdi.</div>`;
+  let h = `<div class="guyar">Sadece <b>güçlü işaretler</b>: aynı oran dizilimindeki geçmiş maçlarda çok gol (2.5 üst) ya da karşılıklı gol baskın çıkanlar — <b>garanti değil, bahis önerisi değil</b>. Geçmiş testte bu tür sapmalara bahis ortalama −%14 getirdi. Tarih/saate göre sıralı.</div>`;
   h += '<div class="glist">';
   up.forEach((m, i) => {
-    const d = m.date === today ? esc(m.time) : dShort(m.date) + ' ' + esc(m.time);
-    const badge = m.strong ? '<span class="gbadge strong">GÜÇLÜ GOLLÜ</span>' : '<span class="gbadge">GOL EĞİLİMİ</span>';
+    const d = m.date === today ? 'Bugün ' + esc(m.time) : dShort(m.date) + ' ' + esc(m.time);
+    const badge = m.kind === 'kg'
+      ? '<span class="gbadge kg">KG VAR GÜÇLÜ</span>'
+      : '<span class="gbadge strong">GÜÇLÜ GOLLÜ</span>';
     h += `<div class="gcard" data-i="${i}">
       <div class="gtop"><span class="gtime">${d}</span>${badge}</div>
       <div class="gteams">${esc(m.homeName)} – ${esc(m.awayName)}</div>
