@@ -82,7 +82,7 @@ async function loadList(withLive = true) {
       date: m.date, time: m.time || '', home: m.home, away: m.away,
       homeName: m.home >= 0 && S.meta.teams[m.home] ? S.meta.teams[m.home].n : m.homeName,
       awayName: m.away >= 0 && S.meta.teams[m.away] ? S.meta.teams[m.away].n : m.awayName,
-      h: m.h || 0, d: m.d || 0, a: m.a || 0, o: m.o || 0, u: m.u || 0,
+      h: m.h || 0, d: m.d || 0, a: m.a || 0, o: m.o || 0, u: m.u || 0, oddsSource: m.oddsSource || '',
       status: m.status || 'ns', hg: m.hg, ag: m.ag, clock: m.clock || '', ...extra,
     };
   };
