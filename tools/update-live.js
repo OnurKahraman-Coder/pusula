@@ -102,9 +102,9 @@ async function main() {
   /* 4) günün bülteni (ESPN) */
   try {
     const B = require('../lib/bulletin');
-    const p = await B.fetchDay(FX.buildIndex(engine.teams));
+    const p = await B.fetchWindow(FX.buildIndex(engine.teams), { days: 8 });
     B.save(DATA, p);
-    report.push(`bülten: ${p.dateText} · ${p.count} maç`);
+    report.push(`bülten: ${p.dateText}+${p.windowDays}g · ${p.count} maç`);
   } catch (e) {
     report.push(`bülten: HATA ${e.message}`);
   }
