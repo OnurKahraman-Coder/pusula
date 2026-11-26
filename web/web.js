@@ -12,6 +12,19 @@ const dnum = (d) => d.getFullYear() * 10000 + (d.getMonth() + 1) * 100 + d.getDa
 const addDays = (n) => { const d = new Date(); d.setDate(d.getDate() + n); return dnum(d); };
 const dTxt = (n) => `${pad(n % 100)}.${pad(Math.floor((n % 10000) / 100))}.${Math.floor(n / 10000)}`;
 const GUN = ['Paz', 'Pzt', 'Sal', 'Çar', 'Per', 'Cum', 'Cmt'];
+// Canlı verinin en son çekilme zamanını (ESPN oranları) Türkiye saatiyle göster.
+function setFoot(iso) {
+  const el = document.querySelector('#sfoot'); if (!el) return;
+  let txt = 'canlı veri';
+  try {
+    const d = new Date(iso); const now = new Date();
+    const sameDay = d.toDateString() === now.toDateString();
+    const hh = String(d.getHours()).padStart(2, '0') + ':' + String(d.getMinutes()).padStart(2, '0');
+    const gun = sameDay ? 'bugün' : `${pad(d.getDate())}.${pad(d.getMonth() + 1)}`;
+    txt = `güncel · son çekim ${gun} ${hh}`;
+  } catch (_) { /* yoksa düz metin */ }
+  el.textContent = `${txt} · her 3 saatte yenilenir`;
+}
 const dShort = (n) => { const d = new Date(Math.floor(n / 10000), Math.floor((n % 10000) / 100) - 1, n % 100); return `${GUN[d.getDay()]} ${pad(n % 100)}.${pad(Math.floor((n % 10000) / 100))}`; };
 
 const S = { meta: null, items: [], tab: 'today', sel: null, q: '', last: null, fxAt: null };
@@ -87,7 +100,8 @@ async function loadList(withLive = true) {
     };
   };
   const [fx, bl] = await Promise.all([api('/api/bwfixtures').catch(() => null), api('/api/bulletin').catch(() => null)]);
-  if (fx && fx.matches) { S.fxAt = fx.fetchedAt; fx.matches.filter((m) => m.date >= today).forEach((m) => upsert(map, norm(m))); }
+  if (bl && bl.fetchedAt) { S.fxAt = bl.fetchedAt; setFoot(bl.fetchedAt); }
+  if (fx && fx.matches) { fx.matches.filter((m) => m.date >= today).forEach((m) => upsert(map, norm(m))); }
   // bülten birkaç saat eski olabilir: durumunu kullanma, canlı bilgisi ESPN'den gelir
   // bültendeki ESPN oranlarını koru; sadece (eski olabilen) canlı durum/skoru sıfırla
   if (bl && bl.matches) bl.matches.filter((m) => m.date >= today && m.status !== 'ft').forEach((m) => upsert(map, norm(m, { status: 'ns', hg: null, ag: null, clock: '' })));
@@ -456,7 +470,7 @@ async function boot() {
     S.meta = await api('/api/meta');
     $('#eyebrow').textContent = `CANLI ORAN · ${S.meta.matches.toLocaleString('tr-TR')} MAÇLIK ARŞİV`;
     $('#splash').classList.add('off');
-    $('#sfoot').textContent = `veri: ${dTxt(S.meta.lastDate)} · her 3 saatte güncellenir`;
+    $('#sfoot').textContent = 'canlı veri yükleniyor…';
 
     // ayarlar (küçük satır)
     const sv = JSON.parse(store.get('om_web_opts') || '{}');
