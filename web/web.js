@@ -25,9 +25,17 @@ const post = (url, body) => api(url, { method: 'POST', body: JSON.stringify(body
 /*  Maç listesi: bwin fikstür + günün bülteni + ESPN canlı skorları      */
 /* ------------------------------------------------------------------ */
 
+// ESPN'den gelen, yerel arşivde ligi olmayan kupalar (isim/ülke DB'de yok)
+const EXTRA_LEAGUES = {
+  EL: { name: 'UEFA Avrupa Ligi', country: 'Avrupa' },
+  ECL: { name: 'UEFA Avrupa Konferans Ligi', country: 'Avrupa' },
+  CL: { name: 'UEFA Şampiyonlar Ligi', country: 'Avrupa' },
+};
 function leagueInfo(code) {
   const l = (S.meta.leagues || []).find((x) => x.code === code);
-  return l ? { name: l.name, country: l.country || '' } : { name: code, country: '' };
+  if (l) return { name: l.name, country: l.country || '' };
+  if (EXTRA_LEAGUES[code]) return EXTRA_LEAGUES[code];
+  return { name: code, country: '' };
 }
 const keyOf = (m) => (m.home >= 0 && m.away >= 0 ? `${m.home}|${m.away}` : `${String(m.homeName).toLowerCase()}|${String(m.awayName).toLowerCase()}`);
 
@@ -81,7 +89,8 @@ async function loadList(withLive = true) {
   const [fx, bl] = await Promise.all([api('/api/bwfixtures').catch(() => null), api('/api/bulletin').catch(() => null)]);
   if (fx && fx.matches) { S.fxAt = fx.fetchedAt; fx.matches.filter((m) => m.date >= today).forEach((m) => upsert(map, norm(m))); }
   // bülten birkaç saat eski olabilir: durumunu kullanma, canlı bilgisi ESPN'den gelir
-  if (bl && bl.matches) bl.matches.filter((m) => m.date >= today && m.status !== 'ft').forEach((m) => upsert(map, norm(m, { h: 0, d: 0, a: 0, status: 'ns', hg: null, ag: null, clock: '' })));
+  // bültendeki ESPN oranlarını koru; sadece (eski olabilen) canlı durum/skoru sıfırla
+  if (bl && bl.matches) bl.matches.filter((m) => m.date >= today && m.status !== 'ft').forEach((m) => upsert(map, norm(m, { status: 'ns', hg: null, ag: null, clock: '' })));
   if (withLive) (await espnToday()).forEach((m) => upsert(map, norm(m, { h: 0, d: 0, a: 0 })));
   S.items = [...map.values()].flat().filter((m) => m.status !== 'ft')
     .sort((x, y) => (x.status === 'live' ? 0 : 1) - (y.status === 'live' ? 0 : 1) || x.date - y.date || x.time.localeCompare(y.time));
