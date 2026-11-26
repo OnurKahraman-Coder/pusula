@@ -200,11 +200,12 @@
     }
 
     if (WEB && path === '/api/bwfixtures') {
-      try { return { ...(await webJson('bwin-fixtures.json', q.get('refresh') === '1')), via: 'web' }; }
+      // fikstür/oran 3 saatte bir değişir: her zaman taze çek (önbellekten bayat gelmesin)
+      try { return { ...(await webJson('bwin-fixtures.json', true)), via: 'web' }; }
       catch (e) { return { count: 0, matches: [], error: e.message }; }
     }
     if (WEB && path === '/api/bulletin') {
-      try { return await webJson('bulletin.json', q.get('refresh') === '1'); }
+      try { return await webJson('bulletin.json', true); }
       catch (e) { return { date: 0, dateText: '', count: 0, matches: [], error: e.message }; }
     }
     if (path === '/api/panel') {
