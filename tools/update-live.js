@@ -109,6 +109,23 @@ async function main() {
     report.push(`bülten: HATA ${e.message}`);
   }
 
+  /* 5) gollü maç taraması (bültendeki oranlı maçları analiz et) */
+  try {
+    const PANEL = require('../lib/panel');
+    const GOLLU = require('../lib/gollu');
+    const panel = PANEL.createPanel(engine);
+    const bl = JSON.parse(fs.readFileSync(path.join(DATA, 'bulletin.json'), 'utf8'));
+    const today = engine.today || Number(new Date().toISOString().slice(0, 10).replace(/-/g, ''));
+    const up = (bl.matches || []).filter((m) => m.date >= today && m.status !== 'ft');
+    const list = GOLLU.scanGollu(panel, up, { minO25: 0.65 });
+    fs.writeFileSync(path.join(DATA, 'gollu.json'), JSON.stringify({
+      fetchedAt: new Date().toISOString(), count: list.length, matches: list,
+    }));
+    report.push(`gollü: ${list.length} maç`);
+  } catch (e) {
+    report.push(`gollü: HATA ${e.message}`);
+  }
+
   console.log('\n' + report.map((r) => '• ' + r).join('\n'));
   console.log(`son maç: ${db.matches[db.matches.length - 1][0]}`);
 }

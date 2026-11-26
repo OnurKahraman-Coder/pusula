@@ -33,25 +33,39 @@
   <!-- ============ SAĞ: ANALİZ ============ -->
   <main class="main">
     <button class="side-toggle" id="sideToggle">☰ Maç listesi</button>
-    <div class="eyebrow" id="eyebrow">ORANLAR · ARŞİV</div>
-    <h1>Bir maç seç, <em>20 benzer maçın</em> gerçek sonuçlarını gör.</h1>
-    <p class="lead">Soldaki listeden maçı seç. Sistem aynı bwin oran dizilimine sahip geçmiş maçları bulur ve
-      <b>2.5 üst/alt, KG, İY golleri, İY/MS ve skor dağılımını</b> yüzde olarak gösterir.</p>
-
-    <div class="manual">
-      <div class="mt">VEYA ORANLARI ELLE GİR</div>
-      <div class="mrow">
-        <label>1<input type="number" step="0.01" id="iH" placeholder="1.45"></label>
-        <label>X<input type="number" step="0.01" id="iD" placeholder="4.20"></label>
-        <label>2<input type="number" step="0.01" id="iA" placeholder="6.50"></label>
-        <label>2.5 Üst<input type="number" step="0.01" id="iO" placeholder="1.90"></label>
-        <label>2.5 Alt<input type="number" step="0.01" id="iU" placeholder="1.95"></label>
-        <button class="go" id="go">Analiz et</button>
-      </div>
-      <div class="mhint">Sadece 1-X-2 yeterli; 2.5 üst/alt girersen eşleşme daha isabetli olur.</div>
+    <div class="vnav" id="vnav">
+      <button data-v="analiz" class="on">Analiz</button>
+      <button data-v="gollu">🔥 Gollü Maçlar</button>
     </div>
 
-    <div id="out"></div>
+    <div id="analizPane">
+      <div class="eyebrow" id="eyebrow">ORANLAR · ARŞİV</div>
+      <h1>Bir maç seç, <em>20 benzer maçın</em> gerçek sonuçlarını gör.</h1>
+      <p class="lead">Soldaki listeden maçı seç. Sistem aynı bwin oran dizilimine sahip geçmiş maçları bulur ve
+        <b>2.5 üst/alt, KG, İY golleri, İY/MS ve skor dağılımını</b> yüzde olarak gösterir.</p>
+
+      <div class="manual">
+        <div class="mt">VEYA ORANLARI ELLE GİR</div>
+        <div class="mrow">
+          <label>1<input type="number" step="0.01" id="iH" placeholder="1.45"></label>
+          <label>X<input type="number" step="0.01" id="iD" placeholder="4.20"></label>
+          <label>2<input type="number" step="0.01" id="iA" placeholder="6.50"></label>
+          <label>2.5 Üst<input type="number" step="0.01" id="iO" placeholder="1.90"></label>
+          <label>2.5 Alt<input type="number" step="0.01" id="iU" placeholder="1.95"></label>
+          <button class="go" id="go">Analiz et</button>
+        </div>
+        <div class="mhint">Sadece 1-X-2 yeterli; 2.5 üst/alt girersen eşleşme daha isabetli olur.</div>
+      </div>
+
+      <div id="out"></div>
+    </div>
+
+    <div id="golluPane" hidden>
+      <div class="eyebrow">🔥 GOL EĞİLİMİ GÜÇLÜ MAÇLAR</div>
+      <h1 style="margin-top:4px">Gollü Maçlar</h1>
+      <p class="lead">Fikstürdeki maçlar arasında, <b>aynı oran dizilimindeki geçmiş maçlarda</b> en çok 2.5 üst / karşılıklı gol çıkanlar otomatik toplanır. Her güncellemede (3 saatte bir) yenilenir.</p>
+      <div id="golluOut"><div class="empty">yükleniyor…</div></div>
+    </div>
   </main>
 </div>
 

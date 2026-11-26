@@ -196,6 +196,56 @@ function opts() {
   };
 }
 
+/* ------------------------------ Gollü Maçlar ------------------------------ */
+function switchView(v) {
+  $$('#vnav button').forEach((x) => x.classList.toggle('on', x.dataset.v === v));
+  $('#analizPane').hidden = v !== 'analiz';
+  $('#golluPane').hidden = v !== 'gollu';
+  if (v === 'gollu' && !S.golluLoaded) loadGollu();
+}
+
+async function loadGollu() {
+  const out = $('#golluOut');
+  out.innerHTML = '<div class="empty">gollü maçlar taranıyor…</div>';
+  try {
+    const r = await fetch('data/gollu.json?t=' + Date.now(), { cache: 'no-store' });
+    if (!r.ok) throw new Error('HTTP ' + r.status);
+    const j = await r.json();
+    S.golluLoaded = true;
+    S.gollu = (j.matches || []).map((m) => { const li = leagueInfo(m.league); return { ...m, leagueName: li.name, country: li.country }; });
+    renderGollu(S.gollu);
+  } catch (e) {
+    out.innerHTML = '<div class="empty">Yüklenemedi: ' + esc(e.message || e) + '</div>';
+  }
+}
+
+function renderGollu(list) {
+  const today = addDays(0);
+  const up = list.filter((m) => m.date >= today);
+  if (!up.length) { $('#golluOut').innerHTML = '<div class="empty">Şu an gol eğilimi eşiğini geçen maç yok.</div>'; return; }
+  const P = (x) => Math.round(x * 100);
+  let h = `<div class="guyar">Bunlar <b>tarihsel sıklık</b>: aynı oran dizilimindeki ${'geçmiş'} maçlarda bu kadar çok gol çıkmış — <b>garanti değil, bahis önerisi değil</b>. Geçmiş testte bu tür sapmalara bahis ortalama −%14 getirdi.</div>`;
+  h += '<div class="glist">';
+  up.forEach((m, i) => {
+    const d = m.date === today ? esc(m.time) : dShort(m.date) + ' ' + esc(m.time);
+    const badge = m.strong ? '<span class="gbadge strong">GÜÇLÜ GOLLÜ</span>' : '<span class="gbadge">GOL EĞİLİMİ</span>';
+    h += `<div class="gcard" data-i="${i}">
+      <div class="gtop"><span class="gtime">${d}</span>${badge}</div>
+      <div class="gteams">${esc(m.homeName)} – ${esc(m.awayName)}</div>
+      <div class="gleague">${esc(m.country || '')}${m.country ? ' · ' : ''}${esc(m.leagueName || m.league)} · oran ${o2(m.h)} / ${o2(m.d)} / ${o2(m.a)}</div>
+      <div class="gstats"><span>2.5 Üst <b>%${P(m.o25)}</b></span><span>KG Var <b>%${P(m.kg)}</b></span><span>İY 0.5 Üst <b>%${P(m.iy05)}</b></span><span>maç başı <b>${m.avgGoals.toFixed(2)}</b> gol</span><span class="gsub">(${m.found} benzer maç)</span></div>
+    </div>`;
+  });
+  h += '</div>';
+  $('#golluOut').innerHTML = h;
+  $('#golluOut').querySelectorAll('.gcard').forEach((el) => el.addEventListener('click', () => {
+    const m = up[+el.dataset.i];
+    switchView('analiz');
+    pick(m);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }));
+}
+
 async function run() {
   const h = +$('#iH').value, d = +$('#iD').value, a = +$('#iA').value;
   if (!(h > 1 && d > 1 && a > 1)) { toast('1, X ve 2 oranlarını gir.'); return; }
@@ -349,6 +399,7 @@ async function boot() {
     if (sv.excludeLow) $('#oLow').checked = true;
 
     $('#go').addEventListener('click', run);
+    $$('#vnav button').forEach((b) => b.addEventListener('click', () => switchView(b.dataset.v)));
     ['#iH', '#iD', '#iA', '#iO', '#iU'].forEach((s) => $(s).addEventListener('keydown', (e) => { if (e.key === 'Enter') run(); }));
     $$('#dtabs button').forEach((b) => b.addEventListener('click', () => {
       S.tab = b.dataset.d; $$('#dtabs button').forEach((x) => x.classList.toggle('on', x === b)); renderList();
