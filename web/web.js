@@ -237,8 +237,8 @@ const GVIEWS = {
     cap: 60,
   },
   evev: {
-    warn: 'Yalnızca <b>Evet/Evet ihtimali en yüksek</b> maçlar (≥%75). Evet/Evet = <b>her iki yarıda da en az 1 gol</b>. Benzer maçların İY/MS skorlarından. Tarih/saate göre sıralı. Garanti değil, bahis önerisi değil.',
-    filter: (m) => m.evEv != null && m.evEv >= 0.75,
+    warn: 'Yalnızca <b>Evet/Evet ihtimali en yüksek</b> maçlar (≥%85). Evet/Evet = <b>her iki yarıda da en az 1 gol</b>. Benzer maçların İY/MS skorlarından. Tarih/saate göre sıralı. Garanti değil, bahis önerisi değil.',
+    filter: (m) => m.evEv != null && m.evEv >= 0.85,
     sort: SORT_DT,
     cap: 80,
   },
