@@ -184,6 +184,8 @@ td.eq { color: var(--pnum); font-weight: 800; }
 .gbadge.don { background:#a86fc0; color:#160a1c; }
 .gbadge.iykg { background:#5bb0a0; color:#05140f; }
 .gbadge.evev { background:#6aa84f; color:#071400; }
+.gbadge.euro { background:#c86fa0; color:#1a0712; margin-left:6px; }
+.geuro { color:#d49ac0; font-size:12px; }
 .fnav { display:flex; gap:6px; flex-wrap:wrap; margin:0 0 14px; }
 .fnav button { background:#14171c; color:#c7ccd4; border:1px solid var(--line); border-radius:999px; padding:6px 14px; cursor:pointer; font:inherit; font-size:13px; }
 .fnav button.on { background:#ff8a3d; color:#111; border-color:#ff8a3d; font-weight:600; }

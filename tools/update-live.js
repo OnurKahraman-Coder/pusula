@@ -117,12 +117,18 @@ async function main() {
     const bl = JSON.parse(fs.readFileSync(path.join(DATA, 'bulletin.json'), 'utf8'));
     const today = engine.today || Number(new Date().toISOString().slice(0, 10).replace(/-/g, ''));
     const up = (bl.matches || []).filter((m) => m.date >= today && m.status !== 'ft');
-    const list = GOLLU.scanFixtures(panel, up);
+    let euroIndex = null;
+    try {
+      const EURO = require('../lib/euro');
+      euroIndex = await EURO.fetchEuroIndex(FX, FX.buildIndex(engine.teams), { back: 5, fwd: 9 });
+    } catch (_) { euroIndex = null; }
+    const list = GOLLU.scanFixtures(panel, up, euroIndex);
+    const euroN = list.filter((m) => m.euroRet).length;
     fs.writeFileSync(path.join(DATA, 'gollu.json'), JSON.stringify({
       fetchedAt: new Date().toISOString(), count: list.length, matches: list,
     }));
     const gc = list.filter((m) => m.kind).length;
-    report.push(`taramalar: ${list.length} maç (${gc} gollü/kg)`);
+    report.push(`taramalar: ${list.length} maç (${gc} gollü/kg, ${euroN} Avrupa dönüşü)`);
   } catch (e) {
     report.push(`gollü: HATA ${e.message}`);
   }

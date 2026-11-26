@@ -205,6 +205,15 @@ function switchView(v) {
 }
 
 const SORT_DT = (a, b) => (a.date - b.date) || String(a.time).localeCompare(String(b.time));
+const COMP_AD = { CL: 'Şampiyonlar L.', EL: 'Avrupa L.', ECL: 'Konferans L.' };
+function euroTag(m) { return m.euroRet ? '<span class="gbadge euro">🔬 AVRUPA DÖNÜŞÜ</span>' : ''; }
+function euroStat(m) {
+  if (!m.euroRet) return '';
+  const e = m.euroRet; const who = [];
+  if (e.home) who.push(`${esc(e.homeName)} (${COMP_AD[e.home] || e.home})`);
+  if (e.away) who.push(`${esc(e.awayName)} (${COMP_AD[e.away] || e.away})`);
+  return `<span class="geuro">🔬 son ~4 günde Avrupa: ${who.join(', ')} — deneysel</span>`;
+}
 const GVIEWS = {
   gollu: {
     warn: 'Sadece <b>güçlü işaretler</b>: benzer oran bandındaki geçmiş maçlarda çok gol (2.5 üst) ya da karşılıklı gol baskın çıkanlar. Tarih/saate göre sıralı. <b>Garanti değil, bahis önerisi değil</b> — geçmiş testte bu tür sapmalara bahis ortalama −%14 getirdi.',
@@ -219,16 +228,16 @@ const GVIEWS = {
     cap: 60,
   },
   iy12: {
-    warn: 'Yalnızca <b>1/2 ihtimali en yüksek</b> maçlar (≥%10). İY/MS 1/2 = ilk yarı ev önde, maç sonu deplasman kazanır — bir <b>dönüş</b>. Tarih/saate göre sıralı. Dönüşler doğası gereği çok nadirdir; küçük örnekli ve <b>gürültülü</b>. Bahis önerisi değil.',
-    filter: (m) => m.p12 >= 0.10,
+    warn: '<b>1/2 dönüş</b> = ilk yarı ev önde, maç sonu deplasman kazanır. Ölçülü sinyal: benzer oran bandı ihtimali (≥%10). Ayrıca <b>🔬 Avrupa dönüşü</b> (son ~4 günde Avrupa/kupa oynamış takım) deneysel olarak işaretlenir — kanıtlı değil, sonuçları izliyoruz. Tarih/saate sıralı. Dönüşler nadir ve gürültülü; bahis önerisi değil.',
+    filter: (m) => m.p12 >= 0.10 || m.euroRet,
     sort: SORT_DT,
-    cap: 60,
+    cap: 80,
   },
   iy21: {
-    warn: 'Yalnızca <b>2/1 ihtimali en yüksek</b> maçlar (≥%10). İY/MS 2/1 = ilk yarı deplasman önde, maç sonu ev kazanır — bir <b>dönüş</b>. Tarih/saate göre sıralı. Dönüşler çok nadirdir; küçük örnekli ve <b>gürültülü</b>. Bahis önerisi değil.',
-    filter: (m) => m.p21 >= 0.10,
+    warn: '<b>2/1 dönüş</b> = ilk yarı deplasman önde, maç sonu ev kazanır. Ölçülü sinyal: benzer oran bandı ihtimali (≥%10). Ayrıca <b>🔬 Avrupa dönüşü</b> (son ~4 günde Avrupa/kupa oynamış takım) deneysel olarak işaretlenir — kanıtlı değil, sonuçları izliyoruz. Tarih/saate sıralı. Dönüşler nadir ve gürültülü; bahis önerisi değil.',
+    filter: (m) => m.p21 >= 0.10 || m.euroRet,
     sort: SORT_DT,
-    cap: 60,
+    cap: 80,
   },
   iykg: {
     warn: 'Yalnızca <b>İY KG ihtimali en yüksek</b> maçlar (≥%35). İY KG = ilk yarıda <b>iki takım da gol atar</b>. Benzer oran bandındaki geçmiş maçların ilk yarı skorlarından. Tarih/saate göre sıralı. Garanti değil, bahis önerisi değil.',
@@ -277,11 +286,11 @@ function renderGollu(filter) {
       badge = '<span class="gbadge g6">6+ GOL</span>';
       stats = `<span>6+ gol <b>${P(m.p6)}</b> <small>(${esc(m.p6s)})</small></span><span>benzer maç başı <b>${m.avgGoals.toFixed(2)}</b></span><span>çok gollü <b>${esc(m.g6)}</b></span>`;
     } else if (filter === 'iy12') {
-      badge = '<span class="gbadge don">1/2 DÖNÜŞ</span>';
-      stats = `<span>1/2 ihtimali <b>${P(m.p12)}</b> <small>(${esc(m.p12s)})</small></span><span>maç başı <b>${m.avgGoals.toFixed(2)}</b> gol</span>`;
+      badge = '<span class="gbadge don">1/2 DÖNÜŞ</span>' + euroTag(m);
+      stats = `<span>1/2 ihtimali <b>${P(m.p12)}</b> <small>(${esc(m.p12s)})</small></span><span>maç başı <b>${m.avgGoals.toFixed(2)}</b> gol</span>${euroStat(m)}`;
     } else if (filter === 'iy21') {
-      badge = '<span class="gbadge don">2/1 DÖNÜŞ</span>';
-      stats = `<span>2/1 ihtimali <b>${P(m.p21)}</b> <small>(${esc(m.p21s)})</small></span><span>maç başı <b>${m.avgGoals.toFixed(2)}</b> gol</span>`;
+      badge = '<span class="gbadge don">2/1 DÖNÜŞ</span>' + euroTag(m);
+      stats = `<span>2/1 ihtimali <b>${P(m.p21)}</b> <small>(${esc(m.p21s)})</small></span><span>maç başı <b>${m.avgGoals.toFixed(2)}</b> gol</span>${euroStat(m)}`;
     } else if (filter === 'iykg') {
       badge = '<span class="gbadge iykg">İY KG VAR</span>';
       stats = `<span>İY KG <b>${P(m.iyKg)}</b></span><span>İY 0.5 Üst <b>${P(m.iy05)}</b></span><span>KG Var <b>${P(m.kg)}</b></span>`;
