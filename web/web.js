@@ -167,7 +167,7 @@ function pick(m) {
   else {
     $('#out').innerHTML = `<div class="res"><div class="rhead"><div><div class="t">${esc(m.homeName)} – ${esc(m.awayName)}</div>
       <div class="sub">${esc(m.leagueName)} · ${dTxt(m.date)} ${esc(m.time)}</div></div></div>
-      <div class="verd"><div class="v">bwin oranı listede yok</div><div class="s">Yukarıdaki kutulara bwin'deki 1-X-2 (ve varsa 2.5 üst/alt) oranlarını yazıp <b>Analiz et</b>'e bas.</div></div></div>`;
+      <div class="verd"><div class="v">Bu maçın oranı listede yok</div><div class="s">Yukarıdaki kutulara kendi bahis sitendeki 1-X-2 (ve varsa 2.5 üst/alt) oranlarını yazıp <b>Analiz et</b>'e bas.</div></div></div>`;
     $('#iH').focus();
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
@@ -185,83 +185,6 @@ function opts() {
     excludeLow: $('#oLow') ? $('#oLow').checked : false,
     useOU: true,
   };
-}
-
-/* ------------------------------ Fırsatlar ------------------------------ */
-
-function switchView(v) {
-  const main = document.querySelector('.main');
-  $$('#vnav button').forEach((x) => x.classList.toggle('on', x.dataset.v === v));
-  if (v === 'firsatlar') {
-    main.classList.add('show-firsatlar');
-    if (!S.firsatlarLoaded) loadFirsatlar();
-  } else {
-    main.classList.remove('show-firsatlar');
-  }
-}
-
-async function loadFirsatlar() {
-  const out = $('#firsatlarOut');
-  out.innerHTML = '<div class="empty">analiz ediliyor…</div>';
-  try {
-    const r = await api('/api/firsatlar');
-    S.firsatlarLoaded = true;
-    renderFirsatlar(r);
-  } catch (e) {
-    out.innerHTML = '<div class="empty">Yüklenemedi: ' + esc(e.message || e) + '</div>';
-  }
-}
-
-function renderFirsatlar(r) {
-  const pc = (x) => (x * 100).toFixed(1);
-  let h = '';
-  h += '<h3 class="fk-h">Örüntü Kuralları</h3>';
-  if (r.uyari) h += '<div class="fk-warn" style="margin-bottom:10px">⚠ ' + esc(r.uyari) + '</div>';
-  for (const k of r.kurallar) {
-    const b = k.baz || {};
-    const anlamli = !!b.anlamli;
-    const rozet = anlamli
-      ? '<span class="fk-badge ok">anlamlı işaret</span>'
-      : '<span class="fk-badge noise">gürültü — ayırt edilemez</span>';
-    h += '<div class="fk-card' + (anlamli ? '' : ' pasif') + '">'
-      + '<div class="fk-top"><b>' + esc(k.ad) + '</b> ' + rozet + '</div>'
-      + '<div class="fk-sub">' + esc(k.aciklama) + ' → ' + esc(k.sinyal) + '</div>'
-      + '<div class="fk-stat">dönüş %' + (b.pct != null ? b.pct : '—')
-      + ' <small>(baz %' + (b.bazPct != null ? b.bazPct : '—')
-      + ' · %95 GA [' + (b.gaLo != null ? b.gaLo : '—') + '–' + (b.gaHi != null ? b.gaHi : '—') + ']'
-      + ' · n=' + (b.n || 0) + (anlamli && b.lift ? ' · lift ' + b.lift + '×' : '') + ')</small></div>';
-    if (!anlamli) {
-      h += '<div class="fk-warn">Bu kuralın oranı (%' + (b.pct != null ? b.pct : '—') + '), genel orandan (%'
-        + (b.bazPct != null ? b.bazPct : '—') + ') istatistiksel olarak ayırt edilemiyor. İşaret olarak kullanma.</div>';
-    }
-    if (k.maclar && k.maclar.length) {
-      h += '<ul class="fk-ml">';
-      for (const m of k.maclar) h += '<li>' + esc(m.date) + ' · ' + esc(m.home) + ' – ' + esc(m.away) + ' <small>(' + esc(m.league) + ')</small></li>';
-      h += '</ul>';
-    } else {
-      h += '<div class="fk-sub" style="margin-top:4px">Önümüzdeki maçlarda bu örüntüye uyan yok.</div>';
-    }
-    h += '</div>';
-  }
-
-  h += '<h3 class="fk-h" style="margin-top:18px">Değer Fırsatları <small>(model &gt; piyasa, EV&gt;%3)</small></h3>';
-  if (!r.value || !r.value.length) {
-    h += '<div class="empty">Şu an değer eşiğini geçen seçim yok.</div>';
-  } else {
-    h += '<div class="fk-tblwrap"><table class="fk-tbl"><thead><tr><th>Maç</th><th>Seçim</th><th>Oran</th><th>Model</th><th>Piyasa</th><th>EV</th></tr></thead><tbody>';
-    for (const v of r.value) {
-      const not = v.azVeri ? '⚠ az veri (' + v.macSay + ' maç)' : (v.ev > 0.20 ? '⚠ aşırı EV' : '');
-      h += '<tr' + (v.supheli ? ' class="supheli"' : '') + '>'
-        + '<td>' + esc(v.home) + ' – ' + esc(v.away) + '<br><small>' + esc(v.league) + ' · ' + esc(v.date) + '</small></td>'
-        + '<td>' + esc(v.secim) + '</td><td>' + (v.secimOrani != null ? v.secimOrani : '—') + '</td>'
-        + '<td>%' + pc(v.modelP) + '</td><td>%' + pc(v.piyasaP) + '</td>'
-        + '<td><b>+%' + pc(v.ev) + '</b>' + (not ? ' <span class="fk-warn-in">' + not + '</span>' : '') + '</td></tr>';
-    }
-    h += '</tbody></table></div>';
-    h += '<div class="fk-sub" style="margin-top:8px">⚠ İşaretli satırlar güvenilmez: az maçlı takımda model piyasadan aşırı ayrışır (ince-veri artefaktı). Güvenilir seçimler üstte.</div>';
-  }
-  h += '<div class="fk-sub" style="margin-top:10px">Fikstür: ' + (r.sayac ? r.sayac.fikstur : 0) + ' maç</div>';
-  $('#firsatlarOut').innerHTML = h;
 }
 
 async function run() {
@@ -346,7 +269,7 @@ function render(r, m) {
     <div class="rhead">
       <div>
         <div class="t">${live ? '<span class="badge-live">CANLI</span>' : ''}${esc(home)} – ${esc(away)}${live && m.hg != null ? ` <span class="lsc">${m.hg}-${m.ag} · ${esc(m.clock)}</span>` : ''}</div>
-        <div class="sub">${m ? `${esc(m.country || '')} · ${esc(m.leagueName || '')} · ${dTxt(m.date)} ${esc(m.time || '')} · ` : ''}<b>bwin</b>${r.options.line === 'close' ? ' kapanış' : ''}</div>
+        <div class="sub">${m ? `${esc(m.country || '')} · ${esc(m.leagueName || '')} · ${dTxt(m.date)} ${esc(m.time || '')} · ` : ''}<b>${m && m.oddsSource ? esc(m.oddsSource) : 'oran'}</b></div>
       </div>
       <div class="rodds"><span><i>1</i>${o2(I.h)}</span><span><i>X</i>${o2(I.d)}</span><span><i>2</i>${o2(I.a)}</span>${I.o ? `<span><i>2.5 Ü</i>${o2(I.o)}</span>` : ''}${I.u ? `<span><i>2.5 A</i>${o2(I.u)}</span>` : ''}</div>
     </div>
@@ -361,9 +284,10 @@ function render(r, m) {
         ${card('o35', '3.5 Üst', st.o35)}${card('o15', '1.5 Üst', st.o15)}${card('u25', '2.5 Alt', st.u25)}${card('kg25', 'KG + 2.5 Üst', st.kg25)}
       </div></div>
 
-    ${val.length ? `<div class="sect"><h3>Değer Fırsatları</h3><div class="hs">bwin oranına göre tarihsel olarak daha sık gerçekleşenler</div><div class="box">
-      ${val.map((x) => `<div class="vrow"><b>${x.lbl}</b><span class="o">${o2(x.odd)}</span><span class="d">tarihsel ${P1(x.hp)} · piyasa ${P1(x.mp)}</span><span class="e">+${(x.e * 100).toFixed(1)}</span></div>`).join('')}
-    </div></div>` : ''}
+    ${val.length ? `<div class="sect"><h3>Oran Bandında Tarihsel Sıklık</h3><div class="hs">aynı oran dizilimindeki geçmiş maçlarda ne sıklıkta gerçekleşti — bilgi amaçlı, bahis önerisi değil</div><div class="box">
+      ${val.map((x) => `<div class="vrow"><b>${x.lbl}</b><span class="o">${o2(x.odd)}</span><span class="d">tarihsel ${P1(x.hp)} · piyasa ${P1(x.mp)}</span></div>`).join('')}
+    </div>
+    <div class="hs" style="margin-top:6px">Not: Bu sapmalara bahis, geçmiş walk-forward testte ortalama −%14 getirdi. Sıklık farkı tek başına kazanç anlamına gelmez.</div></div>` : ''}
 
     <div class="sect two">
       <div><h3>İlk Yarı Skor Trendi</h3><div class="box">${trend(st.htTrend, st.htN, md && md.htScores)}</div></div>
@@ -389,7 +313,7 @@ function render(r, m) {
     </div>
 
     <div class="rfoot"><b>Yöntem:</b> bwin 1-X-2 (ve 2.5) oranı aynı ya da en yakın geçmiş maçlar bulunur${r.options.match === 'exact' ? '; en az 2 oranı birebir aynı olanlar önce gelir' : ''}. Turuncu oran = birebir aynı.
-      <b>Kaynak:</b> oranlar bwin · sonuçlar ${(S.meta.matches || 0).toLocaleString('tr-TR')} maçlık arşiv (16 lig, 2004–). ${esc(r.notes.join(' '))}
+      <b>Kaynak:</b> canlı oran DraftKings (ESPN) · geçmiş eşleşme bwin arşivi, ${(S.meta.matches || 0).toLocaleString('tr-TR')} maç (16 lig, 2004–). ${esc(r.notes.join(' '))}
       <b>Not:</b> geçmiş performans geleceğin garantisi değildir · 18+</div>
   </div>`;
 }
@@ -399,7 +323,7 @@ function render(r, m) {
 async function boot() {
   try {
     S.meta = await api('/api/meta');
-    $('#eyebrow').textContent = `BWIN ORANLARI · ${S.meta.matches.toLocaleString('tr-TR')} MAÇLIK ARŞİV`;
+    $('#eyebrow').textContent = `CANLI ORAN · ${S.meta.matches.toLocaleString('tr-TR')} MAÇLIK ARŞİV`;
     $('#splash').classList.add('off');
     $('#sfoot').textContent = `veri: ${dTxt(S.meta.lastDate)} · her 3 saatte güncellenir`;
 
@@ -416,7 +340,6 @@ async function boot() {
     if (sv.excludeLow) $('#oLow').checked = true;
 
     $('#go').addEventListener('click', run);
-    $$('#vnav button').forEach((b) => b.addEventListener('click', () => switchView(b.dataset.v)));
     ['#iH', '#iD', '#iA', '#iO', '#iU'].forEach((s) => $(s).addEventListener('keydown', (e) => { if (e.key === 'Enter') run(); }));
     $$('#dtabs button').forEach((b) => b.addEventListener('click', () => {
       S.tab = b.dataset.d; $$('#dtabs button').forEach((x) => x.classList.toggle('on', x === b)); renderList();
