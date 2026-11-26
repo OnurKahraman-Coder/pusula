@@ -242,16 +242,16 @@ const GVIEWS = {
     cap: 60,
   },
   iy12: {
-    warn: '<b>1/2 dönüş</b> = ilk yarı ev önde, maç sonu deplasman kazanır. Ölçülü sinyal: benzer oran bandı ihtimali (≥%10). Ayrıca <b>🔬 Avrupa dönüşü</b> (son ~4 günde Avrupa/kupa oynamış takım) deneysel olarak işaretlenir — kanıtlı değil, sonuçları izliyoruz. Tarih/saate sıralı. Dönüşler nadir ve gürültülü; bahis önerisi değil.',
-    filter: (m) => m.p12 >= 0.10 || m.euroRet,
-    sort: SORT_DT,
-    cap: 80,
+    warn: '<b>1/2 dönüş</b> = ilk yarı ev önde, maç sonu <b>deplasman</b> kazanır. Burada <b>deplasman favorisi</b> maçlar en güçlü favoriden sıralanır. Kanıt (120b maç): dönüşlerin %63\'ü favorinin geri dönüşüdür; maç öncesi ihtimal düşük (~%3-4, piyasa da öyle fiyatlar), ama <b>ağır favori (oran&lt;1.30) devrede geride kalırsa ~%40 geri döner</b> (zayıf favori ~%10). Yani bunlar <b>canlı izleme adayı</b>: favori İY\'de geride kalırsa 1/2 değer kazanır. Bahis önerisi değil.',
+    filter: (m) => m.a > 1 && m.h > 1 && m.a < m.h && m.a <= 1.65,
+    sort: (a, b) => (a.a - b.a) || SORT_DT(a, b),
+    cap: 60,
   },
   iy21: {
-    warn: '<b>2/1 dönüş</b> = ilk yarı deplasman önde, maç sonu ev kazanır. Ölçülü sinyal: benzer oran bandı ihtimali (≥%10). Ayrıca <b>🔬 Avrupa dönüşü</b> (son ~4 günde Avrupa/kupa oynamış takım) deneysel olarak işaretlenir — kanıtlı değil, sonuçları izliyoruz. Tarih/saate sıralı. Dönüşler nadir ve gürültülü; bahis önerisi değil.',
-    filter: (m) => m.p21 >= 0.10 || m.euroRet,
-    sort: SORT_DT,
-    cap: 80,
+    warn: '<b>2/1 dönüş</b> = ilk yarı deplasman önde, maç sonu <b>ev</b> kazanır. Burada <b>ev favorisi</b> maçlar en güçlü favoriden sıralanır. Kanıt (120b maç): dönüşlerin %63\'ü favorinin geri dönüşüdür; maç öncesi ihtimal düşük (~%3-4), ama <b>ağır favori (oran&lt;1.30) devrede geride kalırsa ~%40 geri döner</b> (zayıf favori ~%10). <b>Canlı izleme adayı</b>: favori İY\'de geride kalırsa 2/1 değer kazanır. Bahis önerisi değil.',
+    filter: (m) => m.h > 1 && m.a > 1 && m.h < m.a && m.h <= 1.65,
+    sort: (a, b) => (a.h - b.h) || SORT_DT(a, b),
+    cap: 60,
   },
   iykg: {
     warn: 'Yalnızca <b>İY KG ihtimali en yüksek</b> maçlar (≥%35). İY KG = ilk yarıda <b>iki takım da gol atar</b>. Benzer oran bandındaki geçmiş maçların ilk yarı skorlarından. Tarih/saate göre sıralı. Garanti değil, bahis önerisi değil.',
@@ -300,11 +300,11 @@ function renderGollu(filter) {
       badge = '<span class="gbadge g6">6+ GOL</span>';
       stats = `<span>6+ gol <b>${P(m.p6)}</b> <small>(${esc(m.p6s)})</small></span><span>benzer maç başı <b>${m.avgGoals.toFixed(2)}</b></span><span>çok gollü <b>${esc(m.g6)}</b></span>`;
     } else if (filter === 'iy12') {
-      badge = '<span class="gbadge don">1/2 DÖNÜŞ</span>' + euroTag(m);
-      stats = `<span>1/2 ihtimali <b>${P(m.p12)}</b> <small>(${esc(m.p12s)})</small></span><span>maç başı <b>${m.avgGoals.toFixed(2)}</b> gol</span>${euroStat(m)}`;
+      badge = '<span class="gbadge don">1/2 ADAYI</span>' + euroTag(m);
+      stats = `<span>deplasman favori <b>${m.a.toFixed(2)}</b></span><span>İY\'de geride kalırsa izle → 1/2</span>${euroStat(m)}`;
     } else if (filter === 'iy21') {
-      badge = '<span class="gbadge don">2/1 DÖNÜŞ</span>' + euroTag(m);
-      stats = `<span>2/1 ihtimali <b>${P(m.p21)}</b> <small>(${esc(m.p21s)})</small></span><span>maç başı <b>${m.avgGoals.toFixed(2)}</b> gol</span>${euroStat(m)}`;
+      badge = '<span class="gbadge don">2/1 ADAYI</span>' + euroTag(m);
+      stats = `<span>ev favori <b>${m.h.toFixed(2)}</b></span><span>İY\'de geride kalırsa izle → 2/1</span>${euroStat(m)}`;
     } else if (filter === 'iykg') {
       badge = '<span class="gbadge iykg">İY KG VAR</span>';
       stats = `<span>İY KG <b>${P(m.iyKg)}</b></span><span>İY 0.5 Üst <b>${P(m.iy05)}</b></span><span>KG Var <b>${P(m.kg)}</b></span>`;
