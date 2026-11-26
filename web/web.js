@@ -230,6 +230,18 @@ const GVIEWS = {
     sort: SORT_DT,
     cap: 60,
   },
+  iykg: {
+    warn: 'Yalnızca <b>İY KG ihtimali en yüksek</b> maçlar (≥%35). İY KG = ilk yarıda <b>iki takım da gol atar</b>. Benzer oran bandındaki geçmiş maçların ilk yarı skorlarından. Tarih/saate göre sıralı. Garanti değil, bahis önerisi değil.',
+    filter: (m) => m.iyKg != null && m.iyKg >= 0.35,
+    sort: SORT_DT,
+    cap: 60,
+  },
+  evev: {
+    warn: 'Yalnızca <b>Evet/Evet ihtimali en yüksek</b> maçlar (≥%75). Evet/Evet = <b>her iki yarıda da en az 1 gol</b>. Benzer maçların İY/MS skorlarından. Tarih/saate göre sıralı. Garanti değil, bahis önerisi değil.',
+    filter: (m) => m.evEv != null && m.evEv >= 0.75,
+    sort: SORT_DT,
+    cap: 80,
+  },
 };
 
 async function loadGollu() {
@@ -270,6 +282,12 @@ function renderGollu(filter) {
     } else if (filter === 'iy21') {
       badge = '<span class="gbadge don">2/1 DÖNÜŞ</span>';
       stats = `<span>2/1 ihtimali <b>${P(m.p21)}</b> <small>(${esc(m.p21s)})</small></span><span>maç başı <b>${m.avgGoals.toFixed(2)}</b> gol</span>`;
+    } else if (filter === 'iykg') {
+      badge = '<span class="gbadge iykg">İY KG VAR</span>';
+      stats = `<span>İY KG <b>${P(m.iyKg)}</b></span><span>İY 0.5 Üst <b>${P(m.iy05)}</b></span><span>KG Var <b>${P(m.kg)}</b></span>`;
+    } else if (filter === 'evev') {
+      badge = '<span class="gbadge evev">EVET / EVET</span>';
+      stats = `<span>Evet/Evet <b>${P(m.evEv)}</b></span><span>İY 0.5 Üst <b>${P(m.iy05)}</b></span><span>2.5 Üst <b>${P(m.o25)}</b></span>`;
     } else {
       badge = m.kind === 'kg' ? '<span class="gbadge kg">KG VAR GÜÇLÜ</span>' : '<span class="gbadge strong">GÜÇLÜ GOLLÜ</span>';
       stats = `<span>2.5 Üst <b>${P(m.o25)}</b></span><span>KG Var <b>${P(m.kg)}</b></span><span>İY 0.5 Üst <b>${P(m.iy05)}</b></span><span>maç başı <b>${m.avgGoals.toFixed(2)}</b> gol</span>`;
