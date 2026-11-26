@@ -204,30 +204,31 @@ function switchView(v) {
   if (v === 'gollu' && !S.golluLoaded) loadGollu();
 }
 
+const SORT_DT = (a, b) => (a.date - b.date) || String(a.time).localeCompare(String(b.time));
 const GVIEWS = {
   gollu: {
     warn: 'Sadece <b>güçlü işaretler</b>: benzer oran bandındaki geçmiş maçlarda çok gol (2.5 üst) ya da karşılıklı gol baskın çıkanlar. Tarih/saate göre sıralı. <b>Garanti değil, bahis önerisi değil</b> — geçmiş testte bu tür sapmalara bahis ortalama −%14 getirdi.',
     filter: (m) => !!m.kind,
-    sort: (a, b) => (a.date - b.date) || String(a.time).localeCompare(String(b.time)),
+    sort: SORT_DT,
     cap: 300,
   },
   g6: {
-    warn: '<b>6+ gol</b> ihtimali en yüksek maçlar (model varsa gol beklentisinden Poisson ile, yoksa benzer maç sıklığından). 6+ gol <b>nadir</b> bir olaydır — en olasıda bile düşüktür. Bahis önerisi değil.',
-    filter: (m) => m.p6 != null && m.p6 >= 0.05,
-    sort: (a, b) => b.p6 - a.p6,
-    cap: 25,
+    warn: 'Yalnızca <b>6+ gol ihtimali en yüksek</b> maçlar (≥%15; model varsa gol beklentisinden Poisson ile, yoksa benzer maç sıklığından). Tarih/saate göre sıralı. 6+ gol <b>nadir</b> bir olaydır — en olasıda bile düşüktür. Bahis önerisi değil.',
+    filter: (m) => m.p6 != null && m.p6 >= 0.15,
+    sort: SORT_DT,
+    cap: 60,
   },
   iy12: {
-    warn: '<b>İY/MS 1/2</b>: ilk yarı ev önde, maç sonu deplasman kazanır — bir <b>dönüş</b>. Dönüşler doğası gereği çok nadirdir; bu sıralama küçük örnekli ve <b>gürültülü</b>. "En olası" = görece, yine de düşük ihtimal. Bahis önerisi değil.',
-    filter: (m) => m.p12 > 0,
-    sort: (a, b) => b.p12 - a.p12,
-    cap: 15,
+    warn: 'Yalnızca <b>1/2 ihtimali en yüksek</b> maçlar (≥%10). İY/MS 1/2 = ilk yarı ev önde, maç sonu deplasman kazanır — bir <b>dönüş</b>. Tarih/saate göre sıralı. Dönüşler doğası gereği çok nadirdir; küçük örnekli ve <b>gürültülü</b>. Bahis önerisi değil.',
+    filter: (m) => m.p12 >= 0.10,
+    sort: SORT_DT,
+    cap: 60,
   },
   iy21: {
-    warn: '<b>İY/MS 2/1</b>: ilk yarı deplasman önde, maç sonu ev kazanır — bir <b>dönüş</b>. Dönüşler çok nadirdir; sıralama küçük örnekli ve <b>gürültülü</b>. "En olası" = görece, yine de düşük ihtimal. Bahis önerisi değil.',
-    filter: (m) => m.p21 > 0,
-    sort: (a, b) => b.p21 - a.p21,
-    cap: 15,
+    warn: 'Yalnızca <b>2/1 ihtimali en yüksek</b> maçlar (≥%10). İY/MS 2/1 = ilk yarı deplasman önde, maç sonu ev kazanır — bir <b>dönüş</b>. Tarih/saate göre sıralı. Dönüşler çok nadirdir; küçük örnekli ve <b>gürültülü</b>. Bahis önerisi değil.',
+    filter: (m) => m.p21 >= 0.10,
+    sort: SORT_DT,
+    cap: 60,
   },
 };
 
