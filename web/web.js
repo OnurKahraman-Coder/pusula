@@ -213,8 +213,8 @@ const GVIEWS = {
     cap: 300,
   },
   g6: {
-    warn: 'Yalnızca <b>6+ gol ihtimali en yüksek</b> maçlar (≥%15; model varsa gol beklentisinden Poisson ile, yoksa benzer maç sıklığından). Tarih/saate göre sıralı. 6+ gol <b>nadir</b> bir olaydır — en olasıda bile düşüktür. Bahis önerisi değil.',
-    filter: (m) => m.p6 != null && m.p6 >= 0.15,
+    warn: 'Yalnızca <b>6+ gol ihtimali en yüksek</b> maçlar (≥%20; model varsa gol beklentisinden Poisson ile, yoksa benzer maç sıklığından). Tarih/saate göre sıralı. 6+ gol <b>nadir</b> bir olaydır — en olasıda bile düşüktür. Bahis önerisi değil.',
+    filter: (m) => m.p6 != null && m.p6 >= 0.20,
     sort: SORT_DT,
     cap: 60,
   },
