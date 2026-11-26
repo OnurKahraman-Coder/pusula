@@ -204,44 +204,86 @@ function switchView(v) {
   if (v === 'gollu' && !S.golluLoaded) loadGollu();
 }
 
+const GVIEWS = {
+  gollu: {
+    warn: 'Sadece <b>güçlü işaretler</b>: benzer oran bandındaki geçmiş maçlarda çok gol (2.5 üst) ya da karşılıklı gol baskın çıkanlar. Tarih/saate göre sıralı. <b>Garanti değil, bahis önerisi değil</b> — geçmiş testte bu tür sapmalara bahis ortalama −%14 getirdi.',
+    filter: (m) => !!m.kind,
+    sort: (a, b) => (a.date - b.date) || String(a.time).localeCompare(String(b.time)),
+    cap: 300,
+  },
+  g6: {
+    warn: '<b>6+ gol</b> ihtimali en yüksek maçlar (model varsa gol beklentisinden Poisson ile, yoksa benzer maç sıklığından). 6+ gol <b>nadir</b> bir olaydır — en olasıda bile düşüktür. Bahis önerisi değil.',
+    filter: (m) => m.p6 != null && m.p6 >= 0.05,
+    sort: (a, b) => b.p6 - a.p6,
+    cap: 25,
+  },
+  iy12: {
+    warn: '<b>İY/MS 1/2</b>: ilk yarı ev önde, maç sonu deplasman kazanır — bir <b>dönüş</b>. Dönüşler doğası gereği çok nadirdir; bu sıralama küçük örnekli ve <b>gürültülü</b>. "En olası" = görece, yine de düşük ihtimal. Bahis önerisi değil.',
+    filter: (m) => m.p12 > 0,
+    sort: (a, b) => b.p12 - a.p12,
+    cap: 15,
+  },
+  iy21: {
+    warn: '<b>İY/MS 2/1</b>: ilk yarı deplasman önde, maç sonu ev kazanır — bir <b>dönüş</b>. Dönüşler çok nadirdir; sıralama küçük örnekli ve <b>gürültülü</b>. "En olası" = görece, yine de düşük ihtimal. Bahis önerisi değil.',
+    filter: (m) => m.p21 > 0,
+    sort: (a, b) => b.p21 - a.p21,
+    cap: 15,
+  },
+};
+
 async function loadGollu() {
   const out = $('#golluOut');
-  out.innerHTML = '<div class="empty">gollü maçlar taranıyor…</div>';
+  out.innerHTML = '<div class="empty">maçlar taranıyor…</div>';
   try {
     const r = await fetch('data/gollu.json?t=' + Date.now(), { cache: 'no-store' });
     if (!r.ok) throw new Error('HTTP ' + r.status);
     const j = await r.json();
     S.golluLoaded = true;
     S.gollu = (j.matches || []).map((m) => { const li = leagueInfo(m.league); return { ...m, leagueName: li.name, country: li.country }; });
-    renderGollu(S.gollu);
+    renderGollu(S.gfilter || 'gollu');
   } catch (e) {
     out.innerHTML = '<div class="empty">Yüklenemedi: ' + esc(e.message || e) + '</div>';
   }
 }
 
-function renderGollu(list) {
+function renderGollu(filter) {
+  S.gfilter = filter;
+  $$('#fnav button').forEach((b) => b.classList.toggle('on', b.dataset.f === filter));
+  const v = GVIEWS[filter] || GVIEWS.gollu;
   const today = addDays(0);
-  const up = list.filter((m) => m.date >= today);
-  if (!up.length) { $('#golluOut').innerHTML = '<div class="empty">Şu an gol eğilimi eşiğini geçen maç yok.</div>'; return; }
-  const P = (x) => Math.round(x * 100);
-  let h = `<div class="guyar">Sadece <b>güçlü işaretler</b>: aynı oran dizilimindeki geçmiş maçlarda çok gol (2.5 üst) ya da karşılıklı gol baskın çıkanlar — <b>garanti değil, bahis önerisi değil</b>. Geçmiş testte bu tür sapmalara bahis ortalama −%14 getirdi. Tarih/saate göre sıralı.</div>`;
+  let list = (S.gollu || []).filter((m) => m.date >= today).filter(v.filter).sort(v.sort);
+  if (v.cap) list = list.slice(0, v.cap);
+  const P = (x) => (x == null ? '—' : '%' + Math.round(x * 100));
+  let h = `<div class="guyar">${v.warn}</div>`;
+  if (!list.length) { h += '<div class="empty">Bu taramada uygun maç yok.</div>'; $('#golluOut').innerHTML = h; return; }
   h += '<div class="glist">';
-  up.forEach((m, i) => {
+  list.forEach((m, i) => {
     const d = m.date === today ? 'Bugün ' + esc(m.time) : dShort(m.date) + ' ' + esc(m.time);
-    const badge = m.kind === 'kg'
-      ? '<span class="gbadge kg">KG VAR GÜÇLÜ</span>'
-      : '<span class="gbadge strong">GÜÇLÜ GOLLÜ</span>';
+    let badge, stats;
+    if (filter === 'g6') {
+      badge = '<span class="gbadge g6">6+ GOL</span>';
+      stats = `<span>6+ gol <b>${P(m.p6)}</b> <small>(${esc(m.p6s)})</small></span><span>benzer maç başı <b>${m.avgGoals.toFixed(2)}</b></span><span>çok gollü <b>${esc(m.g6)}</b></span>`;
+    } else if (filter === 'iy12') {
+      badge = '<span class="gbadge don">1/2 DÖNÜŞ</span>';
+      stats = `<span>1/2 ihtimali <b>${P(m.p12)}</b> <small>(${esc(m.p12s)})</small></span><span>maç başı <b>${m.avgGoals.toFixed(2)}</b> gol</span>`;
+    } else if (filter === 'iy21') {
+      badge = '<span class="gbadge don">2/1 DÖNÜŞ</span>';
+      stats = `<span>2/1 ihtimali <b>${P(m.p21)}</b> <small>(${esc(m.p21s)})</small></span><span>maç başı <b>${m.avgGoals.toFixed(2)}</b> gol</span>`;
+    } else {
+      badge = m.kind === 'kg' ? '<span class="gbadge kg">KG VAR GÜÇLÜ</span>' : '<span class="gbadge strong">GÜÇLÜ GOLLÜ</span>';
+      stats = `<span>2.5 Üst <b>${P(m.o25)}</b></span><span>KG Var <b>${P(m.kg)}</b></span><span>İY 0.5 Üst <b>${P(m.iy05)}</b></span><span>maç başı <b>${m.avgGoals.toFixed(2)}</b> gol</span>`;
+    }
     h += `<div class="gcard" data-i="${i}">
       <div class="gtop"><span class="gtime">${d}</span>${badge}</div>
       <div class="gteams">${esc(m.homeName)} – ${esc(m.awayName)}</div>
       <div class="gleague">${esc(m.country || '')}${m.country ? ' · ' : ''}${esc(m.leagueName || m.league)} · oran ${o2(m.h)} / ${o2(m.d)} / ${o2(m.a)}</div>
-      <div class="gstats"><span>2.5 Üst <b>%${P(m.o25)}</b></span><span>KG Var <b>%${P(m.kg)}</b></span><span>İY 0.5 Üst <b>%${P(m.iy05)}</b></span><span>maç başı <b>${m.avgGoals.toFixed(2)}</b> gol</span><span class="gsub">(${m.found} benzer maç)</span></div>
+      <div class="gstats">${stats}<span class="gsub">(${m.found} benzer maç)</span></div>
     </div>`;
   });
   h += '</div>';
   $('#golluOut').innerHTML = h;
   $('#golluOut').querySelectorAll('.gcard').forEach((el) => el.addEventListener('click', () => {
-    const m = up[+el.dataset.i];
+    const m = list[+el.dataset.i];
     switchView('analiz');
     pick(m);
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -402,6 +444,7 @@ async function boot() {
 
     $('#go').addEventListener('click', run);
     $$('#vnav button').forEach((b) => b.addEventListener('click', () => switchView(b.dataset.v)));
+    $$('#fnav button').forEach((b) => b.addEventListener('click', () => renderGollu(b.dataset.f)));
     ['#iH', '#iD', '#iA', '#iO', '#iU'].forEach((s) => $(s).addEventListener('keydown', (e) => { if (e.key === 'Enter') run(); }));
     $$('#dtabs button').forEach((b) => b.addEventListener('click', () => {
       S.tab = b.dataset.d; $$('#dtabs button').forEach((x) => x.classList.toggle('on', x === b)); renderList();

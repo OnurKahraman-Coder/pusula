@@ -117,11 +117,12 @@ async function main() {
     const bl = JSON.parse(fs.readFileSync(path.join(DATA, 'bulletin.json'), 'utf8'));
     const today = engine.today || Number(new Date().toISOString().slice(0, 10).replace(/-/g, ''));
     const up = (bl.matches || []).filter((m) => m.date >= today && m.status !== 'ft');
-    const list = GOLLU.scanGollu(panel, up, { minO25: 0.65 });
+    const list = GOLLU.scanFixtures(panel, up);
     fs.writeFileSync(path.join(DATA, 'gollu.json'), JSON.stringify({
       fetchedAt: new Date().toISOString(), count: list.length, matches: list,
     }));
-    report.push(`gollü: ${list.length} maç`);
+    const gc = list.filter((m) => m.kind).length;
+    report.push(`taramalar: ${list.length} maç (${gc} gollü/kg)`);
   } catch (e) {
     report.push(`gollü: HATA ${e.message}`);
   }
