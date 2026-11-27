@@ -36,8 +36,23 @@ function favBehind(m) {
   if (favG >= oppG) return null;                 // favori geride değil
   const deficit = oppG - favG;
   const band = favOdds < 1.30 ? 0 : favOdds < 1.50 ? 1 : 2;
-  const rate = [[43, 21], [30, 14], [22, 10]][band][deficit >= 2 ? 1 : 0];
-  return { rate, dir: homeFav ? '2/1' : '1/2', favName: homeFav ? m.homeName : m.awayName, favOdds, deficit };
+  // İY'de geride favori kazanma % (football-data 120b + Maçkolik 34b ortalaması, curutucu 2026-11-27)
+  let rate = [[38, 17], [27, 11], [21, 8]][band][deficit >= 2 ? 1 : 0];
+  // dakika etkisi (ESPN n=447): hâlâ gerideyse İY'ye göre 60' ×0.73, 75' ×0.54, 85' ×0.22
+  const mm = String(m.clock || '').match(/^(\d+)/);
+  const min = mm ? +mm[1] : 45;
+  const pts = [[45, 1], [60, 0.73], [75, 0.54], [85, 0.22], [90, 0.05]];
+  let f = 1;
+  for (let k = 1; k < pts.length; k++) {
+    if (min <= pts[k][0]) { const [a0, f0] = pts[k - 1], [a1, f1] = pts[k]; f = f0 + (f1 - f0) * Math.max(0, min - a0) / (a1 - a0); break; }
+    f = pts[k][1];
+  }
+  // kırmızı kart (favori gerideyken gelen): rakip kırmızı → ~%28 (×1.6), favori kırmızı → ~%3 (×0.2)
+  const favRed = homeFav ? (m.rh || 0) : (m.ra || 0), oppRed = homeFav ? (m.ra || 0) : (m.rh || 0);
+  let red = '';
+  if (oppRed > favRed) { f *= 1.6; red = 'rakip 10 kişi'; } else if (favRed > oppRed) { f *= 0.2; red = 'favori 10 kişi'; }
+  rate = Math.max(1, Math.min(70, Math.round(rate * f)));
+  return { rate, dir: homeFav ? '2/1' : '1/2', favName: homeFav ? m.homeName : m.awayName, favOdds, deficit, min, red };
 }
 const dShort = (n) => { const d = new Date(Math.floor(n / 10000), Math.floor((n % 10000) / 100) - 1, n % 100); return `${GUN[d.getDay()]} ${pad(n % 100)}.${pad(Math.floor((n % 10000) / 100))}`; };
 
@@ -157,8 +172,8 @@ function renderList() {
   if (alerts.length) {
     banner = `<div class="cbkbar"><div class="cbkhead">🔴 CANLI DÖNÜŞ ADAYI · ${alerts.length}</div>`;
     alerts.forEach((m) => { const fb = favBehind(m); const i = S.items.indexOf(m);
-      banner += `<div class="cbkrow" data-i="${i}"><b>${esc(fb.favName)}</b> geride · ${m.hg}-${m.ag} ${esc(m.clock)} · tarihsel <b>%${fb.rate}</b> → ${fb.dir}</div>`; });
-    banner += `<div class="cbknote">İY'de geride kalan ağır favori dönüp kazanır (120b maç). Garanti değil, bahis önerisi değil.</div></div>`;
+      banner += `<div class="cbkrow" data-i="${i}"><b>${esc(fb.favName)}</b> geride · ${m.hg}-${m.ag} ${esc(m.clock)}${fb.red ? ' · ' + fb.red : ''} · bu durumda tarihsel <b>%${fb.rate}</b> → ${fb.dir}</div>`; });
+    banner += `<div class="cbknote">Oran, favori gücü + gol farkı + dakika + kırmızı karta göre (155b maç, doğrulandı). Dakika ilerledikçe düşer. Canlı oranla kıyaslanmadı; garanti değil, bahis önerisi değil.</div></div>`;
   }
   if (!items.length) {
     box.innerHTML = banner + `<div class="empty">${S.tab === 'live' ? 'Şu an canlı maç yok.' : 'Bu aralıkta maç yok.'}<br>Oranları sağdan elle girebilirsin.</div>`;
@@ -191,7 +206,7 @@ function renderList() {
         const sc = m.status === 'live' && m.hg != null ? `<small class="sc">${m.hg}-${m.ag} · ${esc(m.clock)}</small>` : '';
         const od = m.h > 1 ? `<span>${o2(m.h)}</span><span>${o2(m.d)}</span><span>${o2(m.a)}</span>` : '<span class="no">oran yok</span>';
         const fb = favBehind(m);
-        const alert = fb ? `<div class="cbk">🔴 ${esc(fb.favName)} geride (favori ${o2(fb.favOdds)}) — tarihsel <b>%${fb.rate}</b> dönüp kazanır → <b>${fb.dir}</b> adayı</div>` : '';
+        const alert = fb ? `<div class="cbk">🔴 ${esc(fb.favName)} geride (favori ${o2(fb.favOdds)}${fb.red ? ', ' + fb.red : ''}) — bu durumda tarihsel <b>%${fb.rate}</b> dönüp kazanır → <b>${fb.dir}</b> adayı</div>` : '';
         html += `<div class="m${on}${fb ? ' cbkm' : ''}" data-i="${i}">${left}<div class="tm">${esc(m.homeName)}<br>${esc(m.awayName)}${sc}${alert}</div><div class="odds">${od}</div></div>`;
       });
     }
@@ -309,7 +324,49 @@ async function loadGollu() {
   }
 }
 
+async function loadNesine() {
+  if (S.nesine) return S.nesine;
+  try {
+    const r = await fetch('data/nesine-surpriz.json?t=' + Date.now(), { cache: 'no-store' });
+    S.nesine = r.ok ? await r.json() : { matches: [] };
+  } catch (_) { S.nesine = { matches: [] }; }
+  return S.nesine;
+}
+
+async function renderNesine() {
+  const out = $('#golluOut');
+  out.innerHTML = '<div class="empty">Nesine bülteni yükleniyor…</div>';
+  const j = await loadNesine();
+  const now = Date.now();
+  const list = (j.matches || []).filter((m) => !m.esd || m.esd > now - 2 * 3600e3)
+    .sort((a, b) => b.pFavCb - a.pFavCb).slice(0, 60);
+  const P = (x) => (x == null ? '—' : '%' + (x * 100).toFixed(1));
+  const st = j.stats || {};
+  let h = `<div class="guyar"><b>Nesine İY/MS sürpriz sıralaması.</b> Maçlar <b>favorinin geri dönüşü</b> (İY geride → maçı alır) ihtimaline göre sıralı. Model 172 bin maçtan (Nesine oranları): belirleyici olan favorinin gücü ve <b>2,5 üst</b> olasılığı; en üst dilim tabanın ~1,3 katı sık dönüyor (en fazla ~%4-5).<br>
+  ⚠️ <b>Kanıt:</b> Nesine bu ihtimali zaten fiyatlıyor (model ile Nesine oranı korelasyonu ${st.kor || '0,95'}). Şu anki bültende dönüş oranı modelin başabaşını geçen maç: <b>${st.deger != null ? st.deger : 0}</b>/${j.count || list.length}; ortanca beklenen getiri ${st.evMed || '−%28'}. <b>🎯 Tavan kuralı</b> (bir taraf 34+, diğeri düşük): düşük taraf her zaman favorinin dönüşüdür; daha sık gelir ama daha az öder. Gerçek getirisi bundan sonra kaydedilen Nesine oranlarıyla ölçülüyor. Asıl fırsat <b>canlıda</b>: favori İY'de geride kalırsa Maçlar listesinde 🔴 uyarı çıkar. Bahis önerisi değil.</div>`;
+  if (!list.length) { out.innerHTML = h + '<div class="empty">Nesine verisi yok (bülten çekilemedi).</div>'; return; }
+  h += '<div class="glist">';
+  for (const m of list) {
+    const ev = m.oFav ? m.pFavCb * m.oFav - 1 : null;
+    const kur = m.kural ? `<span class="gbadge kural">🎯 TAVAN ${m.kural.secim} @${m.kural.oran}</span>` : '';
+    const f2 = (x) => (x ? x.toFixed(2) : '-');
+    h += `<div class="gcard ncard">
+      <div class="gtop"><span class="gtime">${esc((m.d || '').slice(0, 5))} ${esc(m.t || '')}</span><span class="gbadge don">${m.favKey} ADAYI</span>${kur}</div>
+      <div class="gteams">${esc(m.home)} – ${esc(m.away)}</div>
+      <div class="gleague">${esc(m.lig)} · MS ${(m.ms || []).map(f2).join(' / ')}${m.ou ? ' · 2,5 A/Ü ' + m.ou.map(f2).join(' / ') : ''}</div>
+      <div class="gstats"><span>favori dönüşü <b>${P(m.pFavCb)}</b></span><span>Nesine ${m.favKey} <b>${m.oFav || '—'}</b></span><span>başabaş <b>${m.bbFav}</b></span><span>beklenen getiri <b>${ev == null ? '—' : (ev >= 0 ? '+' : '−') + Math.abs(Math.round(ev * 100)) + '%'}</b></span><span class="gsub">zayıf dönüşü ${P(m.pDogCb)} · ${m.dogKey} ${m.oDog || '—'}</span></div>
+    </div>`;
+  }
+  out.innerHTML = h + '</div>';
+}
+
 function renderGollu(filter) {
+  if (filter === 'nsurp') {
+    S.gfilter = filter;
+    $$('#fnav button').forEach((b) => b.classList.toggle('on', b.dataset.f === filter));
+    renderNesine();
+    return;
+  }
   S.gfilter = filter;
   $$('#fnav button').forEach((b) => b.classList.toggle('on', b.dataset.f === filter));
   const v = GVIEWS[filter] || GVIEWS.gollu;

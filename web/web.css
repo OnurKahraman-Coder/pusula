@@ -225,3 +225,6 @@ td.eq { color: var(--pnum); font-weight: 800; }
 .m.cbkm{box-shadow:inset 3px 0 0 #ef4444}
 .cbk{display:block;margin-top:4px;font-size:11.5px;color:#fca5a5;background:#2a0f12;border:1px solid #7f1d1d;border-radius:7px;padding:3px 7px;line-height:1.35}
 .cbk b{color:#fff}
+
+.gbadge.kural{background:#5b2d8a;color:#fff}
+.ncard .gstats b{white-space:nowrap}

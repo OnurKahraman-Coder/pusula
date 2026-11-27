@@ -133,6 +133,29 @@ async function main() {
     report.push(`gollü: HATA ${e.message}`);
   }
 
+  /* 6) Nesine İY/MS sürpriz listesi + ileriye dönük oran arşivi */
+  try {
+    const NES = require('../lib/nesine');
+    const nd = await NES.fetchNesine();
+    const ws = nd.matches.filter((m) => m.oFav);
+    const ev = ws.map((m) => m.pFavCb * m.oFav - 1).sort((a, b) => a - b);
+    const n = ws.length;
+    let kor = null;
+    if (n > 10) {
+      const mx = ws.reduce((s, m) => s + m.pFavCb, 0) / n, my = ws.reduce((s, m) => s + 1 / m.oFav, 0) / n;
+      let sxy = 0, sx = 0, sy = 0;
+      for (const m of ws) { const x = m.pFavCb - mx, y = 1 / m.oFav - my; sxy += x * y; sx += x * x; sy += y * y; }
+      kor = (sxy / Math.sqrt(sx * sy)).toFixed(2).replace('.', ',');
+    }
+    const med = n ? ev[n >> 1] : null;
+    nd.stats = { kor, deger: ev.filter((x) => x > 0).length, evMed: med == null ? null : (med >= 0 ? '+%' : '−%') + Math.abs(Math.round(med * 100)) };
+    fs.writeFileSync(path.join(DATA, 'nesine-surpriz.json'), JSON.stringify(nd));
+    const kayit = NES.archive(path.join(DATA, 'nesine'), nd);
+    report.push(`nesine: ${nd.count} İY/MS'li maç · değer>0 ${nd.stats.deger} · arşiv bugün ${kayit}`);
+  } catch (e) {
+    report.push(`nesine: HATA ${e.message}`);
+  }
+
   console.log('\n' + report.map((r) => '• ' + r).join('\n'));
   console.log(`son maç: ${db.matches[db.matches.length - 1][0]}`);
 }

@@ -55,6 +55,7 @@ const copyOr = (name, fallback) => {
 copyOr('bwin-fixtures.json', { fetchedAt: null, source: 'none', count: 0, matches: [] });
 copyOr('bulletin.json', { date: 0, dateText: '', count: 0, matches: [] });
 copyOr('gollu.json', { fetchedAt: null, count: 0, matches: [] });
+copyOr('nesine-surpriz.json', { fetchedAt: null, count: 0, matches: [] });
 
 /* 5) index.html */
 let html = fs.readFileSync(path.join(WEB, 'index.html'), 'utf8');
