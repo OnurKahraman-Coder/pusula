@@ -228,3 +228,12 @@ td.eq { color: var(--pnum); font-weight: 800; }
 
 .gbadge.kural{background:#5b2d8a;color:#fff}
 .ncard .gstats b{white-space:nowrap}
+
+.dz-top{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:10px}
+.dz-btn{background:#1d2530;color:#e8edf3;border:1px solid #2f3b4a;border-radius:8px;padding:6px 10px;font:inherit;font-size:13px;cursor:pointer}
+.dz-btn small{opacity:.7;margin-left:4px}
+.dz-add{margin:2px 6px 2px 0}
+.dz-ok{color:#4cd17b}.dz-x{color:#ff6b6b}.dz-mut{color:#8a96a6;font-size:12px}
+.dz-del{margin-left:auto;background:none;border:0;color:#8a96a6;cursor:pointer;font-size:14px}
+.dz-in{background:#0d1117;color:#e8edf3;border:1px solid #2f3b4a;border-radius:6px;padding:4px 6px;margin:0 4px}
+.dz-al{border-left:3px solid #ff4d4d}

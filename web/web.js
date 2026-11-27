@@ -257,6 +257,8 @@ function switchView(v) {
   $$('#vnav button').forEach((x) => x.classList.toggle('on', x.dataset.v === v));
   $('#analizPane').hidden = v !== 'analiz';
   $('#golluPane').hidden = v !== 'gollu';
+  $('#donusPane').hidden = v !== 'donus';
+  if (v === 'donus' && window.PusulaDonus) window.PusulaDonus.show();
   if (v === 'gollu' && !S.golluLoaded) loadGollu();
 }
 
@@ -581,6 +583,7 @@ async function boot() {
       if (window.innerWidth < 900 && $('#side').classList.contains('open') && !e.target.closest('#side') && !e.target.closest('#sideToggle')) $('#side').classList.remove('open');
     });
 
+    if (window.PusulaDonus) window.PusulaDonus.start();
     await loadList(false);          // önce hızlı liste (bwin fikstür + bülten)
     loadList(true).then(() => {      // sonra canlı skorlar
       if (!S.items.some((m) => m.date === addDays(0)) && S.items.length) { S.tab = 'week'; $$('#dtabs button').forEach((x) => x.classList.toggle('on', x.dataset.d === 'week')); renderList(); }

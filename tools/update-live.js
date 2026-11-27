@@ -149,6 +149,13 @@ async function main() {
     }
     const med = n ? ev[n >> 1] : null;
     nd.stats = { kor, deger: ev.filter((x) => x > 0).length, evMed: med == null ? null : (med >= 0 ? '+%' : '−%') + Math.abs(Math.round(med * 100)) };
+    // başlamış maçlar bültenden düşer; canlı İY eşlemesi için son 8 saatte başlayanları önceki dosyadan koru
+    try {
+      const prev = JSON.parse(fs.readFileSync(path.join(DATA, 'nesine-surpriz.json'), 'utf8'));
+      const have = new Set(nd.matches.map((m) => m.id)), cut = Date.now() - 8 * 3600e3;
+      const keep = (prev.matches || []).filter((m) => !have.has(m.id) && m.esd && m.esd > cut && m.esd < Date.now() + 3600e3);
+      nd.matches = keep.concat(nd.matches); nd.kept = keep.length;
+    } catch (_) { /* ilk çalışma */ }
     fs.writeFileSync(path.join(DATA, 'nesine-surpriz.json'), JSON.stringify(nd));
     const kayit = NES.archive(path.join(DATA, 'nesine'), nd);
     report.push(`nesine: ${nd.count} İY/MS'li maç · değer>0 ${nd.stats.deger} · arşiv bugün ${kayit}`);

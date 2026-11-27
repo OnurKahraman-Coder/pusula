@@ -23,7 +23,7 @@ const WEB = path.join(ROOT, 'web');
 for (const f of ['icon.svg', 'icon-192.png', 'icon-512.png', 'manifest.webmanifest', 'local-api.js']) {
   fs.copyFileSync(path.join(PUB, f), path.join(OUT, f));
 }
-for (const f of ['web.css', 'web.js']) fs.copyFileSync(path.join(WEB, f), path.join(OUT, f));
+for (const f of ['web.css', 'web.js', 'donus.js']) fs.copyFileSync(path.join(WEB, f), path.join(OUT, f));
 // eski sürümün service worker'ını kaldır (önbellekte eski arayüz kalmasın)
 fs.writeFileSync(path.join(OUT, 'sw.js'), "self.addEventListener('install',()=>self.skipWaiting());self.addEventListener('activate',e=>e.waitUntil(caches.keys().then(k=>Promise.all(k.map(x=>caches.delete(x)))).then(()=>self.registration.unregister())));\n");
 
@@ -61,7 +61,7 @@ copyOr('nesine-surpriz.json', { fetchedAt: null, count: 0, matches: [] });
 let html = fs.readFileSync(path.join(WEB, 'index.html'), 'utf8');
 html = html.replace('<meta name="theme-color" content="#0d0f12">',
   `<meta name="theme-color" content="#0d0f12">\n<meta name="data-version" content="${version}">\n<meta name="robots" content="noindex">`);
-const scripts = ['engine.browser.js', 'analyze.browser.js', 'fixtures.browser.js', 'panel.browser.js', 'local-api.js', 'web.js']
+const scripts = ['engine.browser.js', 'analyze.browser.js', 'fixtures.browser.js', 'panel.browser.js', 'local-api.js', 'donus.js', 'web.js']
   .map((f) => `<script src="${f}?v=${version}"></script>`).join('\n');
 html = html.replace('<!--SCRIPTS-->', scripts + `\n<script>if('serviceWorker' in navigator){navigator.serviceWorker.getRegistrations().then(r=>r.forEach(x=>x.unregister())).catch(()=>{});}</script>`);
 html = html.replace('web.css"', `web.css?v=${version}"`);
