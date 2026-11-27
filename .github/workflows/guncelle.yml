@@ -43,7 +43,7 @@ jobs:
         run: |
           git config user.name  "pusula-bot"
           git config user.email "pusula-bot@users.noreply.github.com"
-          git add data/raw data/bwin-fixtures.json data/bulletin.json data/nesine
+          git add data/raw data/bwin-fixtures.json data/bulletin.json data/nesine data/nesine-surpriz.json
           if git diff --cached --quiet; then
             echo "degisiklik yok"
           else
