@@ -1,0 +1,243 @@
+Div,Date,Time,HomeTeam,AwayTeam,FTHG,FTAG,FTR,AvgCH,AvgCD,AvgCA
+NOR,30/03/2019,14:30,Odd,Brann,3,2,H,2.39,3.11,3.11
+NOR,30/03/2019,17:00,Valerenga,Mjondalen,2,0,H,1.63,3.85,5.31
+NOR,31/03/2019,17:00,Ranheim,Tromso,1,2,A,2.32,3.36,3
+NOR,31/03/2019,17:00,Sarpsborg 08,Molde,1,1,D,2.61,3.31,2.65
+NOR,31/03/2019,17:00,Stromsgodset,Haugesund,3,2,H,2,3.38,3.77
+NOR,31/03/2019,17:00,Viking,Kristiansund,2,0,H,2.09,3.45,3.42
+NOR,31/03/2019,19:00,Bodo/Glimt,Rosenborg,2,0,H,2.95,3.31,2.38
+NOR,01/04/2019,18:00,Stabaek,Lillestrom,1,1,D,2.73,3.29,2.55
+NOR,06/04/2019,17:00,Mjondalen,Bodo/Glimt,4,5,A,2.84,3.31,2.44
+NOR,07/04/2019,17:00,Haugesund,Sarpsborg 08,1,1,D,2.73,3.28,2.55
+NOR,07/04/2019,17:00,Kristiansund,Valerenga,2,0,H,3.04,3.35,2.3
+NOR,07/04/2019,17:00,Lillestrom,Ranheim,2,1,H,1.65,3.85,5.05
+NOR,07/04/2019,17:00,Molde,Stabaek,3,0,H,1.33,5.09,8.65
+NOR,07/04/2019,17:00,Tromso,Viking,0,2,A,2.07,3.46,3.45
+NOR,07/04/2019,19:00,Brann,Stromsgodset,1,1,D,1.68,3.82,4.83
+NOR,08/04/2019,18:00,Rosenborg,Odd,1,1,D,1.85,3.43,4.32
+NOR,10/04/2019,17:30,Brann,Kristiansund,2,1,H,1.51,4.12,6.29
+NOR,10/04/2019,17:30,Molde,Valerenga,4,1,H,1.41,4.65,7.25
+NOR,12/04/2019,18:00,Stromsgodset,Mjondalen,2,3,A,1.72,3.87,4.49
+NOR,13/04/2019,19:00,Viking,Brann,2,1,H,3.18,3.37,2.22
+NOR,14/04/2019,17:00,Bodo/Glimt,Molde,3,2,H,2.9,3.51,2.31
+NOR,14/04/2019,17:00,Odd,Kristiansund,2,0,H,1.61,3.83,5.53
+NOR,14/04/2019,17:00,Ranheim,Haugesund,0,2,A,2.74,3.16,2.63
+NOR,14/04/2019,17:00,Sarpsborg 08,Lillestrom,1,0,H,1.81,3.51,4.44
+NOR,14/04/2019,17:00,Stabaek,Rosenborg,3,1,H,3.59,3.24,2.11
+NOR,14/04/2019,19:00,Valerenga,Tromso,4,1,H,1.58,4.1,5.37
+NOR,22/04/2019,17:00,Bodo/Glimt,Sarpsborg 08,1,1,D,2.22,3.38,3.15
+NOR,22/04/2019,17:00,Haugesund,Stabaek,3,0,H,1.69,3.73,4.9
+NOR,22/04/2019,17:00,Kristiansund,Ranheim,0,0,D,1.75,3.62,4.68
+NOR,22/04/2019,17:00,Lillestrom,Molde,0,2,A,3.08,3.44,2.23
+NOR,22/04/2019,17:00,Mjondalen,Tromso,1,1,D,2.1,3.45,3.35
+NOR,22/04/2019,17:00,Rosenborg,Stromsgodset,0,0,D,1.62,3.9,5.29
+NOR,22/04/2019,19:00,Brann,Valerenga,1,1,D,1.64,3.87,5.07
+NOR,23/04/2019,18:00,Odd,Viking,1,0,H,1.61,4,5.15
+NOR,27/04/2019,17:00,Sarpsborg 08,Mjondalen,1,1,D,1.44,4.38,6.96
+NOR,28/04/2019,17:00,Lillestrom,Haugesund,1,0,H,2.48,3.12,2.94
+NOR,28/04/2019,17:00,Ranheim,Viking,5,2,H,2.78,3.24,2.53
+NOR,28/04/2019,17:00,Stabaek,Bodo/Glimt,2,0,H,3.25,3.47,2.14
+NOR,28/04/2019,17:00,Stromsgodset,Kristiansund,2,3,A,1.79,3.66,4.31
+NOR,28/04/2019,17:00,Tromso,Brann,1,2,A,3.34,3.39,2.13
+NOR,28/04/2019,19:00,Molde,Rosenborg,3,0,H,1.91,3.65,3.78
+NOR,29/04/2019,18:00,Valerenga,Odd,1,0,H,2.28,3.31,3.11
+NOR,04/05/2019,17:00,Mjondalen,Stabaek,1,0,H,2.03,3.49,3.51
+NOR,05/05/2019,17:00,Bodo/Glimt,Lillestrom,4,0,H,1.59,4.07,5.33
+NOR,05/05/2019,17:00,Brann,Ranheim,0,1,A,1.36,4.79,8.25
+NOR,05/05/2019,17:00,Haugesund,Molde,1,2,A,2.75,3.24,2.56
+NOR,05/05/2019,17:00,Kristiansund,Tromso,1,0,H,1.83,3.64,4.12
+NOR,05/05/2019,17:00,Odd,Stromsgodset,2,1,H,1.78,3.59,4.47
+NOR,05/05/2019,19:00,Rosenborg,Sarpsborg 08,1,0,H,2.21,3.12,3.43
+NOR,06/05/2019,18:00,Viking,Valerenga,1,1,D,2.76,3.45,2.43
+NOR,11/05/2019,17:00,Lillestrom,Rosenborg,1,1,D,3.14,3.24,2.29
+NOR,12/05/2019,17:00,Haugesund,Bodo/Glimt,1,1,D,2.09,3.44,3.39
+NOR,12/05/2019,17:00,Molde,Mjondalen,1,0,H,1.31,5.39,8.94
+NOR,12/05/2019,17:00,Ranheim,Valerenga,1,5,A,3.18,3.3,2.24
+NOR,12/05/2019,17:00,Sarpsborg 08,Kristiansund,0,1,A,1.6,3.87,5.54
+NOR,12/05/2019,17:00,Tromso,Odd,1,2,A,3,3.27,2.35
+NOR,12/05/2019,19:00,Stabaek,Brann,0,1,A,3.96,3.43,1.93
+NOR,13/05/2019,18:00,Stromsgodset,Viking,0,0,D,1.93,3.68,3.65
+NOR,16/05/2019,17:00,Brann,Sarpsborg 08,2,1,H,1.89,3.4,4.21
+NOR,16/05/2019,17:00,Kristiansund,Molde,3,2,H,3.3,3.45,2.13
+NOR,16/05/2019,17:00,Mjondalen,Lillestrom,2,2,D,2.15,3.45,3.26
+NOR,16/05/2019,17:00,Odd,Ranheim,1,0,H,1.39,4.5,8.12
+NOR,16/05/2019,17:00,Rosenborg,Haugesund,0,2,A,1.89,3.4,4.18
+NOR,16/05/2019,17:00,Tromso,Bodo/Glimt,1,2,A,3.6,3.58,1.99
+NOR,16/05/2019,17:00,Viking,Stabaek,3,0,H,1.68,3.91,4.75
+NOR,16/05/2019,19:00,Valerenga,Stromsgodset,2,0,H,1.68,3.91,4.78
+NOR,19/05/2019,17:00,Haugesund,Kristiansund,0,0,D,1.7,3.75,4.82
+NOR,19/05/2019,17:00,Lillestrom,Odd,0,3,A,3.39,3.28,2.16
+NOR,19/05/2019,17:00,Rosenborg,Mjondalen,3,2,H,1.63,3.82,5.3
+NOR,19/05/2019,17:00,Sarpsborg 08,Ranheim,1,3,A,1.44,4.34,7.31
+NOR,19/05/2019,17:00,Stromsgodset,Tromso,3,1,H,1.91,3.45,4.02
+NOR,19/05/2019,19:00,Bodo/Glimt,Brann,1,2,A,2.56,3.35,2.68
+NOR,20/05/2019,18:00,Molde,Viking,5,1,H,1.38,4.87,7.52
+NOR,25/05/2019,17:00,Valerenga,Lillestrom,0,3,A,1.49,4.38,6.11
+NOR,26/05/2019,17:00,Mjondalen,Haugesund,1,4,A,2.8,3.25,2.5
+NOR,26/05/2019,17:00,Ranheim,Stromsgodset,1,0,H,2.28,3.4,3.02
+NOR,26/05/2019,17:00,Tromso,Molde,2,1,H,4.87,4.06,1.63
+NOR,26/05/2019,19:00,Brann,Rosenborg,0,1,A,1.7,3.68,4.99
+NOR,15/06/2019,17:00,Haugesund,Brann,1,1,D,2.95,3.21,2.43
+NOR,16/06/2019,17:00,Bodo/Glimt,Stromsgodset,2,0,H,1.48,4.48,6.12
+NOR,16/06/2019,17:00,Lillestrom,Viking,0,2,A,2.21,3.5,3.09
+NOR,16/06/2019,17:00,Mjondalen,Kristiansund,1,1,D,2.62,3.27,2.67
+NOR,16/06/2019,17:00,Molde,Ranheim,2,0,H,1.27,5.69,9.76
+NOR,16/06/2019,17:00,Sarpsborg 08,Odd,2,0,H,2.63,3.18,2.71
+NOR,16/06/2019,19:00,Rosenborg,Valerenga,3,0,H,1.91,3.51,3.97
+NOR,17/06/2019,18:00,Stabaek,Tromso,0,1,A,2.19,3.4,3.2
+NOR,22/06/2019,17:00,Stromsgodset,Molde,0,4,A,3.63,3.67,1.94
+NOR,23/06/2019,14:00,Valerenga,Sarpsborg 08,1,1,D,2.16,3.42,3.25
+NOR,23/06/2019,17:00,Kristiansund,Stabaek,0,1,A,1.58,4,5.51
+NOR,23/06/2019,17:00,Odd,Haugesund,3,1,H,1.78,3.52,4.57
+NOR,23/06/2019,17:00,Ranheim,Mjondalen,1,1,D,2.31,3.38,3
+NOR,23/06/2019,17:00,Tromso,Rosenborg,1,0,H,3.77,3.34,2
+NOR,23/06/2019,17:00,Viking,Bodo/Glimt,3,4,A,2.81,3.5,2.38
+NOR,23/06/2019,19:00,Brann,Lillestrom,1,0,H,1.34,4.92,8.86
+NOR,29/06/2019,17:00,Rosenborg,Kristiansund,1,0,H,1.57,3.91,5.84
+NOR,30/06/2019,17:00,Bodo/Glimt,Odd,3,0,H,2.27,3.32,3.11
+NOR,30/06/2019,17:00,Haugesund,Valerenga,1,4,A,2.37,3.23,3.03
+NOR,30/06/2019,17:00,Lillestrom,Tromso,4,0,H,2.12,3.27,3.5
+NOR,30/06/2019,17:00,Mjondalen,Viking,1,1,D,2.32,3.64,2.8
+NOR,30/06/2019,17:00,Stabaek,Ranheim,0,0,D,2.62,3.19,2.72
+NOR,30/06/2019,19:00,Molde,Brann,1,1,D,2,3.6,3.5
+NOR,01/07/2019,18:00,Sarpsborg 08,Stromsgodset,2,2,D,1.65,3.78,5.19
+NOR,04/07/2019,19:00,Ranheim,Rosenborg,2,3,A,3.95,3.49,1.91
+NOR,05/07/2019,18:00,Brann,Mjondalen,0,0,D,1.52,4.18,6.09
+NOR,05/07/2019,18:00,Kristiansund,Lillestrom,5,2,H,1.98,3.44,3.78
+NOR,05/07/2019,18:00,Odd,Molde,2,2,D,2.33,3.42,2.93
+NOR,05/07/2019,18:00,Stromsgodset,Stabaek,0,2,A,1.83,3.6,4.16
+NOR,05/07/2019,18:00,Tromso,Sarpsborg 08,2,0,H,3.19,3.29,2.23
+NOR,05/07/2019,18:00,Valerenga,Bodo/Glimt,6,0,H,2.44,3.57,2.68
+NOR,05/07/2019,20:00,Viking,Haugesund,0,0,D,2.02,3.63,3.44
+NOR,10/07/2019,18:00,Odd,Stabaek,2,1,H,1.44,4.4,7.07
+NOR,13/07/2019,14:30,Rosenborg,Viking,5,1,H,1.42,4.64,7.06
+NOR,13/07/2019,20:00,Bodo/Glimt,Ranheim,5,1,H,1.5,4.38,6
+NOR,14/07/2019,17:00,Haugesund,Tromso,5,1,H,1.83,3.43,4.47
+NOR,14/07/2019,17:00,Mjondalen,Odd,2,0,H,3.54,3.39,2.07
+NOR,14/07/2019,19:00,Lillestrom,Stromsgodset,2,1,H,1.89,3.48,4.08
+NOR,15/07/2019,18:00,Stabaek,Sarpsborg 08,3,3,D,3.15,3.3,2.28
+NOR,21/07/2019,17:00,Brann,Stabaek,2,1,H,1.47,4.34,6.54
+NOR,21/07/2019,19:00,Molde,Sarpsborg 08,2,1,H,1.49,4.47,5.91
+NOR,03/08/2019,17:00,Odd,Lillestrom,2,1,H,1.6,3.89,5.57
+NOR,03/08/2019,17:00,Sarpsborg 08,Rosenborg,1,1,D,3.02,3.27,2.35
+NOR,04/08/2019,17:00,Ranheim,Brann,0,3,A,3.55,3.39,2.06
+NOR,04/08/2019,17:00,Stabaek,Haugesund,1,1,D,2.75,3.26,2.55
+NOR,04/08/2019,17:00,Tromso,Mjondalen,2,2,D,2.37,3.32,2.94
+NOR,04/08/2019,17:00,Viking,Molde,0,2,A,3.7,3.95,1.86
+NOR,04/08/2019,19:00,Valerenga,Kristiansund,1,1,D,1.61,4.02,5.16
+NOR,05/08/2019,18:00,Stromsgodset,Bodo/Glimt,1,3,A,3.43,3.69,2
+NOR,10/08/2019,14:30,Rosenborg,Tromso,5,2,H,1.45,4.55,6.53
+NOR,11/08/2019,17:00,Bodo/Glimt,Viking,2,1,H,1.53,4.36,5.63
+NOR,11/08/2019,17:00,Haugesund,Ranheim,0,1,A,1.69,3.81,4.83
+NOR,11/08/2019,17:00,Kristiansund,Odd,1,1,D,3.04,3.28,2.34
+NOR,11/08/2019,19:00,Stromsgodset,Valerenga,3,2,H,2.94,3.46,2.31
+NOR,12/08/2019,18:00,Lillestrom,Mjondalen,3,2,H,2.24,3.32,3.16
+NOR,14/08/2019,18:00,Kristiansund,Bodo/Glimt,1,2,A,2.61,3.55,2.51
+NOR,14/08/2019,18:00,Stabaek,Valerenga,1,1,D,3.17,3.47,2.19
+NOR,14/08/2019,18:00,Viking,Sarpsborg 08,2,1,H,2.96,3.52,2.28
+NOR,17/08/2019,17:00,Odd,Rosenborg,1,1,D,2.1,3.35,3.49
+NOR,18/08/2019,15:00,Stabaek,Kristiansund,2,0,H,2.19,3.4,3.23
+NOR,18/08/2019,17:00,Mjondalen,Brann,2,1,H,3.75,3.54,1.95
+NOR,18/08/2019,17:00,Ranheim,Molde,2,3,A,3.87,3.82,1.85
+NOR,18/08/2019,17:00,Tromso,Lillestrom,1,1,D,2.34,3.35,2.98
+NOR,18/08/2019,17:00,Valerenga,Haugesund,1,2,A,1.75,3.79,4.43
+NOR,18/08/2019,19:00,Viking,Stromsgodset,4,0,H,1.95,3.77,3.55
+NOR,19/08/2019,18:00,Sarpsborg 08,Bodo/Glimt,1,1,D,2.24,3.53,3
+NOR,24/08/2019,17:00,Rosenborg,Stabaek,3,2,H,1.37,4.74,8.49
+NOR,25/08/2019,17:00,Brann,Tromso,2,3,A,1.37,4.92,7.78
+NOR,25/08/2019,17:00,Haugesund,Lillestrom,0,2,A,1.75,3.68,4.62
+NOR,25/08/2019,17:00,Kristiansund,Mjondalen,4,0,H,2.08,3.43,3.49
+NOR,25/08/2019,17:00,Molde,Odd,2,2,D,1.81,3.72,4.19
+NOR,25/08/2019,17:00,Viking,Ranheim,2,2,D,1.78,3.91,4.15
+NOR,25/08/2019,19:00,Stromsgodset,Sarpsborg 08,2,1,H,2.8,3.25,2.53
+NOR,26/08/2019,18:00,Bodo/Glimt,Valerenga,4,0,H,1.75,3.93,4.26
+NOR,30/08/2019,18:00,Odd,Bodo/Glimt,3,1,H,2.18,3.5,3.16
+NOR,31/08/2019,17:00,Stabaek,Stromsgodset,2,1,H,1.93,3.56,3.84
+NOR,01/09/2019,17:00,Lillestrom,Brann,1,3,A,2.81,3.27,2.51
+NOR,01/09/2019,17:00,Mjondalen,Molde,1,3,A,3.16,3.52,2.17
+NOR,01/09/2019,17:00,Ranheim,Kristiansund,1,2,A,2.29,3.38,3.04
+NOR,01/09/2019,17:00,Sarpsborg 08,Viking,2,2,D,1.75,3.85,4.4
+NOR,01/09/2019,17:00,Tromso,Haugesund,2,2,D,2.59,3.33,2.66
+NOR,01/09/2019,19:00,Valerenga,Rosenborg,1,1,D,3.45,3.63,2.01
+NOR,14/09/2019,17:00,Rosenborg,Lillestrom,3,1,H,1.38,4.79,7.64
+NOR,15/09/2019,17:00,Bodo/Glimt,Stabaek,3,3,D,1.52,4.4,5.66
+NOR,15/09/2019,17:00,Haugesund,Mjondalen,0,0,D,1.78,3.63,4.44
+NOR,15/09/2019,17:00,Molde,Tromso,3,0,H,1.23,6.49,10.52
+NOR,15/09/2019,17:00,Stromsgodset,Ranheim,1,0,H,1.97,3.51,3.71
+NOR,15/09/2019,17:00,Viking,Odd,2,0,H,2.6,3.46,2.58
+NOR,15/09/2019,19:00,Kristiansund,Brann,1,0,H,2.86,3.22,2.49
+NOR,16/09/2019,18:00,Sarpsborg 08,Valerenga,1,0,H,2.25,3.54,2.99
+NOR,21/09/2019,17:00,Brann,Haugesund,0,0,D,2.06,3.32,3.64
+NOR,22/09/2019,17:00,Lillestrom,Kristiansund,1,1,D,2.14,3.44,3.3
+NOR,22/09/2019,17:00,Odd,Sarpsborg 08,3,0,H,2.06,3.4,3.52
+NOR,22/09/2019,17:00,Ranheim,Bodo/Glimt,1,1,D,3.13,3.7,2.12
+NOR,22/09/2019,17:00,Tromso,Stromsgodset,0,1,A,2.13,3.49,3.26
+NOR,22/09/2019,17:00,Valerenga,Viking,0,4,A,1.74,4.05,4.2
+NOR,22/09/2019,19:00,Mjondalen,Rosenborg,1,2,A,4.08,3.69,1.83
+NOR,23/09/2019,18:00,Stabaek,Molde,1,2,A,3.24,3.7,2.07
+NOR,28/09/2019,19:00,Rosenborg,Brann,0,0,D,1.49,4.2,6.63
+NOR,29/09/2019,17:00,Kristiansund,Haugesund,2,2,D,2.17,3.34,3.3
+NOR,29/09/2019,17:00,Molde,Lillestrom,2,1,H,1.48,4.48,6.18
+NOR,29/09/2019,17:00,Sarpsborg 08,Stabaek,0,0,D,1.93,3.55,3.83
+NOR,29/09/2019,17:00,Stromsgodset,Odd,2,3,A,2.9,3.44,2.35
+NOR,29/09/2019,17:00,Valerenga,Ranheim,1,1,D,1.69,3.96,4.62
+NOR,29/09/2019,19:00,Bodo/Glimt,Tromso,4,0,H,1.42,4.74,6.69
+NOR,30/09/2019,18:00,Viking,Mjondalen,4,1,H,1.95,3.74,3.53
+NOR,04/10/2019,18:00,Mjondalen,Stromsgodset,1,1,D,2.35,3.37,2.94
+NOR,05/10/2019,17:00,Odd,Valerenga,1,1,D,1.78,3.75,4.31
+NOR,06/10/2019,17:00,Haugesund,Rosenborg,2,1,H,3.16,3.35,2.24
+NOR,06/10/2019,17:00,Lillestrom,Bodo/Glimt,0,0,D,3.01,3.62,2.21
+NOR,06/10/2019,17:00,Ranheim,Sarpsborg 08,0,2,A,2.64,3.3,2.63
+NOR,06/10/2019,17:00,Stabaek,Viking,0,0,D,2.39,3.64,2.72
+NOR,06/10/2019,17:00,Tromso,Kristiansund,5,0,H,2.48,3.4,2.74
+NOR,06/10/2019,19:00,Brann,Molde,0,0,D,2.78,3.43,2.44
+NOR,19/10/2019,17:00,Kristiansund,Rosenborg,2,2,D,3.83,3.59,1.91
+NOR,19/10/2019,19:30,Valerenga,Stabaek,0,2,A,1.81,3.7,4.21
+NOR,20/10/2019,17:00,Molde,Haugesund,3,1,H,1.51,4.27,5.94
+NOR,20/10/2019,17:00,Ranheim,Odd,4,1,H,3.17,3.47,2.19
+NOR,20/10/2019,17:00,Stromsgodset,Lillestrom,1,1,D,1.96,3.56,3.72
+NOR,20/10/2019,17:00,Viking,Tromso,2,1,H,1.51,4.42,5.75
+NOR,20/10/2019,19:00,Sarpsborg 08,Brann,1,1,D,2.17,3.29,3.38
+NOR,21/10/2019,18:00,Bodo/Glimt,Mjondalen,0,0,D,1.34,5.37,7.65
+NOR,26/10/2019,15:00,Lillestrom,Valerenga,0,0,D,2.9,3.31,2.41
+NOR,27/10/2019,17:00,Haugesund,Stromsgodset,2,2,D,2.22,3.34,3.19
+NOR,27/10/2019,17:00,Kristiansund,Viking,4,2,H,1.79,3.85,4.13
+NOR,27/10/2019,17:00,Mjondalen,Sarpsborg 08,0,0,D,2.89,3.32,2.41
+NOR,27/10/2019,17:00,Stabaek,Odd,0,0,D,2.66,3.32,2.59
+NOR,27/10/2019,17:00,Tromso,Ranheim,4,2,H,2.27,3.49,2.98
+NOR,27/10/2019,19:00,Rosenborg,Molde,3,1,H,1.83,3.73,4.04
+NOR,28/10/2019,18:00,Brann,Bodo/Glimt,1,1,D,2.59,3.43,2.6
+NOR,01/11/2019,18:00,Stromsgodset,Rosenborg,3,3,D,3.38,3.51,2.08
+NOR,02/11/2019,17:30,Molde,Kristiansund,2,0,H,1.41,4.86,6.87
+NOR,03/11/2019,17:00,Bodo/Glimt,Haugesund,2,2,D,1.36,4.97,7.72
+NOR,03/11/2019,17:00,Ranheim,Stabaek,0,2,A,2.41,3.41,2.82
+NOR,03/11/2019,17:00,Sarpsborg 08,Tromso,3,2,H,1.53,4.21,5.9
+NOR,03/11/2019,17:00,Viking,Lillestrom,3,0,H,1.67,4.09,4.57
+NOR,03/11/2019,19:00,Valerenga,Brann,1,0,H,1.99,3.41,3.72
+NOR,04/11/2019,18:00,Odd,Mjondalen,3,2,H,1.67,3.71,5.22
+NOR,08/11/2019,18:00,Brann,Odd,1,0,H,2.58,3.24,2.75
+NOR,09/11/2019,17:00,Haugesund,Viking,1,0,H,2.09,3.62,3.27
+NOR,10/11/2019,17:00,Kristiansund,Sarpsborg 08,4,0,H,2.71,3.39,2.52
+NOR,10/11/2019,17:00,Lillestrom,Stabaek,1,3,A,2.44,3.17,2.99
+NOR,10/11/2019,17:00,Mjondalen,Ranheim,3,1,H,1.86,3.62,4.05
+NOR,10/11/2019,17:00,Molde,Stromsgodset,4,0,H,1.58,4.22,5.28
+NOR,10/11/2019,17:00,Tromso,Valerenga,0,0,D,2.24,3.63,2.95
+NOR,10/11/2019,19:00,Rosenborg,Bodo/Glimt,3,2,H,1.56,4.45,5.08
+NOR,24/11/2019,17:00,Bodo/Glimt,Kristiansund,3,0,H,1.4,4.9,7.01
+NOR,24/11/2019,17:00,Odd,Tromso,2,1,H,1.45,4.58,6.45
+NOR,24/11/2019,17:00,Ranheim,Lillestrom,2,1,H,2.24,3.36,3.14
+NOR,24/11/2019,17:00,Sarpsborg 08,Haugesund,1,1,D,1.7,3.72,4.89
+NOR,24/11/2019,17:00,Stabaek,Mjondalen,4,2,H,2.27,3.44,3.03
+NOR,24/11/2019,17:00,Stromsgodset,Brann,6,0,H,1.75,3.86,4.29
+NOR,24/11/2019,17:00,Valerenga,Molde,2,4,A,2.45,3.5,2.72
+NOR,24/11/2019,17:00,Viking,Rosenborg,2,2,D,3.39,3.75,2
+NOR,01/12/2019,17:00,Brann,Viking,1,5,A,1.73,3.96,4.35
+NOR,01/12/2019,17:00,Haugesund,Odd,4,1,H,2.73,3.2,2.6
+NOR,01/12/2019,17:00,Kristiansund,Stromsgodset,1,2,A,2.75,3.55,2.39
+NOR,01/12/2019,17:00,Lillestrom,Sarpsborg 08,0,0,D,2.51,3.02,2.99
+NOR,01/12/2019,17:00,Mjondalen,Valerenga,1,0,H,1.79,3.88,4.08
+NOR,01/12/2019,17:00,Molde,Bodo/Glimt,4,2,H,1.86,3.96,3.69
+NOR,01/12/2019,17:00,Rosenborg,Ranheim,3,2,H,1.36,5.64,6.62
+NOR,01/12/2019,17:00,Tromso,Stabaek,1,1,D,1.69,3.97,4.54
+NOR,07/12/2019,17:00,Start,Lillestrom,2,1,H,2.11,3.28,3.48
+NOR,11/12/2019,18:00,Lillestrom,Start,4,3,H,2.28,3.3,3.06

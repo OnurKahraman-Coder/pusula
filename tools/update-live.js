@@ -82,6 +82,11 @@ async function main() {
     report.push(`sezon ${sc}: ${ok} lig güncellendi${fail ? `, ${fail} hata` : ''}`);
   }
 
+  /* 1b) ek ligler (Norveç vb.: football-data new/*.csv) */
+  try {
+    report.push('ek ligler: ' + await require('./extra-leagues').refresh());
+  } catch (e) { report.push(`ek ligler: HATA ${e.message} (önceki veri korunur)`); }
+
   /* 2) derle */
   execFileSync(process.execPath, [path.join(ROOT, 'tools', 'build.js')], { stdio: 'inherit' });
 

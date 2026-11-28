@@ -38,6 +38,8 @@ const LEAGUE_META = {
   SC1: { name: 'İskoçya Championship', country: 'İskoçya', tier: 2 },
   I1: { name: 'İtalya Serie A', country: 'İtalya', tier: 1 },
   I2: { name: 'İtalya Serie B', country: 'İtalya', tier: 2 },
+  // ek lig: bwin yok, oran = piyasa ortalaması kapanış (tools/extra-leagues.js)
+  NOR: { name: 'Norveç Eliteserien', country: 'Norveç', tier: 1, odds: 'piyasa ortalaması' },
 };
 
 // Ayni kulubun farkli yazimlari: lib/aliases.js (fikstur okuyucu da kullanir)
@@ -166,18 +168,20 @@ function main() {
         const played = row[map.FTHG] !== '' && row[map.FTHG] !== undefined && row[map.FTAG] !== '' && row[map.FTAG] !== undefined;
 
         // tum 1-X-2 oranlari bwin: acilis (BW) ve kapanis (BWC)
-        const bH = pick(row, map, ['BWH']);
-        const bD = pick(row, map, ['BWD']);
-        const bA = pick(row, map, ['BWA']);
+        // ek liglerde bwin yok: piyasa ortalaması kapanış ana oran yerine geçer
+        const alt = LEAGUE_META[code].odds ? ['AvgCH', 'AvgCD', 'AvgCA'] : [];
+        const bH = pick(row, map, ['BWH', alt[0]].filter(Boolean));
+        const bD = pick(row, map, ['BWD', alt[1]].filter(Boolean));
+        const bA = pick(row, map, ['BWA', alt[2]].filter(Boolean));
         const pH = pick(row, map, ['BWCH']);
         const pD = pick(row, map, ['BWCD']);
         const pA = pick(row, map, ['BWCA']);
         const mH = pick(row, map, ['BWCH', 'BWH']);
         const mD = pick(row, map, ['BWCD', 'BWD']);
         const mA = pick(row, map, ['BWCA', 'BWA']);
-        const wH = pick(row, map, ['BWH']);
-        const wD = pick(row, map, ['BWD']);
-        const wA = pick(row, map, ['BWA']);
+        const wH = pick(row, map, ['BWH', alt[0]].filter(Boolean));
+        const wD = pick(row, map, ['BWD', alt[1]].filter(Boolean));
+        const wA = pick(row, map, ['BWA', alt[2]].filter(Boolean));
         const okW = valid1x2(wH, wD, wA);
         let o25 = pick(row, map, ['B365>2.5', 'Avg>2.5', 'P>2.5', 'Max>2.5', 'GB>2.5']);
         let u25 = pick(row, map, ['B365<2.5', 'Avg<2.5', 'P<2.5', 'Max<2.5', 'GB<2.5']);

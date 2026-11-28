@@ -1,0 +1,243 @@
+Div,Date,Time,HomeTeam,AwayTeam,FTHG,FTAG,FTR,AvgCH,AvgCD,AvgCA
+NOR,02/04/2022,15:00,Ham-Kam,Lillestrom,2,2,D,2.66,3.21,2.71
+NOR,02/04/2022,17:00,Molde,Valerenga,1,0,H,1.78,3.94,4.15
+NOR,03/04/2022,17:00,Aalesund,Kristiansund,1,0,H,2.15,3.57,3.21
+NOR,03/04/2022,17:00,Haugesund,Sandefjord,1,3,A,1.98,3.37,3.92
+NOR,03/04/2022,17:00,Jerv,Stromsgodset,1,0,H,3.26,3.34,2.21
+NOR,03/04/2022,17:00,Odd,Tromso,2,0,H,2.27,3.14,3.35
+NOR,03/04/2022,17:00,Sarpsborg 08,Viking,0,1,A,2.33,3.41,3
+NOR,03/04/2022,19:00,Bodo/Glimt,Rosenborg,2,2,D,1.45,4.49,6.86
+NOR,09/04/2022,15:00,Lillestrom,Jerv,4,0,H,1.39,4.8,7.79
+NOR,10/04/2022,17:00,Kristiansund,Sarpsborg 08,2,3,A,2.28,3.35,3.1
+NOR,10/04/2022,17:00,Rosenborg,Odd,1,0,H,1.63,4.02,5.07
+NOR,10/04/2022,17:00,Sandefjord,Bodo/Glimt,1,2,A,4.58,3.75,1.75
+NOR,10/04/2022,17:00,Stromsgodset,Molde,1,3,A,2.62,3.58,2.5
+NOR,10/04/2022,17:00,Tromso,Ham-Kam,2,1,H,1.83,3.49,4.44
+NOR,10/04/2022,17:00,Valerenga,Haugesund,2,1,H,1.66,3.91,4.96
+NOR,10/04/2022,19:00,Viking,Aalesund,1,0,H,1.41,4.94,6.76
+NOR,18/04/2022,17:00,Aalesund,Tromso,2,2,D,2.19,3.37,3.3
+NOR,18/04/2022,17:00,Ham-Kam,Sandefjord,3,0,H,1.85,3.64,4.14
+NOR,18/04/2022,17:00,Haugesund,Stromsgodset,0,1,A,2.32,3.31,3.1
+NOR,18/04/2022,17:00,Jerv,Kristiansund,1,0,H,2.82,3.33,2.48
+NOR,18/04/2022,17:00,Molde,Lillestrom,1,2,A,1.52,4.6,5.44
+NOR,18/04/2022,17:00,Odd,Viking,2,1,H,3.43,3.61,2.05
+NOR,18/04/2022,17:00,Sarpsborg 08,Rosenborg,1,1,D,2.4,3.35,2.92
+NOR,18/04/2022,19:00,Bodo/Glimt,Valerenga,5,1,H,1.53,4.37,5.76
+NOR,23/04/2022,15:00,Odd,Aalesund,2,3,A,2.01,3.62,3.55
+NOR,23/04/2022,17:00,Stromsgodset,Sandefjord,0,5,A,1.62,4.02,5.23
+NOR,24/04/2022,17:00,Kristiansund,Ham-Kam,2,2,D,2.24,3.47,3.11
+NOR,24/04/2022,17:00,Lillestrom,Haugesund,1,0,H,1.58,4.1,5.46
+NOR,24/04/2022,17:00,Tromso,Sarpsborg 08,2,5,A,1.89,3.52,4.06
+NOR,24/04/2022,17:00,Valerenga,Jerv,1,0,H,1.3,5.61,9.32
+NOR,24/04/2022,17:00,Viking,Bodo/Glimt,2,0,H,2.28,3.68,2.87
+NOR,24/04/2022,19:00,Rosenborg,Molde,0,0,D,2.29,3.53,2.95
+NOR,28/04/2022,19:00,Lillestrom,Aalesund,2,0,H,1.74,3.81,4.48
+NOR,30/04/2022,17:00,Viking,Haugesund,5,1,H,1.46,4.67,6.28
+NOR,07/05/2022,15:00,Sarpsborg 08,Odd,1,0,H,1.75,3.85,4.47
+NOR,07/05/2022,17:00,Molde,Viking,3,4,A,2.08,3.76,3.2
+NOR,08/05/2022,17:00,Bodo/Glimt,Lillestrom,1,1,D,1.74,3.9,4.45
+NOR,08/05/2022,17:00,Haugesund,Kristiansund,2,0,H,2,3.56,3.61
+NOR,08/05/2022,17:00,Jerv,Tromso,1,1,D,3.31,3.36,2.19
+NOR,08/05/2022,17:00,Sandefjord,Valerenga,1,3,A,2.59,3.49,2.6
+NOR,08/05/2022,17:00,Stromsgodset,Rosenborg,3,0,H,2.82,3.39,2.46
+NOR,08/05/2022,19:00,Ham-Kam,Aalesund,0,0,D,2.33,3.42,2.97
+NOR,11/05/2022,18:00,Molde,Odd,3,0,H,1.38,5.16,7.09
+NOR,12/05/2022,18:00,Tromso,Valerenga,1,0,H,2.13,3.53,3.27
+NOR,12/05/2022,18:00,Viking,Stromsgodset,0,0,D,1.35,5.37,7.74
+NOR,16/05/2022,17:00,Aalesund,Molde,0,2,A,2.96,3.53,2.28
+NOR,16/05/2022,17:00,Bodo/Glimt,Tromso,1,1,D,1.63,3.93,5.26
+NOR,16/05/2022,17:00,Kristiansund,Stromsgodset,0,3,A,2.22,3.49,3.1
+NOR,16/05/2022,17:00,Lillestrom,Sarpsborg 08,1,0,H,2.09,3.51,3.41
+NOR,16/05/2022,17:00,Odd,Haugesund,0,4,A,1.99,3.6,3.6
+NOR,16/05/2022,17:00,Rosenborg,Sandefjord,3,0,H,1.35,5.21,8.17
+NOR,16/05/2022,17:00,Viking,Jerv,3,0,H,1.14,8.25,16.42
+NOR,16/05/2022,19:00,Valerenga,Ham-Kam,1,1,D,1.65,3.93,5.05
+NOR,21/05/2022,15:00,Sandefjord,Lillestrom,1,4,A,4.07,3.73,1.83
+NOR,21/05/2022,17:00,Molde,Kristiansund,2,1,H,1.29,5.98,8.62
+NOR,22/05/2022,17:00,Haugesund,Bodo/Glimt,1,4,A,4.28,3.78,1.78
+NOR,22/05/2022,17:00,Jerv,Odd,0,1,A,2.58,3.41,2.64
+NOR,22/05/2022,17:00,Sarpsborg 08,Aalesund,1,2,A,1.92,3.58,3.88
+NOR,22/05/2022,17:00,Stromsgodset,Valerenga,3,2,H,2.32,3.56,2.87
+NOR,22/05/2022,17:00,Tromso,Viking,1,1,D,2.35,3.38,2.96
+NOR,22/05/2022,19:00,Ham-Kam,Rosenborg,1,1,D,2.89,3.42,2.37
+NOR,25/05/2022,17:00,Aalesund,Jerv,2,1,H,1.39,4.78,7.77
+NOR,25/05/2022,17:00,Bodo/Glimt,Stromsgodset,2,2,D,1.36,5.23,7.51
+NOR,25/05/2022,17:00,Odd,Sandefjord,0,1,A,1.88,3.76,3.85
+NOR,25/05/2022,17:00,Viking,Ham-Kam,1,1,D,1.31,5.55,8.82
+NOR,25/05/2022,19:00,Lillestrom,Valerenga,2,0,H,1.86,3.67,3.94
+NOR,26/05/2022,17:00,Rosenborg,Haugesund,3,3,D,1.53,4.37,5.63
+NOR,26/05/2022,19:00,Sarpsborg 08,Molde,1,2,A,2.78,3.7,2.32
+NOR,28/05/2022,15:00,Ham-Kam,Odd,1,2,A,1.8,3.72,4.26
+NOR,28/05/2022,17:00,Stromsgodset,Viking,3,2,H,3.04,3.63,2.2
+NOR,29/05/2022,17:00,Haugesund,Aalesund,2,2,D,2.11,3.43,3.4
+NOR,29/05/2022,17:00,Jerv,Sarpsborg 08,0,5,A,3.61,3.7,1.95
+NOR,29/05/2022,17:00,Molde,Bodo/Glimt,3,1,H,2.4,3.68,2.69
+NOR,29/05/2022,17:00,Tromso,Lillestrom,2,2,D,2.23,3.23,3.32
+NOR,29/05/2022,19:00,Valerenga,Rosenborg,0,4,A,1.96,3.67,3.58
+NOR,18/06/2022,15:00,Sarpsborg 08,Stromsgodset,5,1,H,1.91,3.85,3.59
+NOR,18/06/2022,17:00,Kristiansund,Bodo/Glimt,0,2,A,5.01,4.41,1.57
+NOR,19/06/2022,17:00,Jerv,Ham-Kam,1,2,A,3.52,3.47,2.05
+NOR,19/06/2022,17:00,Lillestrom,Rosenborg,3,1,H,2.03,3.51,3.54
+NOR,19/06/2022,17:00,Odd,Molde,1,2,A,3.19,3.67,2.1
+NOR,19/06/2022,17:00,Tromso,Haugesund,1,1,D,1.68,3.84,4.89
+NOR,19/06/2022,17:00,Viking,Sandefjord,1,2,A,1.19,7.43,12.23
+NOR,19/06/2022,19:00,Aalesund,Valerenga,2,2,D,2.28,3.54,2.94
+NOR,25/06/2022,15:00,Haugesund,Viking,4,2,H,3.32,3.56,2.09
+NOR,25/06/2022,17:00,Rosenborg,Kristiansund,3,1,H,1.49,4.61,5.8
+NOR,26/06/2022,17:00,Bodo/Glimt,Aalesund,2,0,H,1.29,6.01,8.99
+NOR,26/06/2022,17:00,Ham-Kam,Sarpsborg 08,3,2,H,2.65,3.59,2.46
+NOR,26/06/2022,17:00,Sandefjord,Tromso,2,2,D,3.56,3.57,2
+NOR,26/06/2022,17:00,Stromsgodset,Lillestrom,3,0,H,2.7,3.63,2.41
+NOR,26/06/2022,19:00,Valerenga,Odd,0,1,A,1.6,4.27,4.97
+NOR,02/07/2022,15:00,Jerv,Haugesund,1,0,H,3.26,3.57,2.12
+NOR,02/07/2022,17:00,Odd,Bodo/Glimt,3,2,H,4.8,4.16,1.63
+NOR,03/07/2022,17:00,Aalesund,Stromsgodset,1,0,H,2.27,3.63,2.88
+NOR,03/07/2022,17:00,Ham-Kam,Molde,0,0,D,2.82,3.57,2.33
+NOR,03/07/2022,17:00,Kristiansund,Lillestrom,1,3,A,3.05,3.42,2.25
+NOR,03/07/2022,17:00,Sarpsborg 08,Sandefjord,4,3,H,1.37,5.39,6.86
+NOR,03/07/2022,19:00,Viking,Rosenborg,1,1,D,1.95,3.77,3.54
+NOR,06/07/2022,18:00,Molde,Jerv,1,1,D,1.18,7.47,13.57
+NOR,09/07/2022,15:00,Bodo/Glimt,Sarpsborg 08,4,1,H,1.38,5.33,6.64
+NOR,09/07/2022,17:00,Stromsgodset,Odd,0,0,D,1.85,3.91,3.79
+NOR,10/07/2022,17:00,Lillestrom,Viking,0,1,A,2.08,3.54,3.35
+NOR,10/07/2022,17:00,Molde,Tromso,5,1,H,1.73,3.86,4.42
+NOR,10/07/2022,17:00,Rosenborg,Jerv,3,2,H,1.28,5.86,9.32
+NOR,10/07/2022,17:00,Valerenga,Kristiansund,3,0,H,1.44,4.84,6.28
+NOR,10/07/2022,19:00,Haugesund,Ham-Kam,1,1,D,2.01,3.55,3.55
+NOR,12/07/2022,19:00,Sandefjord,Aalesund,2,2,D,2.37,3.48,2.85
+NOR,16/07/2022,15:00,Jerv,Sandefjord,1,2,A,2.54,3.57,2.58
+NOR,16/07/2022,17:00,Ham-Kam,Bodo/Glimt,0,2,A,3.78,3.8,1.87
+NOR,17/07/2022,17:00,Molde,Haugesund,1,0,H,1.48,4.71,5.83
+NOR,17/07/2022,17:00,Odd,Lillestrom,1,2,A,2.89,3.44,2.35
+NOR,17/07/2022,17:00,Sarpsborg 08,Valerenga,0,1,A,1.91,3.95,3.49
+NOR,17/07/2022,17:00,Viking,Kristiansund,2,1,H,1.41,5.05,6.36
+NOR,17/07/2022,19:00,Aalesund,Rosenborg,0,0,D,2.85,3.38,2.41
+NOR,23/07/2022,15:00,Bodo/Glimt,Jerv,5,0,H,1.11,9.8,16.85
+NOR,23/07/2022,17:00,Rosenborg,Tromso,3,0,H,1.78,3.68,4.38
+NOR,24/07/2022,17:00,Haugesund,Sarpsborg 08,3,1,H,2.64,3.63,2.45
+NOR,24/07/2022,17:00,Kristiansund,Odd,2,2,D,2.16,3.67,3.06
+NOR,24/07/2022,17:00,Sandefjord,Molde,2,3,A,4.91,4.5,1.57
+NOR,24/07/2022,17:00,Valerenga,Viking,4,2,H,1.8,3.95,3.98
+NOR,24/07/2022,19:00,Stromsgodset,Ham-Kam,1,1,D,2.11,3.62,3.24
+NOR,27/07/2022,18:00,Sandefjord,Kristiansund,2,0,H,2.43,3.55,2.69
+NOR,30/07/2022,15:00,Aalesund,Bodo/Glimt,1,2,A,4.35,3.87,1.74
+NOR,30/07/2022,17:00,Ham-Kam,Kristiansund,0,1,A,1.82,3.71,4.11
+NOR,30/07/2022,17:00,Odd,Rosenborg,2,3,A,3.08,3.55,2.19
+NOR,30/07/2022,17:00,Tromso,Sandefjord,3,0,H,1.33,5.22,8.64
+NOR,30/07/2022,19:00,Jerv,Valerenga,2,5,A,5.12,4.48,1.55
+NOR,31/07/2022,14:30,Molde,Stromsgodset,3,0,H,1.39,5.15,6.62
+NOR,31/07/2022,14:30,Sarpsborg 08,Lillestrom,0,2,A,2.36,3.54,2.79
+NOR,03/08/2022,17:00,Kristiansund,Tromso,1,1,D,2.89,3.42,2.35
+NOR,06/08/2022,15:00,Bodo/Glimt,Odd,7,0,H,1.19,7.52,11.53
+NOR,06/08/2022,17:00,Rosenborg,Ham-Kam,2,1,H,1.5,4.21,6.39
+NOR,07/08/2022,17:00,Haugesund,Jerv,3,1,H,1.39,4.92,7.01
+NOR,07/08/2022,17:00,Kristiansund,Molde,2,3,A,5.09,4.38,1.56
+NOR,07/08/2022,17:00,Lillestrom,Tromso,1,1,D,1.94,3.35,4
+NOR,07/08/2022,17:00,Sandefjord,Viking,2,2,D,3.74,3.78,1.88
+NOR,07/08/2022,17:00,Stromsgodset,Sarpsborg 08,3,1,H,2.2,3.87,2.85
+NOR,07/08/2022,19:00,Valerenga,Aalesund,4,0,H,1.5,4.49,5.71
+NOR,12/08/2022,18:00,Sandefjord,Rosenborg,2,5,A,4.99,4.24,1.6
+NOR,12/08/2022,18:00,Sarpsborg 08,Bodo/Glimt,1,4,A,3.41,3.92,1.95
+NOR,13/08/2022,15:00,Aalesund,Haugesund,1,2,A,2.19,3.4,3.22
+NOR,14/08/2022,17:00,Jerv,Lillestrom,1,0,H,6.17,4.51,1.47
+NOR,14/08/2022,17:00,Tromso,Kristiansund,2,1,H,1.49,4.36,6.2
+NOR,14/08/2022,19:00,Ham-Kam,Valerenga,1,1,D,3.45,3.68,1.98
+NOR,20/08/2022,17:00,Bodo/Glimt,Ham-Kam,2,2,D,1.17,7.58,13.58
+NOR,20/08/2022,17:00,Odd,Sarpsborg 08,1,0,H,2.7,3.72,2.37
+NOR,21/08/2022,17:00,Haugesund,Molde,0,1,A,3.7,3.9,1.86
+NOR,21/08/2022,17:00,Lillestrom,Sandefjord,3,0,H,1.23,6.35,11.37
+NOR,21/08/2022,17:00,Stromsgodset,Jerv,6,0,H,1.3,5.87,8.29
+NOR,21/08/2022,17:00,Valerenga,Tromso,1,0,H,1.65,4.04,4.8
+NOR,21/08/2022,19:00,Rosenborg,Aalesund,2,1,H,1.39,4.92,7.1
+NOR,27/08/2022,17:00,Jerv,Bodo/Glimt,0,2,A,11.37,7.21,1.2
+NOR,27/08/2022,17:00,Sandefjord,Stromsgodset,2,2,D,3.47,3.86,1.95
+NOR,28/08/2022,17:00,Aalesund,Odd,1,1,D,1.94,3.69,3.6
+NOR,28/08/2022,17:00,Ham-Kam,Haugesund,1,0,H,2.21,3.35,3.19
+NOR,28/08/2022,17:00,Lillestrom,Kristiansund,1,1,D,1.48,4.33,6.32
+NOR,28/08/2022,17:00,Molde,Sarpsborg 08,4,1,H,1.36,5.34,7.19
+NOR,28/08/2022,17:00,Viking,Valerenga,1,2,A,2.31,3.66,2.79
+NOR,28/08/2022,19:00,Tromso,Rosenborg,4,3,H,2.79,3.42,2.42
+NOR,31/08/2022,18:00,Kristiansund,Viking,2,1,H,2.87,3.53,2.32
+NOR,31/08/2022,18:00,Tromso,Stromsgodset,1,0,H,2.03,3.56,3.45
+NOR,03/09/2022,17:00,Bodo/Glimt,Molde,1,4,A,1.67,4.2,4.47
+NOR,04/09/2022,17:00,Haugesund,Tromso,2,1,H,2.56,3.22,2.75
+NOR,04/09/2022,17:00,Kristiansund,Sandefjord,3,1,H,1.71,4.09,4.31
+NOR,04/09/2022,17:00,Odd,Jerv,2,1,H,1.36,5.2,7.4
+NOR,04/09/2022,17:00,Rosenborg,Viking,4,1,H,1.83,3.87,3.87
+NOR,04/09/2022,17:00,Sarpsborg 08,Ham-Kam,2,1,H,1.69,3.92,4.62
+NOR,04/09/2022,17:00,Stromsgodset,Aalesund,1,2,A,1.78,3.86,4.11
+NOR,04/09/2022,19:00,Valerenga,Lillestrom,3,1,H,2.24,3.43,3.08
+NOR,10/09/2022,15:00,Sandefjord,Odd,1,3,A,2.58,3.45,2.58
+NOR,10/09/2022,17:00,Lillestrom,Stromsgodset,2,1,H,1.64,4.02,4.91
+NOR,11/09/2022,17:00,Aalesund,Sarpsborg 08,1,3,A,2.14,3.6,3.14
+NOR,11/09/2022,17:00,Ham-Kam,Viking,1,2,A,2.3,3.36,3.04
+NOR,11/09/2022,17:00,Jerv,Molde,2,4,A,11.24,6.59,1.22
+NOR,11/09/2022,17:00,Kristiansund,Valerenga,3,2,H,3.91,3.93,1.81
+NOR,11/09/2022,17:00,Tromso,Bodo/Glimt,3,2,H,3.72,3.6,1.94
+NOR,11/09/2022,19:00,Haugesund,Rosenborg,2,1,H,3.15,3.6,2.13
+NOR,17/09/2022,17:00,Odd,Ham-Kam,2,0,H,2.24,3.42,3.09
+NOR,18/09/2022,17:00,Bodo/Glimt,Haugesund,1,1,D,1.22,6.5,11.12
+NOR,18/09/2022,17:00,Rosenborg,Lillestrom,3,1,H,1.84,3.69,3.99
+NOR,18/09/2022,17:00,Sarpsborg 08,Jerv,4,3,H,1.2,6.99,11.61
+NOR,18/09/2022,17:00,Stromsgodset,Kristiansund,4,1,H,1.87,3.89,3.66
+NOR,18/09/2022,17:00,Valerenga,Sandefjord,4,0,H,1.3,5.7,8.54
+NOR,18/09/2022,17:00,Viking,Tromso,2,2,D,2.02,3.52,3.54
+NOR,18/09/2022,19:00,Molde,Aalesund,3,0,H,1.29,5.89,8.65
+NOR,01/10/2022,15:00,Tromso,Molde,0,1,A,3.17,3.64,2.13
+NOR,01/10/2022,17:00,Lillestrom,Bodo/Glimt,1,4,A,2.98,3.54,2.26
+NOR,01/10/2022,17:00,Valerenga,Stromsgodset,4,0,H,1.53,4.49,5.36
+NOR,02/10/2022,16:00,Aalesund,Viking,2,1,H,2.46,3.54,2.7
+NOR,02/10/2022,16:00,Ham-Kam,Jerv,2,1,H,1.34,5.29,8.02
+NOR,02/10/2022,16:00,Haugesund,Odd,2,2,D,1.88,3.65,3.95
+NOR,02/10/2022,16:00,Sandefjord,Sarpsborg 08,1,1,D,3.47,3.88,1.95
+NOR,02/10/2022,18:00,Kristiansund,Rosenborg,4,4,D,3.74,4.03,1.83
+NOR,08/10/2022,17:00,Sarpsborg 08,Haugesund,4,0,H,1.81,3.9,3.98
+NOR,09/10/2022,16:00,Bodo/Glimt,Sandefjord,4,1,H,1.11,10.01,17.26
+NOR,09/10/2022,16:00,Molde,Ham-Kam,5,0,H,1.22,6.43,11.29
+NOR,09/10/2022,16:00,Odd,Kristiansund,1,1,D,1.82,3.97,3.85
+NOR,09/10/2022,16:00,Stromsgodset,Tromso,1,2,A,2.46,3.54,2.68
+NOR,09/10/2022,16:00,Viking,Lillestrom,0,3,A,2.34,3.41,2.92
+NOR,09/10/2022,18:00,Rosenborg,Valerenga,3,0,H,1.8,3.94,3.92
+NOR,15/10/2022,15:00,Tromso,Odd,3,2,H,1.72,3.85,4.56
+NOR,15/10/2022,17:00,Rosenborg,Stromsgodset,3,0,H,1.31,5.71,8.16
+NOR,16/10/2022,16:00,Valerenga,Bodo/Glimt,0,6,A,2.65,3.71,2.41
+NOR,16/10/2022,16:00,Aalesund,Ham-Kam,0,0,D,2.19,3.4,3.24
+NOR,16/10/2022,16:00,Kristiansund,Haugesund,0,1,A,2.27,3.58,2.93
+NOR,16/10/2022,16:00,Sandefjord,Jerv,1,2,A,1.59,4.39,4.9
+NOR,16/10/2022,16:00,Viking,Sarpsborg 08,0,1,A,2.04,3.77,3.25
+NOR,16/10/2022,18:00,Lillestrom,Molde,0,1,A,3.29,3.61,2.08
+NOR,19/10/2022,17:00,Jerv,Aalesund,0,1,A,3.57,3.7,1.95
+NOR,22/10/2022,17:00,Ham-Kam,Stromsgodset,1,1,D,1.98,3.53,3.63
+NOR,22/10/2022,17:00,Odd,Valerenga,2,1,H,2.92,3.63,2.25
+NOR,23/10/2022,16:00,Aalesund,Sandefjord,1,0,H,1.79,3.89,4.1
+NOR,23/10/2022,16:00,Bodo/Glimt,Kristiansund,5,0,H,1.16,8.17,13.37
+NOR,23/10/2022,16:00,Haugesund,Lillestrom,0,1,A,2.92,3.4,2.35
+NOR,23/10/2022,16:00,Jerv,Viking,2,2,D,4.82,4.19,1.63
+NOR,23/10/2022,16:00,Sarpsborg 08,Tromso,1,1,D,1.87,3.82,3.76
+NOR,23/10/2022,18:00,Molde,Rosenborg,2,1,H,1.82,3.9,3.91
+NOR,29/10/2022,17:00,Stromsgodset,Haugesund,1,2,A,2.15,3.72,3.03
+NOR,29/10/2022,17:00,Valerenga,Sarpsborg 08,3,3,D,2.09,3.79,3.1
+NOR,30/10/2022,16:00,Kristiansund,Aalesund,4,0,H,1.73,3.93,4.32
+NOR,30/10/2022,16:00,Lillestrom,Odd,0,2,A,1.39,4.86,7.31
+NOR,30/10/2022,16:00,Rosenborg,Bodo/Glimt,3,2,H,2.34,3.56,2.82
+NOR,30/10/2022,16:00,Sandefjord,Ham-Kam,1,2,A,2.63,3.28,2.66
+NOR,30/10/2022,16:00,Tromso,Jerv,2,2,D,1.28,6.04,8.87
+NOR,30/10/2022,18:00,Viking,Molde,1,4,A,2.6,3.75,2.43
+NOR,06/11/2022,16:00,Aalesund,Lillestrom,2,1,H,4.2,3.58,1.83
+NOR,06/11/2022,16:00,Bodo/Glimt,Viking,5,4,H,1.2,7.06,11.66
+NOR,06/11/2022,16:00,Ham-Kam,Tromso,1,2,A,2.46,3.28,2.84
+NOR,06/11/2022,16:00,Haugesund,Valerenga,1,1,D,2.34,3.47,2.86
+NOR,06/11/2022,16:00,Jerv,Rosenborg,2,4,A,6.66,4.93,1.41
+NOR,06/11/2022,16:00,Molde,Sandefjord,2,1,H,1.22,6.82,10.54
+NOR,06/11/2022,16:00,Odd,Stromsgodset,5,1,H,1.83,3.96,3.8
+NOR,06/11/2022,16:00,Sarpsborg 08,Kristiansund,2,2,D,1.9,4.04,3.45
+NOR,13/11/2022,16:00,Kristiansund,Jerv,1,1,D,1.25,6.51,9.35
+NOR,13/11/2022,16:00,Lillestrom,Ham-Kam,3,1,H,1.8,3.88,3.99
+NOR,13/11/2022,16:00,Rosenborg,Sarpsborg 08,2,3,A,1.46,4.96,5.7
+NOR,13/11/2022,16:00,Sandefjord,Haugesund,2,2,D,2.01,3.94,3.21
+NOR,13/11/2022,16:00,Stromsgodset,Bodo/Glimt,2,4,A,4.16,4.76,1.63
+NOR,13/11/2022,16:00,Tromso,Aalesund,2,2,D,1.75,3.82,4.32
+NOR,13/11/2022,16:00,Valerenga,Molde,1,2,A,2.77,4.19,2.16
+NOR,13/11/2022,16:00,Viking,Odd,1,1,D,1.85,4.09,3.57
+NOR,16/11/2022,17:00,Sandefjord,Kongsvinger,4,0,H,2.13,3.37,3.27
+NOR,19/11/2022,15:00,Kongsvinger,Sandefjord,2,1,H,2.18,3.75,2.91
