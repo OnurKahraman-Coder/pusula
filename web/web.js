@@ -362,7 +362,44 @@ async function renderNesine() {
   out.innerHTML = h + '</div>';
 }
 
+async function renderEvev() {
+  const out = $('#golluOut');
+  if (!S.evev) {
+    out.innerHTML = '<div class="empty">Evet/Evet adayları yükleniyor…</div>';
+    try {
+      const r = await fetch('data/evev.json?t=' + Date.now(), { cache: 'no-store' });
+      if (!r.ok) throw new Error('HTTP ' + r.status);
+      S.evev = await r.json();
+    } catch (e) { out.innerHTML = '<div class="empty">Yüklenemedi: ' + esc(e.message || e) + '</div>'; return; }
+  }
+  const j = S.evev;
+  const now = Date.now();
+  const list = (j.matches || []).filter((m) => !m.esd || m.esd > now - 2 * 3600e3).slice(0, 80);
+  const P = (x) => (x == null ? '—' : '%' + (x * 100).toFixed(1).replace('.', ','));
+  const f2 = (x) => (x ? x.toFixed(2) : '-');
+  let h = `<div class="guyar"><b>Evet/Evet</b> = 1. yarıda <b>KG Var</b> ve 2. yarıda <b>KG Var</b> (iki takım her iki yarıda da gol atar).
+  Olasılık, Maçkolik arşivinde (2025/26 + bu sezon, ~33 bin iddaa oranlı maç) <b>KG Var ve 2,5 Üst oranı en yakın 400 maçın</b> kaç tanesinin Evet/Evet bittiğinden hesaplanır. Liste: olasılığı ≥%10 olanlar, en yüksekten.<br>
+  ⚠️ <b>Gerçekçi beklenti:</b> tüm maçlarda %6; bu listedeki maçlarda geçmiş testte <b>~%12</b> (yaklaşık 8 maçta 1). <b>Adil oran</b> = 1 / olasılık: Nesine'nin Evet/Evet oranı bunun <b>üstündeyse</b> değer olabilir, altındaysa yok. Kârlılık henüz kanıtlanmadı (piyasa oranı arşivde yok, bundan sonra kaydediliyor). Bahis önerisi değil.</div>`;
+  if (!list.length) { out.innerHTML = h + '<div class="empty">Şu an aday yok (' + (j.taranan || 0) + ' maç tarandı).</div>'; return; }
+  h += '<div class="glist">';
+  for (const m of list) {
+    h += `<div class="gcard ncard">
+      <div class="gtop"><span class="gtime">${esc((m.d || '').slice(0, 5))} ${esc(m.t || '')}</span><span class="gbadge evev">EVET / EVET</span></div>
+      <div class="gteams">${esc(m.home)} – ${esc(m.away)}</div>
+      <div class="gleague">${esc(m.lig)}${m.ms ? ' · MS ' + m.ms.map(f2).join(' / ') : ''} · KG Var ${f2(m.kg[0])} · 2,5 Üst ${f2(m.ou[1])}</div>
+      <div class="gstats"><span>Evet/Evet <b>${P(m.p)}</b></span><span>adil oran <b>${m.adil}</b></span><span class="gsub">(arşivde en yakın 400 maç)</span></div>
+    </div>`;
+  }
+  out.innerHTML = h + '</div>';
+}
+
 function renderGollu(filter) {
+  if (filter === 'evev') {
+    S.gfilter = filter;
+    $$('#fnav button').forEach((b) => b.classList.toggle('on', b.dataset.f === filter));
+    renderEvev();
+    return;
+  }
   if (filter === 'nsurp') {
     S.gfilter = filter;
     $$('#fnav button').forEach((b) => b.classList.toggle('on', b.dataset.f === filter));

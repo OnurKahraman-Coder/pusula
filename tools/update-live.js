@@ -185,6 +185,21 @@ async function main() {
       const keep = (prev.matches || []).filter((m) => !have.has(m.id) && m.esd && m.esd > cut && m.esd < Date.now() + 3600e3);
       nd.matches = keep.concat(nd.matches); nd.kept = keep.length;
     } catch (_) { /* ilk çalışma */ }
+    // Evet/Evet (İY KG + 2Y KG) adayları: KG + 2,5 oranı olan tüm Nesine maçları, Maçkolik arşivine göre
+    try {
+      const EV = require('../lib/evev');
+      const list = EV.scan(EV.loadArchive(), nd.kgAll, { esik: 0.10 });
+      const evev = { fetchedAt: nd.fetchedAt, taranan: (nd.kgAll || []).length, count: list.length, matches: list };
+      fs.writeFileSync(path.join(DATA, 'evev.json'), JSON.stringify(evev));
+      // ileride gerçek sonuç/oranla ölçmek için günlük kayıt (ilk görülen tahmin korunur)
+      const dir = path.join(DATA, 'evev-kayit'); fs.mkdirSync(dir, { recursive: true });
+      const f = path.join(dir, nd.fetchedAt.slice(0, 10) + '.json');
+      let old = {}; try { old = JSON.parse(fs.readFileSync(f, 'utf8')); } catch (_) { old = {}; }
+      for (const m of list) { const k = String(m.id); const row = { h: m.home, a: m.away, l: m.lig, d: m.d, t: m.t, p: m.p, kg: m.kg, ou: m.ou, x452: m.x452, x599: m.x599, at: nd.fetchedAt }; old[k] = old[k] ? { ilk: old[k].ilk, son: row } : { ilk: row, son: row }; }
+      fs.writeFileSync(f, JSON.stringify(old));
+      report.push(`evet/evet: ${(nd.kgAll || []).length} maç tarandı, ${list.length} aday (arşiv olasılığı ≥%10)`);
+    } catch (e) { report.push(`evet/evet: HATA ${e.message}`); }
+    delete nd.kgAll;
     fs.writeFileSync(path.join(DATA, 'nesine-surpriz.json'), JSON.stringify(nd));
     const kayit = NES.archive(path.join(DATA, 'nesine'), nd);
     report.push(`nesine: ${nd.count} İY/MS'li maç · değer>0 ${nd.stats.deger} · arşiv bugün ${kayit}`);
