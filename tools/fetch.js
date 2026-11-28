@@ -10,7 +10,7 @@ const path = require('path');
 const ROOT = path.resolve(__dirname, '..');
 const RAW = path.join(ROOT, 'data', 'raw');
 
-const LEAGUES = ['T1', 'E0', 'E1', 'E2', 'D1', 'D2', 'SP1', 'SP2', 'F1', 'F2', 'N1', 'B1', 'P1', 'G1', 'SC0', 'SC1'];
+const LEAGUES = ['T1', 'E0', 'E1', 'E2', 'D1', 'D2', 'SP1', 'SP2', 'F1', 'F2', 'N1', 'B1', 'P1', 'G1', 'SC0', 'SC1', 'I1', 'I2'];
 const SEASON_START = 2004; // 2004/05
 const SEASON_END = 2026;   // 2026/27
 

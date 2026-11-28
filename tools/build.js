@@ -36,6 +36,8 @@ const LEAGUE_META = {
   G1: { name: 'Yunanistan Süper Lig', country: 'Yunanistan', tier: 1 },
   SC0: { name: 'İskoçya Premiership', country: 'İskoçya', tier: 1 },
   SC1: { name: 'İskoçya Championship', country: 'İskoçya', tier: 2 },
+  I1: { name: 'İtalya Serie A', country: 'İtalya', tier: 1 },
+  I2: { name: 'İtalya Serie B', country: 'İtalya', tier: 2 },
 };
 
 // Ayni kulubun farkli yazimlari: lib/aliases.js (fikstur okuyucu da kullanir)
