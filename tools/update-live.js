@@ -87,6 +87,12 @@ async function main() {
     report.push('ek ligler: ' + await require('./extra-leagues').refresh());
   } catch (e) { report.push(`ek ligler: HATA ${e.message} (önceki veri korunur)`); }
 
+  /* 1c) Türkiye 1. Lig güncel sezon (TFF sonuç + İY, oran Maçkolik/Nesine arşivi) */
+  try {
+    const r = await require('./tr1lig').refresh({ log: (x) => console.log('  ! ' + x) });
+    report.push(`1. Lig: ${r.mac} maç (İY ${r.iy}, oranlı ${r.oran}, yeni sayfa ${r.yeniSayfa})${r.bilinmeyen.length ? ' · TANINMAYAN KULÜP: ' + r.bilinmeyen.join('; ') : ''}`);
+  } catch (e) { report.push(`1. Lig: HATA ${e.message} (önceki veri korunur)`); }
+
   /* 2) derle */
   execFileSync(process.execPath, [path.join(ROOT, 'tools', 'build.js')], { stdio: 'inherit' });
 
@@ -107,9 +113,27 @@ async function main() {
   /* 4) günün bülteni (ESPN) */
   try {
     const B = require('../lib/bulletin');
-    const p = await B.fetchWindow(FX.buildIndex(engine.teams), { days: 8 });
+    const index = FX.buildIndex(engine.teams);
+    const p = await B.fetchWindow(index, { days: 8 });
+    // ESPN'de olmayan Türkiye 1. Lig: yaklaşan maçlar ve oranlar Nesine bülteninden
+    try {
+      const nd = await require('../lib/nesine').fetchNesine();
+      const pad = (n) => String(n).padStart(2, '0');
+      const lim = new Date(); lim.setDate(lim.getDate() + (p.windowDays || 8));
+      const t2 = nd.matches.filter((m) => m.lig === 'Türkiye 1. Lig' && m.ms && m.esd < lim.getTime()).map((m) => {
+        const [dd, mm, yy] = m.d.split('.');
+        return {
+          id: 'nes' + m.id, league: 'T2', date: Number(yy + pad(mm) + pad(dd)), time: m.t || '',
+          homeName: m.home, awayName: m.away, home: FX.matchTeam(m.home, index), away: FX.matchTeam(m.away, index),
+          hg: null, ag: null, status: 'ns', raw: '', clock: '', rh: 0, ra: 0, venue: '', played: false,
+          h: m.ms[0], d: m.ms[1], a: m.ms[2], o: m.ou ? m.ou[1] : 0, u: m.ou ? m.ou[0] : 0, oddsSource: 'Nesine', oddsLine: 'pre',
+        };
+      });
+      p.matches = p.matches.concat(t2).sort((a, b) => a.date - b.date || (a.time || '').localeCompare(b.time || ''));
+      p.count = p.matches.length; p.t2 = t2.length;
+    } catch (e) { report.push(`bülten 1. Lig: HATA ${e.message}`); }
     B.save(DATA, p);
-    report.push(`bülten: ${p.dateText}+${p.windowDays}g · ${p.count} maç`);
+    report.push(`bülten: ${p.dateText}+${p.windowDays}g · ${p.count} maç (1. Lig ${p.t2 || 0})`);
   } catch (e) {
     report.push(`bülten: HATA ${e.message}`);
   }

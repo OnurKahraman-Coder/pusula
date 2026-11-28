@@ -39,7 +39,9 @@ const LEAGUE_META = {
   I1: { name: 'İtalya Serie A', country: 'İtalya', tier: 1 },
   I2: { name: 'İtalya Serie B', country: 'İtalya', tier: 2 },
   // ek lig: bwin yok, oran = piyasa ortalaması kapanış (tools/extra-leagues.js)
-  NOR: { name: 'Norveç Eliteserien', country: 'Norveç', tier: 1, odds: 'piyasa ortalaması' },
+  NOR: { name: 'Norveç Eliteserien', country: 'Norveç', tier: 1, odds: 'piyasa ortalaması', cols: ['AvgCH', 'AvgCD', 'AvgCA'] },
+  // ek lig: geçmiş Maçkolik arşivi, güncel sezon TFF (tools/tr1lig.js); oran = iddaa (Maçkolik/Nesine)
+  T2: { name: 'Türkiye 1. Lig', country: 'Türkiye', tier: 2, odds: 'iddaa', cols: ['IDH', 'IDD', 'IDA'] },
 };
 
 // Ayni kulubun farkli yazimlari: lib/aliases.js (fikstur okuyucu da kullanir)
@@ -169,7 +171,7 @@ function main() {
 
         // tum 1-X-2 oranlari bwin: acilis (BW) ve kapanis (BWC)
         // ek liglerde bwin yok: piyasa ortalaması kapanış ana oran yerine geçer
-        const alt = LEAGUE_META[code].odds ? ['AvgCH', 'AvgCD', 'AvgCA'] : [];
+        const alt = LEAGUE_META[code].cols || [];
         const bH = pick(row, map, ['BWH', alt[0]].filter(Boolean));
         const bD = pick(row, map, ['BWD', alt[1]].filter(Boolean));
         const bA = pick(row, map, ['BWA', alt[2]].filter(Boolean));
@@ -183,8 +185,8 @@ function main() {
         const wD = pick(row, map, ['BWD', alt[1]].filter(Boolean));
         const wA = pick(row, map, ['BWA', alt[2]].filter(Boolean));
         const okW = valid1x2(wH, wD, wA);
-        let o25 = pick(row, map, ['B365>2.5', 'Avg>2.5', 'P>2.5', 'Max>2.5', 'GB>2.5']);
-        let u25 = pick(row, map, ['B365<2.5', 'Avg<2.5', 'P<2.5', 'Max<2.5', 'GB<2.5']);
+        let o25 = pick(row, map, ['B365>2.5', 'Avg>2.5', 'P>2.5', 'Max>2.5', 'GB>2.5', 'ID>2.5']);
+        let u25 = pick(row, map, ['B365<2.5', 'Avg<2.5', 'P<2.5', 'Max<2.5', 'GB<2.5', 'ID<2.5']);
         if (o25 && u25) {
           const s = 1 / o25 + 1 / u25;
           if (s < 0.9 || s > 1.45) { o25 = 0; u25 = 0; }

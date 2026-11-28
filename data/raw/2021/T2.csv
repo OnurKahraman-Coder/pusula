@@ -1,0 +1,322 @@
+Div,Date,Time,HomeTeam,AwayTeam,FTHG,FTAG,FTR,HTHG,HTAG,IDH,IDD,IDA,ID>2.5,ID<2.5
+T2,01/07/2020,14:30,Boluspor,Hatayspor,1,0,H,0,0,3.3,2.8,1.8,1.85,1.5
+T2,01/07/2020,17:00,Altay,Ankaraspor AS,3,0,H,2,0,1.45,3.3,4.4,1.6,1.75
+T2,01/07/2020,17:00,Erzurum BB,Adana Demirspor,1,2,A,1,0,2.15,2.9,2.4,1.55,1.8
+T2,02/07/2020,14:30,Umraniyespor,Eskisehirspor,3,0,H,2,0,1.25,4.0,5.75,1.4,2.05
+T2,02/07/2020,17:00,Balikesirspor,Karagumruk,0,5,A,0,0,4.4,3.25,1.45,1.67,1.67
+T2,02/07/2020,17:00,Istanbulspor,Akhisarspor,0,1,A,0,0,3.6,3.2,1.55,1.55,1.8
+T2,04/07/2020,17:00,Bursaspor,Altinordu,1,0,H,0,0,1.3,3.75,5.5,1.6,1.75
+T2,04/07/2020,17:00,Menemen FK,Adanaspor,4,2,H,2,1,1.5,3.2,4.0,1.65,1.7
+T2,05/07/2020,14:30,Giresunspor,Erzurum BB,0,2,A,0,2,3.9,3.3,1.5,1.8,1.55
+T2,05/07/2020,14:30,Hatayspor,Keciorengucu,1,0,H,0,0,1.5,3.0,4.5,1.8,1.55
+T2,05/07/2020,17:00,Adana Demirspor,Altay,2,2,D,1,0,1.5,3.4,3.75,1.4,2.05
+T2,05/07/2020,17:00,Ankaraspor AS,Umraniyespor,3,2,H,1,1,2.35,2.85,2.25,1.65,1.7
+T2,06/07/2020,14:30,Karagumruk,Boluspor,3,1,H,1,0,1.45,3.2,4.25,1.8,1.55
+T2,06/07/2020,17:00,Akhisarspor,Balikesirspor,3,1,H,1,0,1.1,4.5,12.0,1.45,1.9
+T2,06/07/2020,17:00,Eskisehirspor,Istanbulspor,0,3,A,0,2,3.4,3.1,1.65,1.5,1.85
+T2,11/07/2020,17:00,Balikesirspor,Eskisehirspor,2,0,H,1,0,1.5,3.5,3.75,1.35,2.2
+T2,12/07/2020,14:30,Adanaspor,Hatayspor,1,2,A,0,0,8.0,3.9,1.2,1.55,1.8
+T2,12/07/2020,14:30,Altay,Erzurum BB,0,1,A,0,0,2.1,2.85,2.55,1.6,1.75
+T2,12/07/2020,14:30,Altinordu,Giresunspor,3,1,H,2,1,1.35,3.4,5.25,1.6,1.7
+T2,12/07/2020,14:30,Boluspor,Akhisarspor,0,1,A,0,1,2.8,2.65,2.05,1.8,1.55
+T2,12/07/2020,14:30,Bursaspor,Menemen FK,2,2,D,2,1,1.18,4.4,7.25,1.3,2.3
+T2,12/07/2020,14:30,Istanbulspor,Ankaraspor AS,1,0,H,0,0,3.0,3.0,1.8,1.62,1.7
+T2,12/07/2020,14:30,Keciorengucu,Karagumruk,3,0,H,2,0,4.25,3.3,1.45,1.65,1.67
+T2,12/07/2020,14:30,Umraniyespor,Adana Demirspor,2,3,A,0,2,4.5,3.5,1.4,1.4,2.0
+T2,17/07/2020,17:00,Menemen FK,Altinordu,1,1,D,0,0,2.1,3.2,2.35,1.25,2.45
+T2,18/07/2020,14:30,Adana Demirspor,Istanbulspor,3,0,H,2,0,1.1,5.0,9.0,1.25,2.45
+T2,18/07/2020,14:30,Akhisarspor,Keciorengucu,3,4,A,0,3,1.45,3.25,4.6,1.62,1.7
+T2,18/07/2020,14:30,Erzurum BB,Umraniyespor,4,1,H,2,0,1.3,3.75,5.25,1.4,2.0
+T2,18/07/2020,14:30,Karagumruk,Adanaspor,3,0,H,1,0,1.15,4.4,7.5,1.3,2.25
+T2,18/07/2020,14:30,Giresunspor,Altay,1,2,A,0,2,5.0,3.9,1.3,1.35,2.25
+T2,18/07/2020,14:30,Hatayspor,Bursaspor,3,1,H,2,0,1.8,2.95,3.1,1.7,1.62
+T2,19/07/2020,14:30,Ankaraspor AS,Balikesirspor,4,3,H,1,2,1.35,3.6,4.75,1.45,1.95
+T2,19/07/2020,14:30,Eskisehirspor,Boluspor,0,3,A,0,1,5.5,3.6,1.3,1.55,1.8
+T2,22/07/2020,18:00,Bursaspor,Adana Demirspor,0,0,D,0,0,2.35,2.95,2.2,1.6,1.75
+T2,22/07/2020,18:00,Karagumruk,Akhisarspor,3,3,D,1,1,2.0,2.9,2.65,1.6,1.75
+T2,26/07/2020,18:00,Adana Demirspor,Bursaspor,4,1,H,0,0,1.9,2.7,3.0,1.95,1.45
+T2,26/07/2020,18:00,Akhisarspor,Karagumruk,0,1,A,0,0,1.8,3.1,2.9,1.5,1.9
+T2,30/07/2020,18:00,Adana Demirspor,Karagumruk,1,1,D,0,1,2.2,2.9,2.4,1.6,1.75
+T2,11/09/2020,16:00,Menemen FK,Altinordu,0,2,A,0,0,2.2,2.8,2.45,1.75,1.6
+T2,12/09/2020,13:30,Boluspor,Keciorengucu,0,1,A,0,0,1.95,2.95,2.75,1.75,1.6
+T2,12/09/2020,13:30,Umraniyespor,Bandirmaspor,2,1,H,1,0,2.65,3.0,1.95,1.45,1.95
+T2,12/09/2020,16:00,Ankaraspor AS,Eskisehirspor,1,0,H,0,0,2.0,3.0,2.55,1.5,1.85
+T2,13/09/2020,13:30,Bursaspor,Adana Demirspor,1,3,A,1,0,3.6,3.3,1.55,1.65,1.7
+T2,13/09/2020,16:00,Adanaspor,Istanbulspor,1,0,H,0,0,3.0,2.9,1.85,1.8,1.55
+T2,13/09/2020,16:00,Altay,Samsunspor,0,0,D,0,0,1.75,3.0,3.2,1.67,1.67
+T2,14/09/2020,16:00,Akhisarspor,Beykoz,0,0,D,0,0,2.2,2.95,2.3,1.55,1.8
+T2,18/09/2020,16:00,Eskisehirspor,Adanaspor,0,0,D,0,0,3.5,3.3,1.55,1.6,1.7
+T2,19/09/2020,11:00,Bandirmaspor,Akhisarspor,1,0,H,1,0,1.75,3.0,2.95,1.65,1.7
+T2,19/09/2020,11:00,Beykoz,Balikesirspor,1,0,H,0,0,1.45,3.25,4.25,1.7,1.65
+T2,19/09/2020,16:00,Altinordu,Bursaspor,0,2,A,0,0,1.7,2.9,3.3,1.85,1.5
+T2,20/09/2020,11:00,Keciorengucu,Ankaraspor AS,2,0,H,1,0,1.2,4.0,6.75,1.67,1.67
+T2,20/09/2020,13:30,Istanbulspor,Altay,2,1,H,1,0,3.3,3.0,1.7,1.67,1.67
+T2,20/09/2020,16:00,Giresunspor,Menemen FK,1,1,D,0,0,1.4,3.3,4.5,1.75,1.6
+T2,21/09/2020,16:00,Adana Demirspor,Boluspor,1,1,D,1,1,1.4,3.5,4.5,1.45,1.95
+T2,21/09/2020,16:00,Samsunspor,Umraniyespor,3,0,H,0,0,1.5,3.1,3.75,1.75,1.6
+T2,26/09/2020,11:00,Umraniyespor,Istanbulspor,1,3,A,0,1,1.9,2.95,2.65,1.62,1.7
+T2,26/09/2020,16:00,Akhisarspor,Balikesirspor,2,0,H,0,0,1.6,3.1,3.6,1.67,1.67
+T2,26/09/2020,16:00,Bursaspor,Giresunspor,1,2,A,1,1,1.9,3.0,2.75,1.7,1.62
+T2,27/09/2020,11:00,Bandirmaspor,Samsunspor,2,2,D,1,0,2.7,2.95,1.9,1.7,1.62
+T2,27/09/2020,13:30,Ankaraspor AS,Adana Demirspor,1,3,A,0,2,6.5,4.0,1.2,1.5,1.9
+T2,27/09/2020,16:00,Altay,Eskisehirspor,6,0,H,4,0,1.18,4.0,7.0,1.5,1.9
+T2,28/09/2020,16:00,Boluspor,Altinordu,1,2,A,1,1,1.9,2.85,2.8,1.9,1.5
+T2,28/09/2020,16:00,Menemen FK,Beykoz,2,5,A,1,2,2.9,2.85,1.85,1.8,1.55
+T2,02/10/2020,16:00,Istanbulspor,Bandirmaspor,2,1,H,1,1,1.8,3.1,2.75,1.5,1.9
+T2,03/10/2020,11:00,Beykoz,Bursaspor,3,3,D,1,3,1.75,2.95,3.1,1.7,1.6
+T2,03/10/2020,11:00,Keciorengucu,Altay,0,1,A,0,0,3.0,2.9,1.75,1.75,1.6
+T2,03/10/2020,13:30,Giresunspor,Boluspor,2,1,H,0,1,1.67,2.95,3.4,1.8,1.55
+T2,03/10/2020,16:00,Altinordu,Ankaraspor AS,2,0,H,0,0,1.45,3.4,3.9,1.55,1.8
+T2,04/10/2020,11:00,Eskisehirspor,Umraniyespor,1,1,D,0,1,4.0,3.5,1.4,1.4,2.0
+T2,04/10/2020,13:30,Balikesirspor,Menemen FK,2,1,H,1,1,1.95,2.8,2.75,1.85,1.5
+T2,04/10/2020,13:30,Samsunspor,Akhisarspor,1,0,H,0,0,1.5,3.1,4.25,1.75,1.6
+T2,04/10/2020,16:00,Adana Demirspor,Adanaspor,0,0,D,0,0,1.2,3.9,5.75,1.5,1.9
+T2,17/10/2020,10:30,Bandirmaspor,Eskisehirspor,1,1,D,0,1,1.3,3.75,5.25,1.4,1.95
+T2,17/10/2020,10:30,Samsunspor,Istanbulspor,0,3,A,0,0,1.8,2.7,3.25,1.75,1.55
+T2,17/10/2020,13:00,Adanaspor,Altinordu,5,2,H,2,0,2.35,2.6,2.35,1.9,1.5
+T2,17/10/2020,16:00,Altay,Adana Demirspor,1,0,H,1,0,2.05,2.9,2.55,1.5,1.8
+T2,18/10/2020,10:30,Ankaraspor AS,Giresunspor,1,1,D,1,0,3.6,3.3,1.5,1.5,1.85
+T2,18/10/2020,13:00,Boluspor,Beykoz,1,2,A,1,0,2.8,2.8,1.95,1.8,1.5
+T2,18/10/2020,16:00,Bursaspor,Balikesirspor,3,1,H,1,1,1.62,3.1,3.5,1.55,1.75
+T2,19/10/2020,16:00,Akhisarspor,Menemen FK,0,0,D,0,0,1.85,3.1,2.7,1.65,1.65
+T2,20/10/2020,16:00,Eskisehirspor,Samsunspor,0,1,A,0,1,3.75,3.3,1.5,1.5,1.8
+T2,21/10/2020,10:30,Giresunspor,Adanaspor,4,3,H,2,0,1.75,2.8,3.2,1.7,1.6
+T2,21/10/2020,13:00,Adana Demirspor,Umraniyespor,4,2,H,2,1,1.35,3.6,4.5,1.45,1.9
+T2,21/10/2020,16:00,Altinordu,Altay,2,1,H,2,1,1.9,3.3,2.5,1.6,1.7
+T2,21/10/2020,16:00,Balikesirspor,Boluspor,0,0,D,0,0,2.05,2.95,2.5,1.6,1.75
+T2,22/10/2020,10:30,Beykoz,Ankaraspor AS,2,0,H,1,0,1.35,3.6,4.6,1.45,1.95
+T2,22/10/2020,13:00,Istanbulspor,Akhisarspor,2,2,D,0,2,1.65,3.3,3.2,1.67,1.62
+T2,22/10/2020,16:00,Menemen FK,Bursaspor,2,1,H,1,1,2.65,2.85,2.05,1.65,1.7
+T2,24/10/2020,10:30,Umraniyespor,Altinordu,1,1,D,0,1,2.65,2.9,1.95,1.6,1.75
+T2,24/10/2020,16:00,Samsunspor,Keciorengucu,4,2,H,0,0,1.9,2.55,3.2,2.0,1.4
+T2,25/10/2020,10:30,Ankaraspor AS,Balikesirspor,1,2,A,1,1,2.5,2.9,2.05,1.55,1.75
+T2,25/10/2020,10:30,Bandirmaspor,Adana Demirspor,0,3,A,0,1,2.9,3.0,1.8,1.5,1.85
+T2,25/10/2020,13:00,Adanaspor,Beykoz,1,3,A,1,1,2.65,2.95,1.95,1.62,1.7
+T2,25/10/2020,13:00,Istanbulspor,Eskisehirspor,3,0,H,1,0,1.25,4.0,5.5,1.35,2.1
+T2,26/10/2020,16:00,Akhisarspor,Bursaspor,2,1,H,1,1,2.2,2.65,2.5,1.62,1.67
+T2,26/10/2020,16:00,Boluspor,Menemen FK,0,0,D,0,0,2.0,2.65,2.8,1.8,1.5
+T2,30/10/2020,16:00,Balikesirspor,Adanaspor,0,3,A,0,2,1.95,2.85,2.7,1.62,1.7
+T2,31/10/2020,10:30,Giresunspor,Umraniyespor,0,1,A,0,1,1.62,3.2,3.4,1.5,1.85
+T2,31/10/2020,13:00,Bursaspor,Boluspor,4,2,H,2,1,2.05,2.85,2.55,1.62,1.7
+T2,01/11/2020,10:30,Keciorengucu,Istanbulspor,1,1,D,1,0,2.2,2.85,2.7,1.85,1.62
+T2,01/11/2020,13:00,Eskisehirspor,Akhisarspor,0,1,A,0,1,3.6,3.2,1.55,1.55,1.75
+T2,01/11/2020,16:00,Adana Demirspor,Samsunspor,1,1,D,0,0,1.85,2.95,2.85,1.6,1.7
+T2,06/11/2020,16:00,Altay,Balikesirspor,1,3,A,0,1,1.3,3.6,5.25,1.55,1.75
+T2,07/11/2020,10:30,Bandirmaspor,Giresunspor,0,1,A,0,1,1.95,2.9,2.65,1.6,1.75
+T2,07/11/2020,10:30,Umraniyespor,Beykoz,1,1,D,1,1,2.6,2.75,2.1,1.7,1.62
+T2,07/11/2020,16:00,Ankaraspor AS,Bursaspor,1,1,D,1,1,2.95,3.0,1.75,1.5,1.85
+T2,08/11/2020,10:30,Eskisehirspor,Keciorengucu,2,2,D,1,1,4.25,3.3,1.4,1.55,1.8
+T2,08/11/2020,13:00,Akhisarspor,Boluspor,2,2,D,2,1,2.15,2.75,2.45,1.8,1.55
+T2,08/11/2020,13:00,Samsunspor,Altinordu,1,1,D,0,0,1.45,3.2,4.25,1.62,1.67
+T2,17/11/2020,10:30,Altinordu,Bandirmaspor,2,0,H,2,0,1.95,2.95,2.65,1.6,1.75
+T2,21/11/2020,10:30,Altinordu,Istanbulspor,1,0,H,1,0,2.45,2.9,2.3,1.75,1.67
+T2,21/11/2020,10:30,Boluspor,Ankaraspor AS,2,0,H,0,0,1.9,2.75,2.95,1.75,1.55
+T2,21/11/2020,13:00,Bursaspor,Adanaspor,1,0,H,0,0,1.7,3.1,3.1,1.45,1.95
+T2,21/11/2020,16:00,Giresunspor,Samsunspor,0,0,D,0,0,2.5,2.9,2.3,1.6,1.85
+T2,22/11/2020,10:30,Keciorengucu,Akhisarspor,6,0,H,3,0,1.62,2.95,3.6,1.75,1.55
+T2,22/11/2020,13:00,Beykoz,Bandirmaspor,0,6,A,0,2,1.55,3.1,3.6,1.6,1.7
+T2,22/11/2020,16:00,Adana Demirspor,Eskisehirspor,4,1,H,0,0,1.18,4.5,6.25,1.3,2.35
+T2,23/11/2020,16:00,Balikesirspor,Umraniyespor,1,1,D,1,0,2.95,2.95,1.8,1.6,1.7
+T2,23/11/2020,16:00,Menemen FK,Altay,1,2,A,1,0,3.1,3.0,1.75,1.55,1.75
+T2,28/11/2020,10:30,Umraniyespor,Menemen FK,0,2,A,0,0,1.45,3.2,4.25,1.67,1.65
+T2,28/11/2020,13:00,Akhisarspor,Ankaraspor AS,0,1,A,0,0,1.75,2.9,3.2,1.67,1.62
+T2,28/11/2020,13:00,Istanbulspor,Giresunspor,1,1,D,1,0,1.75,2.9,3.1,1.75,1.55
+T2,28/11/2020,16:00,Altay,Bursaspor,3,1,H,1,1,1.5,3.25,3.9,1.55,1.75
+T2,29/11/2020,10:30,Bandirmaspor,Balikesirspor,1,0,H,0,0,1.7,2.8,3.3,1.75,1.55
+T2,29/11/2020,10:30,Keciorengucu,Adana Demirspor,1,0,H,1,0,2.25,2.8,2.3,1.65,1.67
+T2,29/11/2020,13:00,Eskisehirspor,Altinordu,0,2,A,0,1,2.9,3.0,1.8,1.7,1.6
+T2,29/11/2020,16:00,Samsunspor,Beykoz,2,0,H,1,0,1.6,2.95,3.75,1.75,1.55
+T2,01/12/2020,10:30,Menemen FK,Ankaraspor AS,2,1,H,1,0,1.7,2.9,3.25,1.7,1.62
+T2,02/12/2020,10:30,Altay,Giresunspor,1,1,D,0,1,1.7,2.85,3.3,1.7,1.62
+T2,04/12/2020,13:00,Beykoz,Istanbulspor,2,0,H,1,0,2.25,2.95,2.5,1.7,1.7
+T2,04/12/2020,16:00,Bursaspor,Umraniyespor,1,3,A,0,1,2.2,2.8,2.35,1.65,1.67
+T2,05/12/2020,10:30,Giresunspor,Eskisehirspor,2,0,H,0,0,1.4,3.4,4.75,1.6,1.7
+T2,05/12/2020,13:00,Boluspor,Altay,1,0,H,0,0,2.9,2.9,1.8,1.67,1.65
+T2,05/12/2020,13:00,Menemen FK,Bandirmaspor,1,1,D,0,1,2.4,2.8,2.15,1.62,1.67
+T2,06/12/2020,13:00,Altinordu,Keciorengucu,0,2,A,0,1,2.75,2.95,2.1,1.8,1.62
+T2,06/12/2020,16:00,Adana Demirspor,Akhisarspor,2,0,H,1,0,1.3,3.75,5.25,1.5,1.85
+T2,08/12/2020,10:30,Bandirmaspor,Bursaspor,1,2,A,0,1,1.9,2.85,2.8,1.75,1.55
+T2,08/12/2020,13:00,Eskisehirspor,Beykoz,0,2,A,0,0,4.6,3.4,1.4,1.6,1.7
+T2,08/12/2020,16:00,Samsunspor,Menemen FK,1,1,D,1,1,1.4,3.3,4.75,1.7,1.62
+T2,09/12/2020,10:30,Keciorengucu,Giresunspor,0,1,A,0,0,1.85,2.75,3.1,1.8,1.5
+T2,09/12/2020,13:00,Adana Demirspor,Altinordu,1,1,D,1,1,1.5,3.3,3.75,1.4,1.95
+T2,09/12/2020,16:00,Altay,Ankaraspor AS,3,0,H,0,0,1.25,3.9,5.75,1.45,1.9
+T2,10/12/2020,10:30,Umraniyespor,Boluspor,0,2,A,0,0,1.9,2.7,3.0,1.85,1.5
+T2,14/12/2020,13:00,Menemen FK,Istanbulspor,1,2,A,1,1,2.55,2.8,2.05,1.67,1.65
+T2,14/12/2020,16:00,Ankaraspor AS,Umraniyespor,0,0,D,0,0,3.3,3.0,1.67,1.6,1.75
+T2,15/12/2020,16:00,Balikesirspor,Samsunspor,1,3,A,0,1,4.5,3.2,1.45,1.7,1.6
+T2,19/12/2020,10:30,Bandirmaspor,Ankaraspor AS,2,1,H,1,1,1.4,3.4,4.25,1.5,1.8
+T2,19/12/2020,10:30,Keciorengucu,Balikesirspor,2,1,H,1,0,1.3,3.5,5.0,1.6,1.7
+T2,19/12/2020,13:00,Eskisehirspor,Menemen FK,2,2,D,1,1,2.95,2.9,1.8,1.7,1.62
+T2,19/12/2020,16:00,Altay,Akhisarspor,2,1,H,1,1,1.25,3.75,5.75,1.5,1.8
+T2,20/12/2020,10:30,Umraniyespor,Adanaspor,1,0,H,0,0,1.6,3.0,3.6,1.65,1.65
+T2,20/12/2020,16:00,Istanbulspor,Bursaspor,3,3,D,2,0,1.85,3.2,3.0,1.67,1.75
+T2,21/12/2020,13:00,Samsunspor,Boluspor,1,0,H,1,0,1.4,3.2,5.0,1.8,1.5
+T2,21/12/2020,15:00,Adana Demirspor,Beykoz,3,1,H,3,0,1.8,3.0,2.9,1.6,1.7
+T2,21/12/2020,16:00,Giresunspor,Altinordu,2,0,H,0,0,1.95,2.95,3.0,1.85,1.62
+T2,23/12/2020,13:00,Adanaspor,Menemen FK,3,0,H,0,0,2.2,2.95,2.3,1.55,1.75
+T2,25/12/2020,16:00,Altay,Umraniyespor,3,1,H,2,1,1.5,3.1,4.0,1.6,1.7
+T2,26/12/2020,10:30,Beykoz,Altinordu,4,1,H,2,1,1.85,3.1,3.2,1.8,1.65
+T2,26/12/2020,10:30,Boluspor,Istanbulspor,0,2,A,0,1,2.35,2.7,2.3,1.85,1.5
+T2,26/12/2020,16:00,Balikesirspor,Adana Demirspor,0,1,A,0,1,5.25,4.4,1.2,1.15,2.85
+T2,27/12/2020,10:30,Menemen FK,Keciorengucu,0,0,D,0,0,3.4,3.0,1.65,1.75,1.6
+T2,27/12/2020,13:00,Adanaspor,Bandirmaspor,1,2,A,1,1,2.7,2.75,2.0,1.8,1.5
+T2,27/12/2020,13:00,Akhisarspor,Giresunspor,0,1,A,0,0,3.6,3.0,1.6,1.67,1.62
+T2,27/12/2020,16:00,Ankaraspor AS,Samsunspor,1,2,A,1,1,4.75,3.5,1.35,1.55,1.75
+T2,28/12/2020,16:00,Bursaspor,Eskisehirspor,2,1,H,1,0,1.25,4.0,5.25,1.4,2.05
+T2,30/12/2020,10:30,Beykoz,Altay,0,1,A,0,0,2.6,2.75,2.05,1.7,1.6
+T2,30/12/2020,13:00,Adanaspor,Boluspor,2,3,A,1,2,2.4,2.75,2.2,1.75,1.55
+T2,30/12/2020,16:00,Istanbulspor,Adana Demirspor,3,1,H,1,1,2.0,3.0,2.5,1.5,1.85
+T2,02/01/2021,10:30,Keciorengucu,Bursaspor,0,1,A,0,1,1.62,3.0,3.6,1.7,1.62
+T2,02/01/2021,10:30,Umraniyespor,Akhisarspor,2,1,H,1,0,1.67,2.9,3.5,1.7,1.6
+T2,02/01/2021,16:00,Altinordu,Balikesirspor,0,0,D,0,0,1.95,3.0,2.55,1.45,1.9
+T2,03/01/2021,10:30,Bandirmaspor,Altay,2,0,H,1,0,2.6,2.65,2.1,1.95,1.45
+T2,03/01/2021,13:00,Giresunspor,Beykoz,3,0,H,0,0,2.05,2.7,2.65,1.85,1.5
+T2,03/01/2021,13:00,Istanbulspor,Ankaraspor AS,5,3,H,2,2,1.25,4.0,6.0,1.5,1.85
+T2,03/01/2021,16:00,Samsunspor,Adanaspor,2,1,H,0,0,1.25,3.75,6.0,1.5,1.85
+T2,04/01/2021,13:00,Eskisehirspor,Boluspor,0,2,A,0,0,3.0,3.0,1.8,1.62,1.7
+T2,04/01/2021,16:00,Adana Demirspor,Menemen FK,3,0,H,3,0,1.35,3.6,4.5,1.35,2.1
+T2,07/01/2021,13:00,Ankaraspor AS,Adanaspor,0,2,A,0,0,2.35,2.85,2.2,1.6,1.75
+T2,07/01/2021,16:00,Istanbulspor,Balikesirspor,5,0,H,2,0,1.2,4.0,6.5,1.4,2.05
+T2,11/01/2021,16:00,Akhisarspor,Adanaspor,0,1,A,0,0,5.5,3.6,1.3,1.6,1.75
+T2,23/01/2021,10:30,Bandirmaspor,Umraniyespor,1,0,H,1,0,1.7,2.9,3.3,1.8,1.55
+T2,23/01/2021,13:00,Eskisehirspor,Ankaraspor AS,0,0,D,0,0,3.1,3.0,1.7,1.55,1.75
+T2,23/01/2021,16:00,Adana Demirspor,Bursaspor,1,2,A,0,0,1.45,3.5,3.9,1.3,2.2
+T2,24/01/2021,10:30,Beykoz,Akhisarspor,0,3,A,0,1,1.3,3.75,5.5,1.45,1.9
+T2,24/01/2021,10:30,Keciorengucu,Boluspor,2,0,H,1,0,1.55,3.0,3.9,1.7,1.6
+T2,24/01/2021,13:00,Giresunspor,Balikesirspor,1,0,H,0,0,1.3,3.6,5.5,1.62,1.7
+T2,24/01/2021,16:00,Samsunspor,Altay,1,0,H,0,0,1.7,3.0,3.2,1.62,1.67
+T2,25/01/2021,13:00,Istanbulspor,Adanaspor,1,0,H,1,0,1.35,3.6,4.6,1.4,2.0
+T2,25/01/2021,16:00,Altinordu,Menemen FK,2,4,A,0,0,2.15,2.75,2.5,1.7,1.6
+T2,29/01/2021,16:00,Akhisarspor,Bandirmaspor,1,0,H,0,0,3.6,2.95,1.62,1.75,1.6
+T2,30/01/2021,10:30,Ankaraspor AS,Keciorengucu,1,0,H,1,0,3.5,2.95,1.65,1.8,1.5
+T2,30/01/2021,13:00,Adanaspor,Eskisehirspor,5,2,H,3,0,1.35,3.5,4.75,1.5,1.8
+T2,30/01/2021,16:00,Balikesirspor,Beykoz,0,2,A,0,1,3.4,3.0,1.67,1.62,1.67
+T2,31/01/2021,10:30,Menemen FK,Giresunspor,0,4,A,0,2,3.0,2.85,1.8,1.7,1.6
+T2,31/01/2021,10:30,Umraniyespor,Samsunspor,2,2,D,0,1,3.6,3.0,1.65,1.8,1.6
+T2,31/01/2021,13:00,Boluspor,Adana Demirspor,1,2,A,0,1,2.75,2.9,1.9,1.6,1.75
+T2,31/01/2021,16:00,Bursaspor,Altinordu,1,2,A,1,0,1.8,3.0,3.0,1.5,1.85
+T2,01/02/2021,16:00,Altay,Istanbulspor,1,3,A,0,2,2.35,2.8,2.25,1.67,1.65
+T2,05/02/2021,16:00,Samsunspor,Bandirmaspor,3,1,H,1,1,1.5,3.2,3.75,1.7,1.6
+T2,06/02/2021,10:30,Beykoz,Menemen FK,2,0,H,0,0,1.7,3.0,3.3,1.6,1.75
+T2,06/02/2021,13:00,Eskisehirspor,Altay,0,5,A,0,1,9.0,4.75,1.08,1.3,2.2
+T2,06/02/2021,13:00,Istanbulspor,Umraniyespor,2,3,A,0,1,1.4,3.4,4.75,1.6,1.75
+T2,06/02/2021,16:00,Adana Demirspor,Ankaraspor AS,2,0,H,1,0,1.3,3.9,5.25,1.35,2.1
+T2,07/02/2021,10:30,Keciorengucu,Adanaspor,1,0,H,1,0,1.5,3.0,4.0,1.75,1.55
+T2,07/02/2021,13:00,Altinordu,Boluspor,2,1,H,2,1,2.25,2.7,2.4,1.8,1.5
+T2,07/02/2021,16:00,Balikesirspor,Akhisarspor,3,0,H,2,0,2.15,2.75,2.45,1.7,1.6
+T2,08/02/2021,16:00,Giresunspor,Bursaspor,2,1,H,2,1,1.15,4.4,8.0,1.45,1.95
+T2,13/02/2021,10:30,Bandirmaspor,Istanbulspor,2,1,H,0,0,2.55,2.8,2.1,1.62,1.7
+T2,13/02/2021,10:30,Umraniyespor,Eskisehirspor,3,0,H,1,0,1.15,4.4,7.5,1.4,2.05
+T2,13/02/2021,13:00,Akhisarspor,Samsunspor,1,4,A,0,1,6.25,3.6,1.25,1.6,1.75
+T2,13/02/2021,16:00,Altay,Keciorengucu,0,4,A,0,2,1.75,2.85,3.1,1.75,1.55
+T2,14/02/2021,10:30,Boluspor,Giresunspor,0,1,A,0,0,2.9,2.75,1.9,1.8,1.5
+T2,14/02/2021,13:00,Menemen FK,Balikesirspor,1,1,D,1,0,1.95,2.85,2.7,1.67,1.62
+T2,14/02/2021,16:00,Adanaspor,Adana Demirspor,2,2,D,0,1,3.9,3.0,1.6,1.6,1.75
+T2,15/02/2021,16:00,Bursaspor,Beykoz,0,0,D,0,0,2.85,3.0,1.8,1.55,1.75
+T2,19/02/2021,10:30,Keciorengucu,Umraniyespor,0,1,A,0,1,1.67,2.95,3.4,1.75,1.6
+T2,19/02/2021,13:00,Eskisehirspor,Bandirmaspor,2,1,H,1,1,6.25,4.0,1.2,1.45,1.9
+T2,19/02/2021,16:00,Adana Demirspor,Altay,1,2,A,0,2,2.05,3.1,2.45,1.5,1.95
+T2,20/02/2021,10:30,Menemen FK,Akhisarspor,6,2,H,4,1,2.1,2.8,2.5,1.65,1.67
+T2,20/02/2021,13:00,Altinordu,Adanaspor,1,1,D,1,1,1.9,2.95,2.7,1.62,1.7
+T2,20/02/2021,13:00,Giresunspor,Ankaraspor AS,1,0,H,1,0,1.25,3.75,6.0,1.55,1.75
+T2,20/02/2021,16:00,Istanbulspor,Samsunspor,0,1,A,0,1,2.4,2.85,2.15,1.55,1.75
+T2,21/02/2021,10:30,Beykoz,Boluspor,0,1,A,0,0,1.8,2.9,2.95,1.7,1.62
+T2,21/02/2021,16:00,Balikesirspor,Bursaspor,3,0,H,1,0,2.45,2.9,2.1,1.6,1.75
+T2,23/02/2021,10:30,Umraniyespor,Adana Demirspor,0,0,D,0,0,2.55,2.75,2.1,1.55,1.75
+T2,23/02/2021,11:00,Bandirmaspor,Keciorengucu,1,1,D,0,1,2.15,2.6,2.6,2.0,1.4
+T2,23/02/2021,16:00,Altay,Altinordu,1,3,A,1,0,1.75,2.85,3.25,1.62,1.67
+T2,24/02/2021,10:30,Adanaspor,Giresunspor,0,4,A,0,2,3.5,3.1,1.6,1.55,1.75
+T2,24/02/2021,13:00,Samsunspor,Eskisehirspor,6,1,H,3,0,1.08,5.0,9.5,1.3,2.3
+T2,24/02/2021,16:00,Akhisarspor,Istanbulspor,0,1,A,0,1,4.0,3.3,1.45,1.5,1.9
+T2,25/02/2021,10:30,Boluspor,Balikesirspor,0,0,D,0,0,1.75,2.65,3.5,1.85,1.5
+T2,25/02/2021,13:00,Ankaraspor AS,Beykoz,0,0,D,0,0,3.25,2.9,1.7,1.8,1.5
+T2,25/02/2021,16:00,Bursaspor,Menemen FK,0,1,A,0,0,2.05,2.85,2.6,1.67,1.65
+T2,27/02/2021,13:00,Altinordu,Umraniyespor,1,0,H,0,0,2.2,2.75,2.4,1.6,1.7
+T2,27/02/2021,16:00,Adana Demirspor,Bandirmaspor,2,0,H,0,0,1.5,3.3,3.75,1.5,1.85
+T2,28/02/2021,10:30,Keciorengucu,Samsunspor,1,1,D,0,0,3.1,2.95,1.8,1.9,1.5
+T2,28/02/2021,13:00,Bursaspor,Akhisarspor,3,2,H,1,2,1.95,2.9,2.7,1.5,1.8
+T2,28/02/2021,13:00,Eskisehirspor,Istanbulspor,0,3,A,0,2,6.0,4.0,1.2,1.35,2.1
+T2,28/02/2021,16:00,Giresunspor,Altay,1,2,A,0,0,1.7,3.1,3.3,1.7,1.62
+T2,01/03/2021,10:30,Beykoz,Adanaspor,3,2,H,0,1,1.5,3.1,4.0,1.75,1.55
+T2,01/03/2021,13:00,Menemen FK,Boluspor,0,3,A,0,1,2.2,2.65,2.5,1.9,1.45
+T2,01/03/2021,16:00,Balikesirspor,Ankaraspor AS,2,2,D,0,2,1.67,2.8,3.5,1.95,1.45
+T2,07/03/2021,10:30,Umraniyespor,Giresunspor,3,1,H,2,1,2.75,2.8,1.95,1.85,1.5
+T2,07/03/2021,13:00,Akhisarspor,Eskisehirspor,3,0,H,1,0,1.3,3.6,4.75,1.45,1.9
+T2,07/03/2021,13:00,Boluspor,Bursaspor,2,1,H,0,0,1.8,2.85,3.1,1.75,1.55
+T2,07/03/2021,16:00,Altay,Beykoz,5,0,H,1,0,1.8,2.85,3.1,1.75,1.6
+T2,08/03/2021,16:00,Adanaspor,Balikesirspor,1,1,D,0,1,2.3,2.8,2.25,1.65,1.65
+T2,12/03/2021,16:00,Giresunspor,Bandirmaspor,0,1,A,0,1,1.55,3.1,4.0,2.0,1.45
+T2,13/03/2021,10:30,Keciorengucu,Eskisehirspor,1,0,H,1,0,1.05,5.25,10.0,1.3,2.25
+T2,13/03/2021,13:00,Boluspor,Akhisarspor,0,1,A,0,0,1.67,3.0,3.4,1.65,1.67
+T2,13/03/2021,16:00,Adana Demirspor,Istanbulspor,2,0,H,1,0,1.85,2.95,2.95,1.67,1.67
+T2,14/03/2021,10:30,Beykoz,Umraniyespor,0,1,A,0,0,2.0,2.7,2.75,1.9,1.45
+T2,14/03/2021,13:00,Balikesirspor,Altay,0,3,A,0,2,3.4,3.0,1.67,1.75,1.6
+T2,14/03/2021,13:00,Menemen FK,Adanaspor,0,0,D,0,0,1.8,3.0,2.95,1.6,1.7
+T2,14/03/2021,16:00,Bursaspor,Ankaraspor AS,3,1,H,1,1,1.85,2.85,2.9,1.67,1.65
+T2,15/03/2021,16:00,Altinordu,Samsunspor,0,0,D,0,0,3.4,3.0,1.67,1.7,1.6
+T2,19/03/2021,16:00,Altay,Menemen FK,3,0,H,2,0,1.3,3.6,5.25,1.5,1.85
+T2,20/03/2021,10:30,Istanbulspor,Altinordu,1,2,A,0,0,1.55,3.1,3.75,1.62,1.7
+T2,20/03/2021,10:30,Umraniyespor,Balikesirspor,1,2,A,1,1,1.75,2.8,3.3,1.85,1.5
+T2,20/03/2021,13:00,Eskisehirspor,Adana Demirspor,1,1,D,0,0,10.0,5.5,1.05,1.2,2.5
+T2,20/03/2021,16:00,Samsunspor,Giresunspor,0,2,A,0,0,1.75,2.75,3.4,1.9,1.45
+T2,21/03/2021,10:30,Bandirmaspor,Beykoz,3,2,H,1,2,2.1,2.6,2.65,1.95,1.4
+T2,21/03/2021,13:00,Akhisarspor,Keciorengucu,1,2,A,1,0,3.2,2.8,1.8,1.75,1.55
+T2,21/03/2021,13:00,Ankaraspor AS,Boluspor,1,2,A,1,1,3.0,2.8,1.85,1.85,1.5
+T2,21/03/2021,16:00,Adanaspor,Bursaspor,0,3,A,0,1,2.0,2.9,2.55,1.55,1.75
+T2,03/04/2021,10:30,Beykoz,Samsunspor,0,2,A,0,0,3.6,3.0,1.62,1.7,1.6
+T2,03/04/2021,13:00,Ankaraspor AS,Akhisarspor,4,2,H,2,1,2.1,2.8,2.5,1.62,1.7
+T2,03/04/2021,13:00,Giresunspor,Istanbulspor,0,0,D,0,0,2.1,2.65,2.7,1.75,1.55
+T2,03/04/2021,16:00,Adana Demirspor,Keciorengucu,2,0,H,1,0,1.5,3.1,3.9,1.7,1.6
+T2,05/04/2021,16:00,Bursaspor,Altay,1,3,A,0,1,3.9,3.6,1.4,1.4,2.0
+T2,09/04/2021,13:00,Eskisehirspor,Giresunspor,0,5,A,0,3,10.0,5.0,1.05,1.35,2.1
+T2,09/04/2021,13:00,Keciorengucu,Altinordu,5,3,H,2,0,2.05,2.65,2.75,1.9,1.45
+T2,09/04/2021,16:00,Istanbulspor,Beykoz,2,1,H,0,1,1.6,3.25,3.5,1.5,1.85
+T2,10/04/2021,10:30,Altay,Boluspor,0,1,A,0,1,1.45,3.3,4.0,1.55,1.75
+T2,10/04/2021,10:30,Bandirmaspor,Menemen FK,2,2,D,1,0,1.8,2.75,3.25,1.85,1.5
+T2,10/04/2021,13:00,Samsunspor,Balikesirspor,1,0,H,0,0,1.3,3.5,5.5,1.6,1.7
+T2,10/04/2021,16:00,Akhisarspor,Adana Demirspor,2,3,A,1,2,5.25,3.75,1.3,1.45,1.9
+T2,11/04/2021,13:00,Umraniyespor,Bursaspor,2,1,H,1,1,1.7,3.1,3.0,1.55,1.75
+T2,11/04/2021,16:00,Adanaspor,Ankaraspor AS,1,2,A,0,1,1.75,2.9,3.1,1.65,1.65
+T2,13/04/2021,10:30,Beykoz,Eskisehirspor,5,2,H,1,2,1.08,5.0,8.5,1.2,2.5
+T2,13/04/2021,16:00,Altinordu,Adana Demirspor,0,1,A,0,1,2.65,3.1,1.85,1.4,1.95
+T2,13/04/2021,16:00,Giresunspor,Keciorengucu,2,1,H,1,1,1.75,2.7,3.4,1.9,1.45
+T2,14/04/2021,10:30,Menemen FK,Samsunspor,2,2,D,1,1,4.25,3.25,1.45,1.67,1.65
+T2,14/04/2021,13:00,Adanaspor,Akhisarspor,3,1,H,2,0,2.1,2.8,2.5,1.6,1.7
+T2,14/04/2021,16:00,Balikesirspor,Istanbulspor,1,2,A,0,1,3.4,3.0,1.67,1.7,1.62
+T2,17/04/2021,13:00,Keciorengucu,Beykoz,0,1,A,0,1,1.55,3.25,3.6,1.62,1.7
+T2,17/04/2021,16:00,Adana Demirspor,Giresunspor,3,0,H,3,0,1.8,2.9,3.0,1.62,1.67
+T2,18/04/2021,10:30,Eskisehirspor,Balikesirspor,0,3,A,0,2,4.4,3.6,1.4,1.4,2.05
+T2,18/04/2021,13:00,Akhisarspor,Altinordu,1,1,D,0,1,2.95,3.1,1.75,1.5,1.8
+T2,18/04/2021,16:00,Istanbulspor,Menemen FK,4,0,H,1,0,1.45,3.3,4.25,1.62,1.67
+T2,25/04/2021,17:30,Adanaspor,Umraniyespor,0,2,A,0,1,3.1,3.3,1.62,1.4,2.05
+T2,25/04/2021,17:30,Akhisarspor,Altay,2,0,H,0,0,4.75,3.75,1.3,1.35,2.05
+T2,25/04/2021,17:30,Altinordu,Giresunspor,0,0,D,0,0,2.85,2.7,1.9,1.7,1.55
+T2,25/04/2021,17:30,Ankaraspor AS,Bandirmaspor,3,2,H,0,0,2.6,3.2,1.9,1.4,1.95
+T2,25/04/2021,17:30,Balikesirspor,Keciorengucu,1,2,A,1,1,3.25,2.9,1.7,1.7,1.6
+T2,25/04/2021,17:30,Beykoz,Adana Demirspor,0,3,A,0,1,8.25,4.6,1.15,1.35,2.2
+T2,25/04/2021,17:30,Boluspor,Samsunspor,0,2,A,0,1,5.5,3.9,1.25,1.45,1.9
+T2,25/04/2021,17:30,Bursaspor,Istanbulspor,1,2,A,1,2,3.3,3.4,1.6,1.35,2.1
+T2,25/04/2021,17:30,Menemen FK,Eskisehirspor,2,1,H,2,0,1.08,5.25,8.5,1.2,2.55
+T2,01/05/2021,10:30,Eskisehirspor,Bursaspor,1,5,A,1,1,3.75,3.75,1.4,1.25,2.45
+T2,01/05/2021,13:00,Adana Demirspor,Balikesirspor,3,0,H,0,0,1.1,5.0,8.5,1.3,2.3
+T2,01/05/2021,13:00,Altinordu,Beykoz,3,2,H,2,1,1.25,4.0,5.25,1.3,2.2
+T2,01/05/2021,13:00,Bandirmaspor,Adanaspor,3,2,H,1,0,1.75,3.0,2.95,1.5,1.85
+T2,01/05/2021,13:00,Giresunspor,Akhisarspor,3,0,H,2,0,1.2,4.25,6.5,1.55,1.8
+T2,01/05/2021,13:00,Istanbulspor,Boluspor,1,1,D,0,0,1.4,3.5,4.5,1.55,1.8
+T2,01/05/2021,13:00,Keciorengucu,Menemen FK,4,1,H,1,1,1.62,3.0,3.5,1.6,1.7
+T2,01/05/2021,13:00,Samsunspor,Ankaraspor AS,3,1,H,1,0,1.08,5.25,9.0,1.25,2.45
+T2,01/05/2021,13:00,Umraniyespor,Altay,0,1,A,0,0,2.95,3.25,1.7,1.35,2.1
+T2,07/05/2021,13:00,Boluspor,Eskisehirspor,3,0,H,1,0,1.15,4.75,6.5,1.2,2.65
+T2,07/05/2021,17:30,Akhisarspor,Umraniyespor,1,1,D,0,0,2.7,3.25,1.8,1.3,2.2
+T2,09/05/2021,15:00,Altay,Bandirmaspor,4,3,H,3,1,1.4,3.9,3.9,1.2,2.5
+T2,09/05/2021,15:00,Ankaraspor AS,Istanbulspor,0,2,A,0,1,3.6,3.5,1.5,1.3,2.2
+T2,09/05/2021,15:00,Balikesirspor,Altinordu,0,5,A,0,2,4.6,3.75,1.35,1.4,2.05
+T2,09/05/2021,15:00,Bursaspor,Keciorengucu,0,3,A,0,2,3.75,3.9,1.45,1.35,2.2
+T2,09/05/2021,17:30,Adanaspor,Samsunspor,0,2,A,0,2,12.0,5.25,1.05,1.3,2.4
+T2,09/05/2021,17:30,Beykoz,Giresunspor,1,2,A,1,2,10.0,5.0,1.08,1.3,2.25
+T2,17/05/2021,17:00,Altay,Istanbulspor,3,2,H,3,1,1.9,3.1,3.2,1.75,1.7
+T2,18/05/2021,15:00,Altinordu,Samsunspor,1,0,H,0,0,3.2,3.0,1.9,1.8,1.7
+T2,22/05/2021,15:00,Istanbulspor,Altay,0,1,A,0,0,2.45,3.2,2.15,1.4,2.3
+T2,22/05/2021,18:00,Samsunspor,Altinordu,2,2,D,0,1,1.3,4.0,5.75,1.5,2.1
+T2,26/05/2021,17:00,Altinordu,Altay,0,1,A,0,0,3.4,2.8,1.65,1.62,1.65
